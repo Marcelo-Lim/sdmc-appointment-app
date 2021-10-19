@@ -10,78 +10,98 @@ const footer = () => {
             <Box
             px={{ xs: 3, sm: 5 }}
             py={{ xd: 5, sm: 5 }}
-            borderTop= {0}    
-            bgcolor="lightgray" 
+            borderTop= {0}
+            borderBottom= {1}    
+            bgcolor="white" 
             color="black"
             >
                 <Container maxwidth="lg">
-                    <Grid container spacing={4}>
-                        <Grid item xs={12} sm={3}>
-                            <Box borderBottom={1}>Help</Box>
+                    
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} sm={4}>
+                        <Box textAlign="flex-start">
+                            <img src={logo}/>
+                        </Box>
+                        <Grid item xs={12} sm={4}>
+                            <Box borderBottom={0}></Box>
                                 <Box>
                                     <Link href="../pages/ContactUs.js" color="inherit">
-                                        Contact
+                                        Address: #61, 7th Avenue, Baranggay Soccoro, Cubao, Quezon City
                                     </Link>
                                 </Box>
                                 <Box>
                                     <Link href="/" color="inherit">
-                                        Support
+                                        CBC | Complete Blood Count
                                     </Link>
                                 </Box>
                                 <Box>
                                     <Link href="/" color="inherit">
-                                        Privacy
+                                        X-Ray
+                                    </Link>
+                                </Box>
+                                <Box>
+                                    <Link href="/" color="inherit">
+                                        Urinalysis
+                                    </Link>
+                                </Box>
+                                <Box>
+                                    <Link href="/" color="inherit">
+                                        Fecalysis
                                     </Link>
                                 </Box>
                         </Grid>
-                        <Grid item xs={12} sm={3}>
-                            <Box borderBottom={1}>Location</Box>
-                                <Box>
-                                    <h7 color="inherit">
-                                        61 7th Avenue Cubao, Quezon City
-                                    </h7>
-                                </Box>
                         </Grid>
-                        <Grid item xs={12} sm={3}>
-                            <Box borderBottom={1}>Legal</Box>
-                                <Box>
-                                    <Link href="/" color="inherit">
-                                        Privacy Policy
-                                    </Link>
-                                </Box>
-                                <Box>
-                                    <Link href="/" color="inherit">
-                                        Terms and Conditions
-                                    </Link>
-                                </Box>
+                        <Grid item xs={12} sm={4}>
+                            <Box borderBottom={1}>Services</Box>
                                 
+                                <Box>
+                                    <Link href="../pages/ContactUs.js" color="inherit">
+                                        Physical Exam
+                                    </Link>
+                                </Box>
+                                <Box>
+                                    <Link href="/" color="inherit">
+                                        CBC | Complete Blood Count
+                                    </Link>
+                                </Box>
+                                <Box>
+                                    <Link href="/" color="inherit">
+                                        X-Ray
+                                    </Link>
+                                </Box>
+                                <Box>
+                                    <Link href="/" color="inherit">
+                                        Urinalysis
+                                    </Link>
+                                </Box>
+                                <Box>
+                                    <Link href="/" color="inherit">
+                                        Fecalysis
+                                    </Link>
+                                </Box>
                         </Grid>
                         <Grid item xs={12} sm={3}>
-                            <Box borderBottom={1}>About</Box>
+                            <Box borderBottom={1}>Clinic</Box>
                                 <Box>
                                     <Link href="/" color="inherit">
-                                        About Santos-Del Carmen Medical Clinic
+                                        About us
                                     </Link>
                                 </Box>
                                 <Box>
                                     <Link href="/" color="inherit">
-                                        Careers
-                                    </Link>
-                                </Box>
-                                <Box>
-                                    <Link href="/" color="inherit">
-                                        Team
+                                        Contact us
                                     </Link>
                                 </Box>
                         </Grid>
                     </Grid>
-                    <Box textAlign="center">
-                        <img src={logo}/>
-                    </Box>
-                    <Box textAlign="center" pt={{xs: 5, sm: 5 }} pb={{xs:5, sm: 0}}>
-                        Santos-Del Carmen Medical Clinic &reg; {new Date().getFullYear()}
-                    </Box>
+                    
                 </Container>
+            </Box>
+            <Box textAlign="flex-start" pt={{xs: 1, sm: 1 }} pb={{xs:5, sm: 0}}>
+                        Santos-Del Carmen Medical Clinic &reg; {new Date().getFullYear()}
+            </Box>
+            <Box textAlign="flex-end" pt={{xs: 1, sm: 1 }} pb={{xs:5, sm: 0}}>
+                        Contact us: 
             </Box>
         </footer>
     )
