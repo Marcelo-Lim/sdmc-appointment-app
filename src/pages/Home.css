@@ -1,0 +1,22 @@
+.cover {
+    margin-top: 0px;
+    height: 350px;
+    width: auto;
+    background-color: gray;
+}
+
+.button_book {
+    margin-left: 180px;
+}
+
+.home_title {
+    margin-left: 50px;
+}
+
+.services1 {
+    margin-top: 50px;
+}
+
+.services2 {
+    margin-top: 100px;
+}

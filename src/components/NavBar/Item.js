@@ -10,7 +10,7 @@ const Item = ({ title, component, onClickListener }) => {
       <NavItem onClick={onClickListener}>
         <NavLink
           tag={Link}
-          className={["text-dark", classes.title]}
+          className={["text-light", classes.title]}
           to={component}
         >
           {title}
