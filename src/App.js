@@ -1,8 +1,7 @@
-
 import Routes from './routes/index'
 
 function App() {
-  
+
     return <Routes />;
 
 }

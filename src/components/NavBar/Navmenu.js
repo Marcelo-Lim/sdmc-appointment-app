@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { COLORS } from "../../Styles/colors";
 import Item from "./Item";
 import "./Navmenu.css";
+import IconClinic from "../../assets/images/sdmclogo.png";
 
 const menu =[
     {
@@ -39,11 +40,11 @@ const NavMenu = () => {
       <AppBar
         elevation={0}
         position='fixed'
-        style={{ boxShadow: "none", background: COLORS.WHITE }}
+        style={{ boxShadow: "none", background: COLORS.RED }}
       >
         <Navbar
           className='navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow'
-          light
+          dark
         >
           <Container>
             <NavbarBrand tag={Link} to='/'>
@@ -84,7 +85,7 @@ const NavMenu = () => {
       flexGrow: 1,
       fontWeight: "bold",
       fontSize: 25,
-      color: COLORS.BLACK,
+      color: COLORS.WHITE,
       fontFamily: "Pathway Gothic One",
     },
   }));
