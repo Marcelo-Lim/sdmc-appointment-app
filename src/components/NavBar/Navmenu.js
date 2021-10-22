@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { COLORS } from "../../Styles/colors";
 import Item from "./Item";
 import "./Navmenu.css";
-import IconClinic from "../../assets/images/sdmclogo.png";
+import IconClinic from "../../assets/Images/sdmclogo.png";
 
 const menu =[
     {
