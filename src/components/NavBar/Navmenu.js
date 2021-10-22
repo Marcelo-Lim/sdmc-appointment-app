@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import { COLORS } from "../../Styles/colors";
 import Item from "./Item";
 import "./Navmenu.css";
-import IconClinic from "../../assets/images/sdmclogo.png";
+import IconClinic from "../../assets/images/sdmc.png";
 
 const menu =[
     {
@@ -49,7 +49,7 @@ const NavMenu = () => {
           <Container>
             <NavbarBrand tag={Link} to='/'>
               <div>
-                <Typography className={classes.title}>SDMC</Typography>
+                <img src={IconClinic} alt='logo' height="50px" width="60px" />
               </div>
             </NavbarBrand>
             <NavbarToggler

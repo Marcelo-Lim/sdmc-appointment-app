@@ -1,20 +1,25 @@
 .cover {
-    margin-top: 0px;
-    height: 350px;
+    margin-top: 50px;
+    height: 400px;
     width: auto;
     background-color: gray;
 }
 
 .button_book {
-    margin-left: 180px;
+    margin-left: 200px;
 }
 
 .home_title {
-    margin-left: 50px;
+    margin-top: 100px;
+    margin-left: 70px;
+}
+
+.services {
+    margin-top: 50px;
 }
 
 .services1 {
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .services2 {
