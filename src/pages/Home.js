@@ -37,7 +37,7 @@ const Home = () => {
         </Grid>
       </div>
 
-      <div>
+      <div className="services">
         <Container component="main" maxWidth="lg">
           <Grid 
             container 
@@ -86,7 +86,7 @@ const Home = () => {
 
     typo2: {
       flexGrow: 1,
-      fontSize: 20,
+      fontSize: 30,
       fontWeight: 'bold',
       fontFamily: 'Pathway Gothic One',
       color: COLORS.BLACK,
