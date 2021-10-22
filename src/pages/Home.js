@@ -47,24 +47,36 @@ const Home = () => {
           >
             <Typography className={classes.typo2}>Services</Typography>
             <div className="services1">
-              <Grid container spacing={9} justifyContent="center" alignItems="center">
+              <Grid container spacing={0} justifyContent="center" alignItems="center">
                 <Grid item>
-                  <img src={blood} width="100%" height="200"/>
+                  <div className="image1">
+                    <img src={blood} width="100%" height="200"/>
+                    <Typography className={classes.typo_test}>Blood Test</Typography>
+                  </div>
                 </Grid>
 
                 <Grid item>
-                  <img src={cbc} width="100%" height="200"/>
+                  <div className="image2">
+                    <img src={cbc} width="100%" height="200"/>
+                    <Typography className={classes.typo_test}>Complete Blood Count (CBC)</Typography>
+                  </div>
                 </Grid>
               </Grid>
             </div>
             <div className="services2">
-              <Grid container spacing={9} justifyContent="center" alignItems="center">
+              <Grid container spacing={0} justifyContent="center" alignItems="center">
                 <Grid item>
-                  <img src={xray} width="100%" height="200"/>
+                  <div className="image3">
+                    <img src={xray} width="100%" height="200"/>
+                    <Typography className={classes.typo_test}>X-Ray</Typography>
+                  </div>
                 </Grid>
 
                 <Grid item>
-                  <img src={physical} width="100%" height="200"/>
+                  <div className="image4">
+                    <img src={physical} width="100%" height="200"/>
+                    <Typography className={classes.typo_test}>Physical Exam</Typography>
+                  </div>
                 </Grid> 
               </Grid>
             </div>
@@ -90,6 +102,13 @@ const Home = () => {
       fontWeight: 'bold',
       fontFamily: 'Pathway Gothic One',
       color: COLORS.BLACK,
+    },
+
+    typo_test: {
+      marginTop: '10px',
+      textAlign: 'center',
+      fontSize: 20,
+      fontWeight: 'bold',
     },
 
     button1: {
