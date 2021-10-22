@@ -19,9 +19,25 @@
 }
 
 .services1 {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .services2 {
     margin-top: 100px;
+}
+
+.image1 {
+    margin-right: 160px;
+}
+
+.image2 {
+    margin-left: 200px;
+}
+
+.image3 {
+    margin-right: 160px;
+}
+
+.image4 {
+    margin-left: 200px;
 }
