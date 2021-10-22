@@ -2,11 +2,11 @@ import React from "react"
 import { Container, Typography, makeStyles, Grid, Button, Card, CardMedia} from "@material-ui/core";
 import { COLORS } from '../Styles/colors';
 import './Home.css';
-import picture from "../assets/images/sdmclogo.png";
-import blood from "../assets/images/bloodtesticon.png";
-import cbc from "../assets/images/cbcicon.png";
-import physical from "../assets/images/physicalicon.png";
-import xray from "../assets/images/xrayicon.png";
+import picture from "../assets/Images/sdmclogo.png";
+import blood from "../assets/Images/bloodtesticon.png";
+import cbc from "../assets/Images/cbcicon.png";
+import physical from "../assets/Images/physicalicon.png";
+import xray from "../assets/Images/xrayicon.png";
 
 const Home = () => {
   const classes = useStyles();
