@@ -13,14 +13,16 @@ const RootRoutes =()=>{
     return(
         <Router>
             <NavMenu/>
-            <div style={{ marginTop: 100 }}>
             <Route exact path='/' component={Home} />
             <Route exact path='/Home' component={Home} />
             <Route exact path='/AboutUs' component={AboutUs} />
             <Route exact path='/ContactUs' component={ContactUs} />
             <Route exact path='/BookNow' component={BookNow}/>
+<<<<<<< HEAD
             </div>
             <Footer/>
+=======
+>>>>>>> 05bc5616f9e9b78336ba3cef1c477fac48d4ff69
         </Router>
     )
 }
