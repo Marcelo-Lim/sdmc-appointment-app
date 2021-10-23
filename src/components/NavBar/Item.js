@@ -22,7 +22,7 @@ const Item = ({ title, component, onClickListener }) => {
   const useStyles = makeStyles((theme) => ({
     title: {
       flexGrow: 1,
-      fontSize: 15,
+      fontSize: 20,
       fontFamily: "Pathway Gothic One",
       color: COLORS.BLACK,
     },

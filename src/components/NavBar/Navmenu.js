@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { makeStyles, Typography, AppBar } from "@material-ui/core";
+import { makeStyles, AppBar } from "@material-ui/core";
 import {
   Collapse,
   Container,
@@ -61,7 +61,7 @@ const NavMenu = () => {
               isOpen={isOpen}
               navbar
             >
-              <ul className='navbar-nav flex-grow'>
+              <ul className='navbar-nav flex-grow mx-auto'>
                 {menu.map(({ title, component }, idx) => (
                   <Item
                     key={idx}
