@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { makeStyles, Typography, AppBar } from "@material-ui/core";
+import { makeStyles, AppBar } from "@material-ui/core";
 import {
   Collapse,
   Container,
@@ -11,11 +11,7 @@ import { Link } from "react-router-dom";
 import { COLORS } from "../../Styles/colors";
 import Item from "./Item";
 import "./Navmenu.css";
-<<<<<<< HEAD
-import IconClinic from "../../assets/Images/sdmclogo.png";
-=======
 import IconClinic from "../../assets/images/sdmc.png";
->>>>>>> 05bc5616f9e9b78336ba3cef1c477fac48d4ff69
 
 const menu =[
     {
@@ -65,7 +61,7 @@ const NavMenu = () => {
               isOpen={isOpen}
               navbar
             >
-              <ul className='navbar-nav flex-grow'>
+              <ul className='navbar-nav flex-grow mx-auto'>
                 {menu.map(({ title, component }, idx) => (
                   <Item
                     key={idx}

@@ -1,12 +1,12 @@
 import React from "react"
-import { Container, Typography, makeStyles, Grid, Button, Card, CardMedia} from "@material-ui/core";
+import { Container, Typography, makeStyles, Grid, Button } from "@material-ui/core";
 import { COLORS } from '../Styles/colors';
 import './Home.css';
-import picture from "../assets/Images/sdmclogo.png";
-import blood from "../assets/Images/bloodtesticon.png";
-import cbc from "../assets/Images/cbcicon.png";
-import physical from "../assets/Images/physicalicon.png";
-import xray from "../assets/Images/xrayicon.png";
+import cbc from "../assets/images/bt4.png";
+import serum from "../assets/images/bt3.png";
+import urinalysis from "../assets/images/bt2.png";
+import hiv from "../assets/images/bt6.png";
+import screening from "../assets/images/bt5.png";
 
 const Home = () => {
   const classes = useStyles();
@@ -38,50 +38,96 @@ const Home = () => {
       </div>
 
       <div className="services">
-        <Container component="main" maxWidth="lg">
+        <Typography className={classes.typo2}>Services</Typography>
+        <Typography className={classes.typo8}>Santos-Del Carmen Medical Clinic offers the following tests</Typography>
+        
+        <div className="service1">
           <Grid 
-            container 
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
+            container
+            direction="row"
           >
-            <Typography className={classes.typo2}>Services</Typography>
-            <div className="services1">
-              <Grid container spacing={0} justifyContent="center" alignItems="center">
-                <Grid item>
-                  <div className="image1">
-                    <img src={blood} width="100%" height="200"/>
-                    <Typography className={classes.typo_test}>Blood Test</Typography>
-                  </div>
-                </Grid>
-
-                <Grid item>
-                  <div className="image2">
-                    <img src={cbc} width="100%" height="200"/>
-                    <Typography className={classes.typo_test}>Complete Blood Count (CBC)</Typography>
-                  </div>
-                </Grid>
-              </Grid>
-            </div>
-            <div className="services2">
-              <Grid container spacing={0} justifyContent="center" alignItems="center">
-                <Grid item>
-                  <div className="image3">
-                    <img src={xray} width="100%" height="200"/>
-                    <Typography className={classes.typo_test}>X-Ray</Typography>
-                  </div>
-                </Grid>
-
-                <Grid item>
-                  <div className="image4">
-                    <img src={physical} width="100%" height="200"/>
-                    <Typography className={classes.typo_test}>Physical Exam</Typography>
-                  </div>
-                </Grid> 
-              </Grid>
-            </div>
+            <Grid item>
+              <img src={cbc} width="150px" height="200" alt="cbc"/>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.typo3}>
+                CBC (Complete Blood Count) | Platelet Count | Blood Typing | LDL (Low-Density <br/>
+                Lipoprotein (Choresterol)) | HDL (High-Density Lipoprotein (Choresterol)) | FBS <br/>
+                (Fasting Blood Sugar) | BUA (Blood Uric Acid) | BUN (Blood Urea Nitrogen) | Lipid <br/>
+                Profile | Cholesterol | Triglycerides | HBA1C (Haemoglobin A1c | Glycated Hemoglobin) <br/>
+              </Typography>
+            </Grid>
           </Grid>
-        </Container>
+        </div>
+
+        <div className="service2">
+          <Grid 
+            container
+            direction="row"
+          >
+            <Grid item>
+              <Typography className={classes.typo4}>
+                Creatinine | SGPT (Serum Glutamic Pyruvic Transaminase) | SGOT (Serum <br/>
+                Glutamic Oxaloacetic Transaminase)
+              </Typography>
+            </Grid>  
+            <Grid item>
+              <img src={serum} width="150px" height="200" alt="cbc"/>
+            </Grid>
+          </Grid>
+        </div>
+
+        <div className="service3">
+          <Grid 
+            container
+            direction="row"
+          >
+            <Grid item>
+              <img src={urinalysis} width="250px" height="200" alt="cbc"/>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.typo5}>
+                Urinalysis | Sodium | Potassium | Magnesium | Calcium | Inorganic Phosporous | <br/>
+                Bilirubin B1B2 | Total Protein | Albumin | TPAG (Total Protein, Albumin-Globulin <br/>
+                Ratio) | Alkaline Phospotase | Fecalysis
+              </Typography>
+            </Grid>
+          </Grid>
+        </div>
+
+        <div className="service4">
+          <Grid 
+            container
+            direction="row"
+          >
+            <Grid item>
+              <Typography className={classes.typo6}>
+              Anti-HAV IgM | Anti-HAV IgG | Anti-Hbc IgM | Anti-Hbc IgG | Anti HCV | Anti <br/>
+              Hbe | Anti HBs
+              </Typography>
+            </Grid>  
+            <Grid item>
+              <img src={hiv} width="200px" height="200" alt="cbc"/>
+            </Grid>
+          </Grid>
+        </div>
+
+        <div className="service5">
+          <Grid 
+            container
+            direction="row"
+          >
+            <Grid item>
+              <img src={screening} width="250px" height="200" alt="cbc"/>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.typo7}>
+              HBsAg Screening | HBsAg ELISA | Hepatitis A Profile | Hepaptitis B Profile
+              </Typography>
+            </Grid>
+          </Grid>
+        </div>
+
       </div>
     </div>
   )
@@ -99,16 +145,48 @@ const Home = () => {
     typo2: {
       flexGrow: 1,
       fontSize: 30,
+      textAlign: 'center',
       fontWeight: 'bold',
       fontFamily: 'Pathway Gothic One',
       color: COLORS.BLACK,
     },
 
-    typo_test: {
-      marginTop: '10px',
+    typo3: {
+      marginTop: '50px',
+      marginLeft: '50px',
+      fontSize: 15,
+    },
+
+    typo4: {
+      marginTop: '50px',
+      marginRight: '50px',
+      fontSize: 15,
+    },
+
+    typo5: {
+      marginTop: '50px',
+      fontSize: 15,
+    },
+
+    typo6: {
+      marginTop: '100px',
+      marginRight: '10px',
+      fontSize: 15,
+    },
+
+    typo7: {
+      marginTop: '90px',
+      marginLeft: '10px',
+      fontSize: 15,
+    },
+
+    typo8: {
+      flexGrow: 1,
+      fontSize: 30,
       textAlign: 'center',
-      fontSize: 20,
-      fontWeight: 'bold',
+      marginTop: '30px',
+      fontFamily: 'Pathway Gothic One',
+      color: COLORS.BLACK,
     },
 
     button1: {
