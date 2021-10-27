@@ -3,6 +3,10 @@ a.navbar-brand {
     text-align: center;
     word-break: break-all;
   }
+
+  a.navbar {
+    text-align: center;
+  }
   
   body {
     font-family: "Pathway Gothic One";
