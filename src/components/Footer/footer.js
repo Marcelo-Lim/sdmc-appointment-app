@@ -1,29 +1,37 @@
 import React from 'react'
 import { Container, Grid, Box, Link,} from "@material-ui/core";
 import Button from '@material-ui/core/Button';
-import logo from "../../assets/Images/SDMCLOGO1.png";
+import logo from "../../assets/images/SDMCLOGO1.png";
 import "./footer.css";
 
 
+
+
 const footer = () => {
+    
     return (
-        <footer>
+        <footer >
             <Box
             px={{ xs: 3, sm: 5 }}
             py={{ xd: 5, sm: 5 }}
-            borderTop= {0}
-            borderBottom= {1}  
-            bgcolor="white" 
+            borderTop= {1}
+            borderBottom= {0}  
+            bgcolor="white"
             color="black"
+            overflow="auto"
+            
             >
-                <Container maxwidth="lg">
-                    
-                    <Grid container  direction="row" justifyContent="space-evenly" spacing={5}>
+                
+                
+                    <Grid container  direction="row" justifyContent="space-evenly" alignItems="center" spacing={2}>
                         
-                        <Box ml={-25}>
-                            <img src={logo}/>
-                        </Box>
-                        <Grid item xs={12} sm={5}>
+                    <Grid item xs={12} sm={2}>
+                        
+                        <img src={logo} alt="logo"/>
+                        
+                    </Grid>
+                        
+                        <Grid item xs={12} sm={3}>
                             <Box borderBottom={0}></Box>
                                 <Box>
                                     <Link href="../pages/ContactUs.js" color="inherit">
@@ -98,12 +106,14 @@ const footer = () => {
                                 </Box>
                         </Grid>
                         <Grid item xs={12} sm={2}>
-                                <Button variant="contained"> Register </Button>
+                            <Box>
+                                <Button variant="contained" color="error"> Register </Button>
                                 <Button variant="outlined" color="secondary"> Log in </Button>
+                            </Box>
                         </Grid>
                     </Grid>
                     
-                </Container>
+                
             </Box>
             <Grid 
             container="row"
@@ -120,5 +130,6 @@ const footer = () => {
         </footer>
     )
 }
+
 
 export default footer
