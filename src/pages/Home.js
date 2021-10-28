@@ -23,7 +23,7 @@ const Home = () => {
             <Grid container spacing={2} direction="column">
               <Grid item>
                   <div className="home_title">
-                    <Typography className={classes.typo1}>Santos-Del Carmen <br/>&nbsp;&nbsp;&nbsp;Medical Clinic</Typography>
+                    <Typography className="typo1">Santos-Del Carmen <br/>&nbsp;&nbsp;&nbsp;Medical Clinic</Typography>
                   </div>
               </Grid>
 
@@ -41,13 +41,13 @@ const Home = () => {
         <Typography className={classes.typo2}>Services</Typography>
         <Typography className={classes.typo8}>Santos-Del Carmen Medical Clinic offers the following tests</Typography>
         
-        <div className="service1">
+        <div className="service-left">
           <Grid 
             container
             direction="row"
           >
-            <Grid item>
-              <img src={cbc} width="150px" height="200" alt="cbc"/>
+            <Grid item >
+              <img src={cbc} width="150px" height="200" alt="cbc" />
             </Grid>
             <Grid item>
               <Typography className={classes.typo3}>
@@ -60,10 +60,11 @@ const Home = () => {
           </Grid>
         </div>
 
-        <div className="service2">
+        <div className="service-right">
           <Grid 
             container
             direction="row"
+            justifyContent= "flex-end"
           >
             <Grid item>
               <Typography className={classes.typo4}>
@@ -77,7 +78,7 @@ const Home = () => {
           </Grid>
         </div>
 
-        <div className="service3">
+        <div className="service-left">
           <Grid 
             container
             direction="row"
@@ -95,10 +96,11 @@ const Home = () => {
           </Grid>
         </div>
 
-        <div className="service4">
+        <div className="service-right">
           <Grid 
             container
             direction="row"
+            justifyContent="flex-end"
           >
             <Grid item>
               <Typography className={classes.typo6}>
@@ -112,7 +114,7 @@ const Home = () => {
           </Grid>
         </div>
 
-        <div className="service5">
+        <div className="service-left">
           <Grid 
             container
             direction="row"
@@ -135,12 +137,6 @@ const Home = () => {
 
   const useStyles = makeStyles((theme) => ({
 
-    typo1: {
-      flexGrow: 1,
-      fontSize: 50,
-      fontFamily: 'Pathway Gothic One',
-      color: COLORS.BLACK,
-    },
 
     typo2: {
       flexGrow: 1,
@@ -152,19 +148,21 @@ const Home = () => {
     },
 
     typo3: {
-      marginTop: '50px',
-      marginLeft: '50px',
+      marginTop: '10px',
+      marginLeft: '10px',
+      marginBottom: '20px',
       fontSize: 15,
     },
 
     typo4: {
       marginTop: '50px',
-      marginRight: '50px',
+      marginRight: '40px',
       fontSize: 15,
     },
 
     typo5: {
-      marginTop: '50px',
+      marginTop: '10px',
+      marginLeft: '20px',
       fontSize: 15,
     },
 
@@ -175,7 +173,8 @@ const Home = () => {
     },
 
     typo7: {
-      marginTop: '90px',
+      marginTop: '10px',
+      marginBottom: '50px',
       marginLeft: '10px',
       fontSize: 15,
     },
@@ -184,15 +183,17 @@ const Home = () => {
       flexGrow: 1,
       fontSize: 30,
       textAlign: 'center',
-      marginTop: '30px',
+      marginTop: '10px',
       fontFamily: 'Pathway Gothic One',
       color: COLORS.BLACK,
     },
 
     button1: {
-     background: COLORS.RED,
-     color: COLORS.WHITE,
+      background: COLORS.RED,
+      color: COLORS.WHITE,
     },
+
+    
 
   }))
 export default Home;

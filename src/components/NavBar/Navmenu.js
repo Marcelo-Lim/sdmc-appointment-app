@@ -40,10 +40,10 @@ const NavMenu = () => {
       <AppBar
         elevation={0}
         position='fixed'
-        style={{ boxShadow: "none", background: COLORS.RED }}
+        style={{ boxShadow: "none", background: COLORS.RED, }}
       >
         <Navbar
-          className='navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow'
+          className='navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow w-100'
           dark
         >
           <Container>
