@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Grid, Box, Link,} from "@material-ui/core";
 import Button from '@material-ui/core/Button';
-import logo from "../../assets/images/SDMCLOGO1.png";
+import logo from "../../assets/Images/SDMCLOGO1.png";
 import "./footer.css";
 
 
