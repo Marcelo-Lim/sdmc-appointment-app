@@ -40,15 +40,15 @@ const NavMenu = () => {
       <AppBar
         elevation={0}
         position='fixed'
-        style={{ boxShadow: "none", background: COLORS.RED }}
+        style={{ boxShadow: "none", background: COLORS.RED, }}
       >
         <Navbar
-          className='navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow'
+          className='navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow w-100'
           dark
         >
           <Container>
             <NavbarBrand tag={Link} to='/'>
-              <div>
+              <div className="navbarbrand">
                 <img src={IconClinic} alt='logo' height="50px" width="60px" />
               </div>
             </NavbarBrand>

@@ -20,6 +20,7 @@ const RootRoutes =()=>{
             <Route exact path='/BookNow' component={BookNow}/>
             <Footer/>
         </Router>
+        
     )
 }
 export default RootRoutes;

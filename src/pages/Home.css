@@ -1,9 +1,13 @@
+
+
 .cover {
+    display: flex;
     margin-top: 50px;
     height: 400px;
     width: auto;
     background-color: gray;
 }
+
 
 .button_book {
     margin-left: 200px;
@@ -17,56 +21,25 @@
 .services {
     margin-top: 50px;
     text-align: center;
-    align-items: center;
+    
 }
 
-.service1 {
-    margin-top: 50px;
-    margin-left: 100px;
+.service-left {
     text-align: left;
-    align-items: center;
 }
 
-.service2 {
-    margin-top: 50px;
-    margin-left: 450px;
+.service-right {
     text-align: right;
-    align-items: center;
 }
 
-.service3 {
-    margin-top: 50px;
-    margin-left: 70px;
-    text-align: left;
-    align-items: center;
+.typo1 {
+    font-size: 50px !important;
+    font-family: 'Pathway Gothic One';
+    color: black;
 }
 
-.service4 {
-    margin-top: 50px;
-    margin-left: 450px;
-    text-align: right;
-    align-items: center;
-}
-
-.service5 {
-    margin-top: 50px;
-    margin-left: 70px;
-    text-align: left;
-    align-items: center;
-}
-
-.image1 {
-    margin-right: 160px;
-}
-
-.image2 {
-    margin-left: 200px;
-}
-
-.image3 {
-    margin-right: 160px;
-}
-
-.image4 {
-    margin-left: 200px;
+@media screen and (max-width: 460px){
+    .typo1 {
+        font-size: 35px !important;
+    }
 }

@@ -5,25 +5,32 @@ import logo from "../../assets/images/SDMCLOGO1.png";
 import "./footer.css";
 
 
+
+
 const footer = () => {
+    
     return (
-        <footer>
+        <footer >
             <Box
-            px={{ xs: 3, sm: 5 }}
+            px={{ xs: 2, sm: 2 }}
             py={{ xd: 5, sm: 5 }}
-            borderTop= {0}
-            borderBottom= {1}  
-            bgcolor="white" 
+            borderTop= {1}
+            borderBottom= {0}  
+            bgcolor="white"
             color="black"
+            
             >
-                <Container maxwidth="lg">
-                    
-                    <Grid container  direction="row" justifyContent="space-evenly" spacing={5}>
+                
+                
+                    <Grid container  direction="row" justifyContent="space-evenly" alignItems="center" spacing={1}>
                         
-                        <Box ml={-25}>
-                            <img src={logo}/>
-                        </Box>
-                        <Grid item xs={12} sm={5}>
+                    <Grid item xs={12} md>
+                        
+                        <img src={logo} alt="logo"/>
+                        
+                    </Grid>
+                        
+                        <Grid item xs={12} sm={4} md >
                             <Box borderBottom={0}></Box>
                                 <Box>
                                     <Link href="../pages/ContactUs.js" color="inherit">
@@ -52,7 +59,7 @@ const footer = () => {
                                 </Box>
                         </Grid>
                         
-                        <Grid item xs={12} sm={2}>
+                        <Grid item xs={12} sm={4} md >
                             <Box borderBottom={0}> <b> Services </b> </Box>
                                 
                                 <Box>
@@ -71,7 +78,7 @@ const footer = () => {
                                     </Link>
                                 </Box>
                         </Grid>
-                        <Grid item xs={12} sm={1}>
+                        <Grid item xs={12} sm>
                             <Box borderBottom={0}> <br/> </Box>
                                 <Box>
                                     <Link href="/" color="inherit">
@@ -84,7 +91,7 @@ const footer = () => {
                                     </Link>
                                 </Box>
                         </Grid>
-                        <Grid item xs={12} sm={2}>
+                        <Grid item xs={12} sm>
                             <Box borderBottom={0}> <b> Clinic </b> </Box>
                                 <Box>
                                     <Link href="/" color="inherit">
@@ -97,13 +104,15 @@ const footer = () => {
                                     </Link>
                                 </Box>
                         </Grid>
-                        <Grid item xs={12} sm={2}>
-                                <Button variant="contained"> Register </Button>
+                        <Grid item xs={12} md>
+                            <Box>
+                                <Button variant="contained" color="error"> Register </Button>
                                 <Button variant="outlined" color="secondary"> Log in </Button>
+                            </Box>
                         </Grid>
                     </Grid>
                     
-                </Container>
+                
             </Box>
             <Grid 
             container="row"
@@ -120,5 +129,6 @@ const footer = () => {
         </footer>
     )
 }
+
 
 export default footer
