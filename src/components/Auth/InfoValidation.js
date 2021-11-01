@@ -20,20 +20,18 @@ export default function validateInfo(values) {
         errors.middleName='Middle is invalid'
     }
    
-    if(!values.suffix.trim()){
-        errors.suffix = 'Suffix is required'
-    }
-    else if(values.suffix.length >2){
+   
+  if(values.suffix.length >3){
         errors.suffix='You entered invalid information'
     }
 
     
-    if (!values.username.trim()) {
+   /* if (!values.username.trim()) {
       errors.username = 'Username required';
     }
     else if(!/^[A-Za-z][A-Za-z0-9]*(?:_+[A-Za-z0-9]+)*$/.test(values.username)){
       errors.username= 'Invalid username';
-    }
+    }*/
   
     if (!values.email) {
       errors.email = 'Email required';

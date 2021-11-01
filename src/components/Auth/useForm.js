@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
+import { useDispatch } from 'react-redux';
+import {useHistory} from 'react-router-dom';
+import { signin,signup } from "../Connection/Action/auth";
 
 const useForm = (callback, validateInfo) => {
+
+    
 
     const [ values, setValues] = useState({
         username: '',
@@ -12,9 +17,12 @@ const useForm = (callback, validateInfo) => {
         lastName:'',
         middleName:'',
         suffix:'',
-        showPassword: false,
+       
     })
     const [errors, setErrors] = useState({});
+    const [isSignup, setIsSignup] = useState(false);
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [isSubmit, setIsSubmit] = useState(false);
 
     const handleChange = e => {
@@ -26,21 +34,38 @@ const useForm = (callback, validateInfo) => {
         setErrors(validateInfo(values));
     };
     
-    const handleSubmit = e => {
-        e.preventDefault();
+    const handleSubmit = () => {
+       // e.preventDefault();
+        
 
-        setErrors(validateInfo(values));
+        
+       if(isSignup){
+      
         setIsSubmit(true);
+         console.log(values);
+         dispatch(signup(values,history))
+       }
+       else{
+        setErrors(validateInfo(values));
+        //alert("Please Enter valid information")
+       }
+      
+
         
     };
+    const logins =()=>{
+        console.log(values)
+        dispatch(signin(values,history))
+    }
 
     useEffect(() => {
         if(Object.keys(errors).length === 0 && isSubmit) {
             callback();
+           
         }
     },
     );
 
-    return {handleChange, values, handleSubmit, errors};
+    return {handleChange,logins, values, setValues,handleSubmit, errors};
 };
 export default useForm;

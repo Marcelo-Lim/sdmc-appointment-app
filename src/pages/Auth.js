@@ -7,19 +7,36 @@ import useStyles from '../components/Auth/Style'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import validateInfo from '../components/Auth/InfoValidation';
 import useForm from '../components/Auth/useForm';
+const initialState = { firstName: '', lastName: '',suffix: '',middleName: '', email: '', password: '', confirmPassword: '' };
 
 const Auth = ({submitForm})=>{
   const classes = useStyles();
+
+  
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
   const [isSignup, setIsSignup] = useState(false);
+  
+  
+  
+  const {handleChange, values,logins,setValues, handleSubmit, errors} = useForm(submitForm, validateInfo);
+  
   const switchMode = () => {
-    
+    setValues(initialState)
     setIsSignup((prevIsSignup) => !prevIsSignup);
     setShowPassword(false);
   };
 
-  const {handleChange, values, handleSubmit, errors} = useForm(submitForm, validateInfo);
+  const handleSubmits = (e)=>{
+    e.preventDefault();
+    if (isSignup){
+        handleSubmit()
+        console.log("pakyu")
+      }
+      else{
+        logins()
+      }
+}
 
   return(
     <Container component="main" maxWidth={isSignup?"md": "sm"}>
@@ -29,7 +46,7 @@ const Auth = ({submitForm})=>{
           <LockOutlinedIcon/>
         </Avatar>
       <Typography component="h1" variant="h5"> {isSignup ? 'Sign Up':'Sign In'}</Typography>
-      <form className={classes.form} onSubmit={handleSubmit}>
+      <form className={classes.form} onSubmit={handleSubmits}>
 
         <Grid container spacing={2}>
           { isSignup && (
@@ -63,6 +80,7 @@ const Auth = ({submitForm})=>{
             </>
           )}  
         
+        {isSignup ? <>
            <Grid item xs={12}> 
                 <TextField  name="email" label="Email" 
                     type="email" placeholder='Enter your email' 
@@ -74,7 +92,19 @@ const Auth = ({submitForm})=>{
             <TextField  name="password" label="Password" type="password" placeholder='Enter your password'
                     value={values.password} onChange={handleChange} 
                     fullWidth  variant="outlined"  error={Boolean(errors.password)} helperText={errors.password}/>
+            </Grid></> : 
+            <> <Grid item xs={12}> 
+                <TextField  name="email" label="Email" 
+                    type="email" placeholder='Enter your email' 
+                    value={values.email} onChange={handleChange} 
+                    fullWidth  variant="outlined"/>
             </Grid>
+
+            <Grid item xs={12}>
+            <TextField  name="password" label="Password" type="password" placeholder='Enter your password'
+                    value={values.password} onChange={handleChange} 
+                    fullWidth  variant="outlined"  />
+            </Grid></>}
 
             {isSignup &&<Grid item xs={12}>
            <TextField  name="repeatPassword" label="Repeat Password" placeholder='Enter your password'
