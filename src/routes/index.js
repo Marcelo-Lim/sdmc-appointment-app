@@ -22,6 +22,7 @@ const RootRoutes =()=>{
             <Route exact path='/Authentication' component={Auth}/>
             <Footer/>
         </Router>
+        
     )
 }
 export default RootRoutes;
