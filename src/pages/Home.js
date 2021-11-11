@@ -37,6 +37,7 @@ const Home = () => {
         </Grid>
       </div>
 
+      <Container component="main" maxWidth="lg">
       <div className="services">
         <Typography className={classes.typo2}>Services</Typography>
         <Typography className={classes.typo8}>Santos-Del Carmen Medical Clinic offers the following tests</Typography>
@@ -129,9 +130,11 @@ const Home = () => {
             </Grid>
           </Grid>
         </div>
-
+       
       </div>
+      </Container>    
     </div>
+  
   )
 };
 

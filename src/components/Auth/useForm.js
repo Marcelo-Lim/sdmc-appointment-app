@@ -38,17 +38,13 @@ const useForm = (callback, validateInfo) => {
        // e.preventDefault();
         
 
-        
-       if(isSignup){
-      
+       setErrors(validateInfo(values));
+     
         setIsSubmit(true);
          console.log(values);
          dispatch(signup(values,history))
-       }
-       else{
-        setErrors(validateInfo(values));
-        //alert("Please Enter valid information")
-       }
+      
+    
       
 
         

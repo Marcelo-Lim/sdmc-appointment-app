@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { makeStyles, AppBar } from "@material-ui/core";
 import {
   Collapse,
@@ -7,10 +7,12 @@ import {
   NavbarBrand,
   NavbarToggler,
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import {useDispatch} from 'react-redux';
+import { Link,useHistory,useLocation } from "react-router-dom";
 import { COLORS } from "../../Styles/colors";
 import Item from "./Item";
 import "./Navmenu.css";
+import * as actionType from '../Connection/Reducers/Constant/actionType'
 import IconClinic from "../../assets/Images/sdmc.png";
 
 const menu =[
@@ -33,9 +35,26 @@ const menu =[
 ]
 
 const NavMenu = () => {
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('information')))
     const [isOpen, setIsOpen] = useState(false);
     const [selectedPage, setSelectedPage] = useState("Home");
     const classes = useStyles();
+    const location =useLocation();
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+    const logout = ()=>{
+      dispatch({type: actionType.LOGOUT})
+      history.push('/Authentication');
+      setUser(null);
+    }
+ useEffect(()=>{
+   const token = user?.token;
+
+    setUser(JSON.parse(localStorage.getItem('infromation')))
+ },[location])
+
+
     return (
       <AppBar
         elevation={0}
