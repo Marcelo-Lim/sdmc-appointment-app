@@ -1,14 +1,16 @@
 import React from 'react'
-import { Container, Grid, Box, Link,} from "@material-ui/core";
+import { Container, Grid, Box, Link, makeStyles} from "@material-ui/core";
+
 import Button from '@material-ui/core/Button';
 import logo from "../../assets/images/SDMCLOGO1.png";
 import "./footer.css";
+import { red } from '@material-ui/core/colors';
 
 
 
 
-const footer = () => {
-    
+const Footer = () => {
+    const classes = useStyles();
     return (
         <footer >
             <Box
@@ -105,10 +107,12 @@ const footer = () => {
                                 </Box>
                         </Grid>
                         <Grid item xs={12} md>
+                            
                             <Box>
-                                <Button variant="contained" color="error"> Register </Button>
-                                <Button variant="outlined" color="secondary"> Log in </Button>
+                                <Button className= {classes.button} type="register" variant="contained"> Register </Button>
+                                <Button type="login" variant="outlined" color="secondary"> Log in </Button>
                             </Box>
+                            
                         </Grid>
                     </Grid>
                     
@@ -128,7 +132,19 @@ const footer = () => {
             </Grid>
         </footer>
     )
-}
+};
+
+const useStyles = makeStyles((theme) => ({
+
+    button: {
+        display: 'flex',
+        flexDirection: 'column',
+        background: 'red',
+        color: 'white',
+        marginBottom: '10px',
+    },
+
+}))
 
 
-export default footer
+export default Footer

@@ -39,7 +39,7 @@ const NavMenu = () => {
     return (
       <AppBar
         elevation={0}
-        position='fixed'
+        position='relative'
         style={{ boxShadow: "none", background: COLORS.RED, }}
       >
         <Navbar

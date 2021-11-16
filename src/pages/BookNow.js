@@ -2,39 +2,35 @@ import { Typography, makeStyles,TextField, Grid, Container, Checkbox, FormContro
 import Autocomplete from '@mui/material/Autocomplete';
 import React from "react";
 import "./BookNow.css";
+import Calendar from "../components/Calendar/Calendar"
 
 const BookNow = () => {
   const classes = useStyles();
   return (
-    <div className="body">
-      <div className="heading">
-        <Typography className={classes.typo1}>Appointment Booking</Typography>
-      </div>
-      <div className="reg_form">
-        <Container component="main" maxWidth="lg">
-          <Grid 
-            container
-            direction="row"
-          >
-            <Grid item>
-             <TextField 
-                required
-                className={classes.inputText}
-                id="outlined-required"
-                label="First Name"
-                variant="outlined"
-              /> 
-            </Grid>
-            <Grid item>
+    <div className="hero-container">
+        <div className="hero">
+        <Typography className={classes.typo1}> Appointment Booking </Typography>
+        </div>
+  
+        <form className={classes.root}>
+          <Grid  container justifyContent="center" alignItems="flex-start">
+            <Grid item xs={12} sm={6} container  direction="row" justifyContent="flex-start" alignItems="center">
               <TextField 
                 required
                 className={classes.inputText}
                 id="outlined-required"
                 label="Last Name"
                 variant="outlined"
+                style = {{width: 150}}
+              /> 
+              <TextField 
+                required
+                className={classes.inputText}
+                id="outlined-required"
+                label="First Name"
+                variant="outlined"
+                style = {{width: 150}}
               />
-            </Grid>
-            <Grid item>
               <TextField 
                 required
                 className={classes.inputText}
@@ -43,8 +39,6 @@ const BookNow = () => {
                 variant="outlined"
                 style = {{width: 120}}
               />
-            </Grid>
-            <Grid item>
               <TextField 
                 required
                 className={classes.inputText}
@@ -53,32 +47,25 @@ const BookNow = () => {
                 variant="outlined"
                 style = {{width: 80}}
               />
-            </Grid>
-          </Grid>
-
-          <Grid 
-              container
-              direction="column"
-          >
-            <Grid item>
+              
               <TextField 
                 required
                 className={classes.inputText}
                 id="outlined-required"
                 label="Email Address"
                 variant="outlined"
+                style = {{width: 480}}
               /> 
-            </Grid>
-            <Grid item>
+            
               <TextField 
                 required
                 className={classes.inputText}
                 id="outlined-required"
                 label="Contact Number"
                 variant="outlined"
+                style = {{width: 480}}
               /> 
-            </Grid>
-            <Grid item>
+
               <TextField 
                 required
                 className={classes.inputText}
@@ -87,35 +74,28 @@ const BookNow = () => {
                 variant="outlined"
                 multiline
                 maxRows={4}
-                style = {{width: 740}} 
+                style = {{width: 480}} 
               /> 
-            </Grid>
-            <Grid item>
+              
+              
               <Autocomplete
                 disablePortal
-                className={classes.inputText}
+                className={classes.combobox}
                 id="combo-box-consultation"
                 options={consultation}
-                sx={{ width: 300 }}
                 renderInput={(params) => <TextField {...params} label="Type of Consultation" />}
               />
-            </Grid>
-          </Grid>
-
-          <Grid 
-            container
-            direction="column"
-          >
-            <Grid item>
               <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
-            </Grid>
-            <Grid item>
+              
               <Button variant="contained" className={classes.button} color="primary">Save</Button>
-            </Grid>
-          </Grid>
-        </Container>
-      </div>
-    </div>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Calendar/>
+              </Grid>
+
+              </Grid>
+            </form>
+          </div>
   )
 };
 
@@ -128,29 +108,40 @@ const consultation = [
 ]
 
 const useStyles = makeStyles((theme) => ({
+  
+  root: {
+    '& .MuiFormControl-root': {
+      width: '30%',
+      margin: theme.spacing(2.5),
+
+    }
+  },
 
   typo1: {
-    marginTop: "100px",
+    textAlign:"center",
     fontSize: "30px",
     fontWeight: "bold",
   },
 
   inputText: {
-    marginTop: "20px",
-    marginRight: "30px",
+  
+    
   },
 
-  combo: {
-    marginTop: "30px"
+  combobox: {
+    width: '100%',
   },
 
   checkbox: {
-    marginTop: "20px",
-    marginLeft: "200px"
+    marginLeft: "125px",
+    marginBottom: "40px",
+    width: "50%",
   },
 
   button: {
-    marginLeft: "350px"
+    marginLeft: "150px",
+    width: "35%",
+    marginBottom: "150px",
   },
 
 }))
