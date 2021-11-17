@@ -9,6 +9,7 @@ import ContactUs from '../pages/ContactUs';
 import AboutUs from '../pages/AboutUs';
 import BookNow from '../pages/BookNow';
 import Monitoring from '../pages/Monitoring';
+import Profile from '../pages/Profile';
 
 const RootRoutes =()=>{
     return(
@@ -20,6 +21,7 @@ const RootRoutes =()=>{
             <Route exact path='/ContactUs' component={ContactUs} />
             <Route exact path='/BookNow' component={BookNow}/>
             <Route exact path='/Monitoring' component={Monitoring}/>
+            <Route exact path='/Profile' component={Profile}/>
             <Footer/>
         </Router>
         
