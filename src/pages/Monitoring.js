@@ -8,7 +8,6 @@ import {
 import "./Monitoring.css";
 import appointments from '../assets/test-data/today-appointments';
 import AddBoxIcon from '@mui/icons-material/AddBox';
-  
 
 const Monitoring = () => {
 const classes = useStyles();

@@ -34,6 +34,10 @@ const menu =[
       title: "Monitoring",
       component: "/Monitoring"
     },
+    {
+      title: "Profile",
+      component: "/Profile"
+    },
 ]
 
 const NavMenu = () => {
