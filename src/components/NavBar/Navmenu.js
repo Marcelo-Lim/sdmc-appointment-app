@@ -30,6 +30,14 @@ const menu =[
         title: "BookNow",
         component: "/BookNow"
     },
+    {
+      title: "Monitoring",
+      component: "/Monitoring"
+    },
+    {
+      title: "Profile",
+      component: "/Profile"
+    },
 ]
 
 const NavMenu = () => {

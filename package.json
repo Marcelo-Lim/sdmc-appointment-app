@@ -12,6 +12,7 @@
     "@material-ui/core": "^4.12.3",
     "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.12.1.tgz",
     "@mui/material": "^5.0.6",
+    "@mui/icons-material": "^5.0.5",
     "@mui/styles": "^5.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
