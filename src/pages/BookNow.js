@@ -89,7 +89,8 @@ const BookNow = () => {
               
               <Button variant="contained" className={classes.button} color="primary">Save</Button>
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={6} className={classes.calendar1}>
+                <h1 className={classes.typo2}> Select Date and Time </h1>
                 <Calendar/>
               </Grid>
 
@@ -123,6 +124,13 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
   },
 
+  typo2: {
+    textAlign:"center",
+    fontSize: "50px",
+    fontWeight: "bold",
+    marginTop: "150px",
+  },
+
   inputText: {
   
     
@@ -142,6 +150,11 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "150px",
     width: "35%",
     marginBottom: "150px",
+  },
+
+  calendar1: {
+      marginBottom: "150px",
+      
   },
 
 }))
