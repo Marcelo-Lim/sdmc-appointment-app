@@ -13,7 +13,7 @@ const BookNow = () => {
         </div>
   
         <form className={classes.root}>
-          <Grid  container justifyContent="center" alignItems="flex-start">
+          <Grid  container  alignItems="flex-start">
             <Grid item xs={12} sm={6} container  direction="row" justifyContent="flex-start" alignItems="center">
               <TextField 
                 required
@@ -76,8 +76,6 @@ const BookNow = () => {
                 maxRows={4}
                 style = {{width: 480}} 
               /> 
-              
-              
               <Autocomplete
                 disablePortal
                 className={classes.combobox}
@@ -85,13 +83,18 @@ const BookNow = () => {
                 options={consultation}
                 renderInput={(params) => <TextField {...params} label="Type of Consultation" />}
               />
-              <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
               
-              <Button variant="contained" className={classes.button} color="primary">Save</Button>
               </Grid>
               <Grid item xs={12} sm={6} className={classes.calendar1}>
                 <h1 className={classes.typo2}> Select Date and Time </h1>
-                <Calendar/>
+                <Calendar className={classes.calendar1}/>
+              </Grid>
+
+              <Grid item xs={12} sm={6} container direction="column" justifyContent="flex-start" alignItems="flex-start">
+              
+              <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
+              
+              <Button variant="contained" className={classes.button} color="primary">Save</Button>
               </Grid>
 
               </Grid>
@@ -129,10 +132,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "50px",
     fontWeight: "bold",
     marginTop: "150px",
+    fontFamily: "Montserrat",
   },
 
   inputText: {
-  
+    
     
   },
 
@@ -141,7 +145,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   checkbox: {
-    marginLeft: "125px",
+    marginTop: "50px",
+    marginLeft: "110px",
     marginBottom: "40px",
     width: "50%",
   },
@@ -153,7 +158,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   calendar1: {
-      marginBottom: "150px",
+    
       
   },
 

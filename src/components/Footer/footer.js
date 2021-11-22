@@ -32,7 +32,7 @@ const Footer = () => {
                         
                     </Grid>
                         
-                        <Grid item xs={12} sm={4} md >
+                        <Grid item xs={12} sm={6} md >
                             <Box borderBottom={0}></Box>
                                 <Box>
                                     <Link href="../pages/ContactUs.js" color="inherit">
@@ -61,7 +61,7 @@ const Footer = () => {
                                 </Box>
                         </Grid>
                         
-                        <Grid item xs={12} sm={4} md >
+                        <Grid item xs={12} sm={6} md >
                             <Box borderBottom={0}> <b> Services </b> </Box>
                                 
                                 <Box>
@@ -105,14 +105,6 @@ const Footer = () => {
                                         Contact us
                                     </Link>
                                 </Box>
-                        </Grid>
-                        <Grid item xs={12} md>
-                            
-                            <Box>
-                                <Button className= {classes.button} type="register" variant="contained"> Register </Button>
-                                <Button type="login" variant="outlined" color="secondary"> Log in </Button>
-                            </Box>
-                            
                         </Grid>
                     </Grid>
                     
