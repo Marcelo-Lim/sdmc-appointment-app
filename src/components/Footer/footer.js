@@ -104,12 +104,6 @@ const footer = () => {
                                     </Link>
                                 </Box>
                         </Grid>
-                        <Grid item xs={12} md>
-                            <Box>
-                                <Button variant="contained" color="error"> Register </Button>
-                                <Button variant="outlined" color="secondary"> Log in </Button>
-                            </Box>
-                        </Grid>
                     </Grid>
                     
                 
