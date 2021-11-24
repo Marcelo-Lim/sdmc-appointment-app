@@ -1,7 +1,6 @@
 import Autocomplete from '@mui/material/Autocomplete';
 import React, {useEffect, useState} from "react";
 import { makeStyles, Typography, Collapse, Grid, TextField, Button, createTheme, ThemeProvider} from "@material-ui/core";
-import { animationOne } from '../animations';
 import './ContactUs.css';
 
 const ContactUs = () => {
