@@ -11,6 +11,7 @@ import Monitoring from '../pages/Monitoring';
 import Profile from '../pages/Profile';
 import Doctor from '../pages/Doctor';
 import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
+import ScrollButton from '../components/ScrollButton/ScrollButton';
 
 const RootRoutes =()=>{
     return(
@@ -24,6 +25,7 @@ const RootRoutes =()=>{
             <Route exact path='/Monitoring' component={Monitoring}/>
             <Route exact path='/Profile' component={Profile}/>
             <Route exact path='/Doctor' component={Doctor}/>
+            <ScrollButton/>
             </ScrollToTop>
             <Footer/>
         </Router>
