@@ -7,7 +7,7 @@ import Calendar from "../components/Calendar/Calendar"
 const BookNow = () => {
   const classes = useStyles();
   return (
-    <div className="hero-container">
+    <div className="hero-container1">
         <div className="hero">
         <Typography className={classes.typo1}> Appointment Booking </Typography>
         </div>
