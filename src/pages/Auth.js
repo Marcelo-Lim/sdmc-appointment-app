@@ -37,7 +37,7 @@ const Auth = ({submitForm})=>{
         logins()
       }
 }
-
+ 
   return(
     <Container component="main" maxWidth={isSignup?"md": "sm"}>
       <Paper className={classes.paper} elevation={3}>
