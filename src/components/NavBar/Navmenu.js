@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { makeStyles, AppBar } from "@material-ui/core";
 import {
+  Button,
   Collapse,
   Container,
   Navbar,
@@ -20,22 +21,26 @@ const menu =[
         title: "Home",
         component: "/Home"
     },
-    {
+    /*{
         title: "AboutUs",
         component: "/AboutUs"
     },
     {
         title: "ContactUs",
         component: "/ContactUs"
-    },
+    },*/
     {
-        title: "BookNow",
+        title: "Book Now",
         component: "/BookNow"
-    },
+    },/*
+    {
+      title: "Monitoring",
+      component: "/Monitoring"
+    },*/
 ]
 
 const NavMenu = () => {
-    const [user,setUser] = useState(JSON.parse(localStorage.getItem('information')))
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('profile')))
     const [isOpen, setIsOpen] = useState(false);
     const [selectedPage, setSelectedPage] = useState("Home");
     const classes = useStyles();
@@ -51,7 +56,7 @@ const NavMenu = () => {
  useEffect(()=>{
    const token = user?.token;
 
-    setUser(JSON.parse(localStorage.getItem('infromation')))
+    setUser(JSON.parse(localStorage.getItem('profile')))
  },[location])
 
 
@@ -66,11 +71,13 @@ const NavMenu = () => {
           dark
         >
           <Container>
+         
             <NavbarBrand tag={Link} to='/'>
               <div className="navbarbrand">
                 <img src={IconClinic} alt='logo' height="50px" width="60px" />
               </div>
             </NavbarBrand>
+            {user?.result? (<>
             <NavbarToggler
               onClick={() => setIsOpen(!isOpen)}
               className='mr-2 white '
@@ -89,10 +96,21 @@ const NavMenu = () => {
                     onClickListener={() => {
                       setSelectedPage(title);
                     }}
+                  
                   />
+
                 ))}
+               <Button variant="contained" color="primary" onClick={logout}>Logout</Button>
               </ul>
             </Collapse>
+           
+            </>):(<>
+                 <NavbarBrand tag={Link} to='/Authentication'>
+                 <div className="navbarbrand">
+                    <Button variant="contained" color="primary">Sign In</Button>
+                 </div>
+               </NavbarBrand></>
+            )}
           </Container>
         </Navbar>
       </AppBar>
