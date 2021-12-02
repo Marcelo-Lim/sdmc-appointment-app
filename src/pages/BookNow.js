@@ -85,7 +85,7 @@ const BookNow = () => {
               />
               
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={6}> 
                 <h1 className={classes.typo2}> Select Date and Time </h1>
                 <Calendar/>
               </Grid>
@@ -116,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiFormControl-root': {
       width: '30%',
-      margin: theme.spacing(4),
+      margin: theme.spacing(2.5),
 
     }
   },
