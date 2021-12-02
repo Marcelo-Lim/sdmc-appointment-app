@@ -1,7 +1,6 @@
 import Autocomplete from '@mui/material/Autocomplete';
 import React, {useEffect, useState} from "react";
 import { makeStyles, Typography, Collapse, Grid, TextField, Button, createTheme, ThemeProvider} from "@material-ui/core";
-import { animationOne } from '../animations';
 import './ContactUs.css';
 
 const ContactUs = () => {
@@ -122,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   btn: {
-    marginLeft: 45,
+    marginLeft: 35,
     marginBottom: 50,
     width: '60%',
     

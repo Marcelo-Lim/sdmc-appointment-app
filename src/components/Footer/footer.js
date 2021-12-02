@@ -1,10 +1,15 @@
 import React from 'react'
+<<<<<<< HEAD
 import { Container, Grid, Box, Link, makeStyles} from "@material-ui/core";
 
 import Button from '@material-ui/core/Button';
 import logo from "../../assets/Images/SDMCLOGO1.png";
+=======
+import { Grid, Box, Link, makeStyles} from "@material-ui/core";
+import logo from "../../assets/images/SDMCLOGO1.png";
+>>>>>>> b39ac16db87348aed27dcb07252b04fca98ec11f
 import "./footer.css";
-import { red } from '@material-ui/core/colors';
+
 
 
 
