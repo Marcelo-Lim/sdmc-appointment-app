@@ -8,7 +8,6 @@ import {
 import "./Monitoring.css";
 import appointments from '../assets/test-data/today-appointments';
 import AddBoxIcon from '@mui/icons-material/AddBox';
-  
 
 const Monitoring = () => {
 const classes = useStyles();
@@ -33,7 +32,7 @@ const classes = useStyles();
 const useStyles = makeStyles((theme) => ({
 
     paper1: {
-        marginTop: "100px",
+        marginTop: "50px",
         marginBottom: "100px",
         marginLeft: "50px",
         marginRight: "50px",
@@ -43,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
     typo1: {
         fontSize: "30px",
         marginBottom: "10px",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        fontFamily: "Montserrat",
     },
 
     typo2: {
