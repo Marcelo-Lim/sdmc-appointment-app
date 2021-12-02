@@ -22,8 +22,8 @@ const classes = useStyles();
                             <Card className={classes.card}>
                                 <CardActionArea>
                                     <CardContent>
-                                        <Typography>Date</Typography>
-                                        <Typography>Time</Typography>
+                                        <Typography className={classes.typo4}>Date</Typography>
+                                        <Typography  className={classes.typo4}>Time</Typography>
                                         <Typography className={classes.typoIcon}>
                                             <CancelIcon sx={{ fontSize: 25 }}/>&nbsp;&nbsp;&nbsp;&nbsp;
                                             <EditIcon sx={{ fontSize: 25 }}/>
@@ -36,8 +36,8 @@ const classes = useStyles();
                             <Card className={classes.card}>
                                 <CardActionArea>
                                     <CardContent>
-                                        <Typography>Date</Typography>
-                                        <Typography>Time</Typography>
+                                        <Typography className={classes.typo4}>Date</Typography>
+                                        <Typography className={classes.typo4}>Time</Typography>
                                         <Typography className={classes.typoIcon}>
                                             <CancelIcon sx={{ fontSize: 25 }}/>&nbsp;&nbsp;&nbsp;&nbsp;
                                             <EditIcon sx={{ fontSize: 25 }}/>
@@ -50,8 +50,8 @@ const classes = useStyles();
                             <Card className={classes.card}>
                                 <CardActionArea>
                                     <CardContent>
-                                        <Typography>Date</Typography>
-                                        <Typography>Time</Typography>
+                                        <Typography className={classes.typo4}>Date</Typography>
+                                        <Typography className={classes.typo4}>Time</Typography>
                                         <Typography className={classes.typoIcon}>
                                             <CancelIcon sx={{ fontSize: 25 }}/>&nbsp;&nbsp;&nbsp;&nbsp;
                                             <EditIcon sx={{ fontSize: 25 }}/>
@@ -70,7 +70,7 @@ const classes = useStyles();
 const useStyles = makeStyles((theme) => ({
     
     paper: {
-        marginTop: "100px",
+        marginTop: "50px",
         marginLeft: "59px",
         marginRight: "50px",
         textAlign: "left"
@@ -80,14 +80,16 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "20px",
         fontWeight: "bold",
         marginTop: "50px",
-        paddingLeft: "20px"
+        paddingLeft: "20px",
+        fontFamily: "Montserrat",
     },
 
     typo2: {
         fontSize: "15px",
         fontWeight: "100",
         marginTop: "5px",
-        paddingLeft: "20px"
+        paddingLeft: "20px",
+        fontFamily: "Montserrat",
     },
 
     paper2: {
@@ -101,6 +103,7 @@ const useStyles = makeStyles((theme) => ({
     typo3: {
         fontSize: "20px",
         fontWeight: "bold",
+        fontFamily: "Montserrat",
     },
 
     container: {
@@ -114,6 +117,13 @@ const useStyles = makeStyles((theme) => ({
     typoIcon: {
         marginTop: "20px"
     },
+
+    typo4: {
+        fontSize: "15px",
+        fontWeight: "100",
+        marginTop: "5px",
+        fontFamily: "Montserrat",
+    }
 }))
 
 export default Profile;

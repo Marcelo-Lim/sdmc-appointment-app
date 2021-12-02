@@ -19,10 +19,6 @@ const menu =[
         component: "/Home"
     },
     {
-        title: "AboutUs",
-        component: "/AboutUs"
-    },
-    {
         title: "ContactUs",
         component: "/ContactUs"
     },
@@ -37,6 +33,10 @@ const menu =[
     {
       title: "Profile",
       component: "/Profile"
+    },
+    {
+      title: "Doctor",
+      component: "/Doctor"
     },
 ]
 
