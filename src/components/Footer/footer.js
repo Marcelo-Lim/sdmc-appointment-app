@@ -1,10 +1,8 @@
 import React from 'react'
-import { Container, Grid, Box, Link, makeStyles} from "@material-ui/core";
-
-import Button from '@material-ui/core/Button';
+import { Grid, Box, Link, makeStyles} from "@material-ui/core";
 import logo from "../../assets/images/SDMCLOGO1.png";
 import "./footer.css";
-import { red } from '@material-ui/core/colors';
+
 
 
 

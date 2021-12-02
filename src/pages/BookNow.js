@@ -85,9 +85,11 @@ const BookNow = () => {
               />
               
               </Grid>
-              <Grid item xs={12} sm={6} className={classes.calendar1}>
+              <Grid item> 
                 <h1 className={classes.typo2}> Select Date and Time </h1>
-                <Calendar className={classes.calendar1}/>
+                <div className="calendarwidth">
+                <Calendar/>
+                </div>
               </Grid>
 
               <Grid item xs={12} sm={6} container direction="column" justifyContent="flex-start" alignItems="flex-start">
