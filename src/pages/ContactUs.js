@@ -121,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   btn: {
-    marginLeft: 45,
+    marginLeft: 35,
     marginBottom: 50,
     width: '60%',
     
