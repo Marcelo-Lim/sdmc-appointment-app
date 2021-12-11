@@ -1,18 +1,23 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Profile.css";
+//import {useSelector} from 'react-redux';
+import { useDispatch } from "react-redux";
 import { Typography, makeStyles, Paper, Container, Grid, Card, CardContent, CardActionArea} from "@material-ui/core";
 import EditIcon from '@mui/icons-material/Edit';
 import CancelIcon from '@mui/icons-material/Cancel';
 
 const Profile = () => {
+    const dispatch = useDispatch();
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+   // const infos = useSelector((state)=> state.infos);
 const classes = useStyles();
     return (
         <div>
             <Paper className={classes.paper} elevation={6}>
-                <Typography className={classes.typo1}>Welcome</Typography>
+                <Typography className={classes.typo1}>Welcome {user?.result.lastName}, {user?.result.firstName}</Typography>
                 <Typography className={classes.typo2}>Gender:</Typography>
-                <Typography className={classes.typo2}>Contact number:</Typography>
-                <Typography className={classes.typo2}>Email address:</Typography>
+                <Typography className={classes.typo2}>Contact number: {user?.result.contactNumber}</Typography>
+                <Typography className={classes.typo2}>Email address: {user?.result.email}</Typography>
             </Paper>
             <Paper className={classes.paper2} variant="outlined" elevation={6}>
                 <Typography className={classes.typo3}>My Appointments</Typography>

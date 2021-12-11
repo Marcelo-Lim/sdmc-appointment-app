@@ -7,12 +7,12 @@ import useStyles from '../components/Auth/Style'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import validateInfo from '../components/Auth/InfoValidation';
 import useForm from '../components/Auth/useForm';
-const initialState = { firstName: '', lastName: '',suffix: '',middleName: '', email: '', password: '', confirmPassword: '' };
+const initialState = { firstName: '', lastName: '',suffix: '',middleName: '', email: '', password: '', confirmPassword: '',contactNumber: '' };
 
 const Auth = ({submitForm})=>{
   const classes = useStyles();
 
-  
+   
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
   const [isSignup, setIsSignup] = useState(false);
@@ -76,6 +76,12 @@ const Auth = ({submitForm})=>{
             placeholder='Enter your Suffix'  
             value={values.suffix} onChange={handleChange} 
             variant="outlined" error={Boolean(errors.suffix)} helperText={errors.suffix}/>
+            </Grid>
+            <Grid item xs={12}> 
+                <TextField  name="contactNumber" label="Contact Number" 
+                    placeholder='Enter your Contact Number' 
+                    value={values.contactNumber} onChange={handleChange} 
+                    fullWidth  variant="outlined" error={Boolean(errors.contactNum)} helperText={errors.contactNum}/>
             </Grid>
             </>
           )}  

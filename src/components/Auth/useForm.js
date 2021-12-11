@@ -12,7 +12,7 @@ const useForm = (callback, validateInfo) => {
         email: '',
         password: '',
         repeatPassword: '',
-        contactNum: '',
+        contactNumber: '',
         firstName:'',
         lastName:'',
         middleName:'',
@@ -33,7 +33,7 @@ const useForm = (callback, validateInfo) => {
         })
         setErrors(validateInfo(values));
     };
-    
+     
     const handleSubmit = () => {
        // e.preventDefault();
         

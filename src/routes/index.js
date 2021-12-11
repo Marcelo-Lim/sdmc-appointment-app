@@ -22,7 +22,7 @@ const RootRoutes =()=>{
             <NavMenu/>
             <ScrollToTop>
             <Route exact path='/' component={Home} />
-            <Route exact path='/Home' component={Home} />
+            <Route exact path='/Home' component={Profile} />
             <Route exact path='/ContactUs' component={ContactUs} />
             <Route exact path='/BookNow' component={BookNow}/>
             <Route exact path='/Authentication' component={Auth}/>

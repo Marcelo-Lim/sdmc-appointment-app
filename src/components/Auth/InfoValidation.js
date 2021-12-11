@@ -51,7 +51,7 @@ export default function validateInfo(values) {
     if (!values.password) {
       errors.password = 'Password is required';
     } 
-    else if (values.password.length < 8) {
+    else if (values.password.length <= 8) {
       errors.password = 'Password needs to be 8 characters or more';
     }
   
@@ -61,6 +61,7 @@ export default function validateInfo(values) {
     else if (values.repeatPassword !== values.password) {
       errors.repeatPassword = 'Passwords do not match';
     }
+    
   
     
   

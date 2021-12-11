@@ -1,4 +1,4 @@
-import {AUTH} from '../Reducers/Constant/actionType'
+import {AUTH, UPDATE} from '../Reducers/Constant/actionType'
 import * as api from '../api/index.js';
 
 export const signin = (formData, router) => async (dispatch) => {
@@ -15,6 +15,7 @@ export const signin = (formData, router) => async (dispatch) => {
     }
   };
   
+
   export const signup = (formData, router) => async (dispatch) => {
     try {
       const { data } = await api.signUp(formData);
@@ -30,3 +31,15 @@ export const signin = (formData, router) => async (dispatch) => {
      
     }
   };
+
+
+  export const updateInformation =(id, info) => async (dispatch) =>{
+    try{
+      const {data} =await api.updateInformation(id, info);
+      dispatch({type: UPDATE, payload:data});
+
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
