@@ -12,7 +12,7 @@ export const signin = (formData, router) => async (dispatch) => {
       console.log(error);
       alert("The data is not found")
       router.push('/Authentication');
-    }
+    } 
   };
   
 

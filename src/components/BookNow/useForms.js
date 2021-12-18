@@ -1,17 +1,11 @@
-import {useState, useEffect,useCallback} from 'react';
+import {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import {createAppointment} from '../Connection/Action/Appointments'
+
 
 const useForms = (callback,validateInfo)=>{
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-    const [startDate,setStartDate]= useState(new Date());
-
-
-    const onChange = (date)=>{
-        setStartDate(date)
-        console.log(startDate)
-    };
-    const rest = startDate.getFullYear();
 
     const [values,setValues]=useState({
         firstName:'' || user?.result.firstName,
@@ -20,13 +14,19 @@ const useForms = (callback,validateInfo)=>{
         suffix:'' || user?.result.suffix,
         contactNumber:'' || user?.result.contactNumber,
         email: '' ||user?.result.email,
-        concern:'',
+        concerns:'',
         consultType: '',
-        dateAndTime: startDate
+        dateAndTime: new Date(),
+       
     })
+   
+  
+    
+
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
     const history = useHistory();
+    
     const [isSubmit, setIsSubmit] = useState(false);
 
     const handleChange = e => {
@@ -36,17 +36,27 @@ const useForms = (callback,validateInfo)=>{
             [name]: value
         })
         setErrors(validateInfo(values));
-    };
+    }; 
   
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        //setErrors(validateInfo(values));
+          console.log(values);
+          setIsSubmit(true);
       
-          //console.log(values);
-          console.log(values.dateAndTime)
-     
-       
+        dispatch(createAppointment(values,history));
  
          
      };
-    return {onChange,handleChange,startDate,setStartDate, values, setValues,handleSubmit, errors};
+
+     useEffect(() => {
+        if(Object.keys(errors).length === 0 && isSubmit) {
+            callback();
+           
+        }
+    },
+    );
+
+    return {handleChange, values, setValues,handleSubmit, errors};
 }
 export default useForms;

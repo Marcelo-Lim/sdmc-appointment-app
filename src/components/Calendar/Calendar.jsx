@@ -4,10 +4,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import useForms from '../BookNow/useForms';
 import validateInfo from '../Auth/InfoValidation';
 
-function Calendar({submitForm}) {
+function Calendar({selected,onChange, ...props}) {
 //const [startDate, setStartDate] = useState(new Date());
 
-    const { onChange,startDate,setStartDate,values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
+    //const {...props, onChange,startDate,setStartDate,values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
 
 
 
@@ -15,14 +15,15 @@ function Calendar({submitForm}) {
     
         <div>
         <DatePicker 
-            selected={startDate} 
+           selected={selected} 
             onChange={onChange} 
             showTimeSelect
-            isClearable={true}
+            //isClearable={true}
             dateFormat="MMMM d, yyyy h:mm aa"
-            value={startDate}
+            //value={startDate}
+            {...props}
             />
-            {console.log(startDate)}
+            
            
             </div>
     ); 

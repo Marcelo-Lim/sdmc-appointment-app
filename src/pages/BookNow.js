@@ -8,16 +8,20 @@ import useForms from '../components/BookNow/useForms';
 import validateInfo from '../components/Auth/InfoValidation';
 import "./BookNow.css";
 import Calendar from "../components/Calendar/Calendar"
+import ConsultationType from "../components/BookNow/ConsultationType";
 
 
 
 const BookNow = ({submitForm}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const [startDate, setStartDate] = useState();
+  
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
   const {handleChange, values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
+
+
+
 
   return (
     <div className="hero-container1">
@@ -25,7 +29,7 @@ const BookNow = ({submitForm}) => {
         <Typography className={classes.typo1}> Appointment Booking </Typography>
         </div>
     
-        <form className={classes.root} onClick={handleSubmit}>
+        <form className={classes.root} onSubmit={handleSubmit}>
           <Grid  container  alignItems="flex-start">
             <Grid item xs={12} sm={6} container  direction="row" justifyContent="flex-start" alignItems="center">
               <TextField 
@@ -39,7 +43,8 @@ const BookNow = ({submitForm}) => {
                 error={Boolean(errors.lastName)}
                 helperText={errors.lastName}
                 onChange={handleChange}
-                enabled={Boolean(false)}
+                //enabled={Boolean(false)}
+                
               /> 
               <TextField 
                 required
@@ -49,6 +54,7 @@ const BookNow = ({submitForm}) => {
                 variant="outlined"
                 style = {{width: 150}}
                 value={values.firstName}
+                onChange={handleChange}
               />
               <TextField 
                 required
@@ -58,6 +64,7 @@ const BookNow = ({submitForm}) => {
                 variant="outlined"
                 style = {{width: 120}}
                 value={values.middleName}
+                onChange={handleChange}
               />
               <TextField 
                 required
@@ -67,6 +74,7 @@ const BookNow = ({submitForm}) => {
                 variant="outlined"
                 style = {{width: 80}}
                 value={values.suffix}
+                onChange={handleChange}
               />
               
               <TextField 
@@ -77,6 +85,7 @@ const BookNow = ({submitForm}) => {
                 variant="outlined"
                 style = {{width: 480}}
                 value={values.email}
+                onChange={handleChange}
               /> 
             
               <TextField 
@@ -87,46 +96,43 @@ const BookNow = ({submitForm}) => {
                 variant="outlined"
                 style = {{width: 480}}
                 value={values.contactNumber}
+                onChange={handleChange}
               /> 
 
               <TextField 
                 required
                 className={classes.inputText}
-               name="concern"
+                name="concerns"
                 label="Concern"
                 variant="outlined"
                 multiline
                 maxRows={4}
                 style = {{width: 480}} 
-                value={values.concern}
+                value={values.concerns}
                 
                 onChange={handleChange}
               /> 
-              <Autocomplete
-                disablePortal
-                className={classes.combobox}
-                
-                options={consultation}
-                
-                renderInput={(params) => <TextField {...params} name="consultType" label="Type of Consultation" value={values.consultType} />}
-              />
-              
+
+              <ConsultationType
+                 
+                  inputValue={values.consultType}
+                  onInputChange={(evt, value) => setValues(prev=>({...prev,consultType:value}))}
+                />
+             
               </Grid>
               <Grid item xs={6}> 
-
-            
 
                 <h1 className={classes.typo2}> Select Date and Time </h1>
                 <div className="calendarwidth">
 
-               <Calendar/>
+               <Calendar onChange={date=> setValues(prev =>({...prev, dateAndTime:date}))} selected={values.dateAndTime}/>
                 </div>
               </Grid>
 
               <Grid item xs={12} sm={6} container direction="column" justifyContent="flex-start" alignItems="flex-start">
               
-              <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
               
+              <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
               <Button type="submit" variant="contained" className={classes.button} color="primary">Save</Button>
               </Grid>
 
