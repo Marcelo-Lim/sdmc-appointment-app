@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import {useHistory} from 'react-router-dom';
-import {createAppointment} from '../Connection/Action/Appointments'
+import {createAppointment} from '../Connection/Action/appointments'
 
 
 const useForms = (callback,validateInfo)=>{
@@ -15,7 +15,7 @@ const useForms = (callback,validateInfo)=>{
         contactNumber:'' || user?.result.contactNumber,
         email: '' ||user?.result.email,
         concerns:'',
-        consultType: '',
+        concernType: '',
         dateAndTime: new Date(),
        
     })

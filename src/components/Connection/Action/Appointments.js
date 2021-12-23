@@ -1,14 +1,21 @@
-import { FETCH_ALL,CREATE,AUTH } from "../Reducers/Constant/actionType";
+import { FETCH_ALL,CREATE } from '../Reducers/Constant/actionType.js';
 import * as api from '../api/index.js'
 
-export const createAppointment = (appointment, router) => async (dispatch) => {
+export const getAppointment =()=> async (dispatch)=>{
     try{
-        const { data } = await api.addAppointment(appointment);
-        dispatch({ type: AUTH, data });
-        console.log("tama na be");
+        const {data} = await api.fetchAppointments();
+        dispatch({type: FETCH_ALL, payload: data});
+        console.log("Tama naman");
     }catch(error){
         console.log(error);
-        console.log('TANGINA MO MALI');
     }
-};
- 
+}
+export const createAppointment = (savess) => async (dispatch) =>{
+    try{
+        const {data} = await api.addAppointment(savess);
+        dispatch({type: CREATE,payload: data});
+        console.log("MAMAMTAY ka na ")
+    }catch (error) {
+        console.log(error);
+    }
+}

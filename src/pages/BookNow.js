@@ -115,8 +115,8 @@ const BookNow = ({submitForm}) => {
 
               <ConsultationType
                  
-                  inputValue={values.consultType}
-                  onInputChange={(evt, value) => setValues(prev=>({...prev,consultType:value}))}
+                  inputValue={values.concernType}
+                  onInputChange={(evt, value) => setValues(prev=>({...prev,concernType:value}))}
                 />
              
               </Grid>

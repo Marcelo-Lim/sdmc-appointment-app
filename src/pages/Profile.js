@@ -1,15 +1,25 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import "./Profile.css";
-//import {useSelector} from 'react-redux';
+import moment from 'moment';
 import { useDispatch } from "react-redux";
-import { Typography, makeStyles, Paper, Container, Grid, Card, CardContent, CardActionArea} from "@material-ui/core";
+import { getAppointment } from "../components/Connection/Action/appointments";
+import { Typography, makeStyles, Paper, Container, Grid, Card, CircularProgress,CardContent, CardActionArea} from "@material-ui/core";
 import EditIcon from '@mui/icons-material/Edit';
 import CancelIcon from '@mui/icons-material/Cancel';
-
 const Profile = () => {
     const dispatch = useDispatch();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-   // const infos = useSelector((state)=> state.infos);
+    const [appointments,setAppointments] = useState([])
+   const [currentId,setCurrentId] = useState(0);
+
+   useEffect(function () {
+    fetch("http://localhost:5000/appointment/appointmentsss")
+    .then(resp=>resp.json())
+    .then(resp=>setAppointments(resp))
+  
+})
+
+
 const classes = useStyles();
     return (
         <div>
@@ -23,49 +33,39 @@ const classes = useStyles();
                 <Typography className={classes.typo3}>My Appointments</Typography>
                 <Container className={classes.container}>
                     <Grid container spacing={2}>
-                        <Grid item xs={4}>
-                            <Card className={classes.card}>
-                                <CardActionArea>
-                                    <CardContent>
-                                        <Typography className={classes.typo4}>Date</Typography>
-                                        <Typography  className={classes.typo4}>Time</Typography>
-                                        <Typography className={classes.typoIcon}>
-                                            <CancelIcon sx={{ fontSize: 25 }}/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <EditIcon sx={{ fontSize: 25 }}/>
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Card className={classes.card}>
-                                <CardActionArea>
-                                    <CardContent>
-                                        <Typography className={classes.typo4}>Date</Typography>
-                                        <Typography className={classes.typo4}>Time</Typography>
-                                        <Typography className={classes.typoIcon}>
-                                            <CancelIcon sx={{ fontSize: 25 }}/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <EditIcon sx={{ fontSize: 25 }}/>
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={4}>
-                            <Card className={classes.card}>
-                                <CardActionArea>
-                                    <CardContent>
-                                        <Typography className={classes.typo4}>Date</Typography>
-                                        <Typography className={classes.typo4}>Time</Typography>
-                                        <Typography className={classes.typoIcon}>
-                                            <CancelIcon sx={{ fontSize: 25 }}/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <EditIcon sx={{ fontSize: 25 }}/>
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        </Grid>
-                    </Grid>
+                  
+           
+           {appointments.map((appointment) => (
+              
+                   <Grid container alignItems="strech" spacing={3}>
+                       {user?.result.email === appointment.email?
+                       (
+                           <Grid key={appointment._id} item xs={12} sm={6} md={6}>
+                       <Card>
+                       <CardContent>
+                       <Typography className={classes.typo4} >{appointment.concerns}</Typography>
+                       <Typography className={classes.typo4} >{appointment.concernType}</Typography>
+                           <Typography className={classes.typo4}>{moment(appointment.dateAndTime).format('D MMM YYYY')}</Typography>
+                           <Typography className={classes.typo4} >{moment(appointment.dateAndTime).format('h:mm a')}</Typography>
+                           <Typography className={classes.typoIcon}>
+                               <CancelIcon sx={{ fontSize: 25 }} onClick={()=>console.log("Cancel")}/>&nbsp;&nbsp;&nbsp;&nbsp;
+                               <EditIcon sx={{ fontSize: 25 }} onClick={()=>console.log("Edit")}/>
+                           </Typography>           
+                       </CardContent>
+                   
+                   </Card>
+                   </Grid>
+                       ):  null }
+                      
+               </Grid>
+ 
+
+
+               ) )}
+         {!appointments.length ?<Typography className={classes.typo4} >No record</Typography>: null }
+            </Grid>
+                        
+                    
                 </Container>
             </Paper>
         </div>
