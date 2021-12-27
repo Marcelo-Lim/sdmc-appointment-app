@@ -7,7 +7,7 @@ export const signin = (formData, router) => async (dispatch) => {
   
       dispatch({ type: AUTH, data });
   
-      router.push('/AboutUs');
+      router.push('/Home');
     } catch (error) {
       console.log(error);
       alert("The data is not found")

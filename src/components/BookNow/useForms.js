@@ -20,7 +20,18 @@ const useForms = (callback,validateInfo)=>{
        
     })
    
-  
+    const initialState = useState({
+        firstName:'' || user?.result.firstName,
+        lastName:'' || user?.result.lastName,
+        middleName:'' || user?.result.middleName,
+        suffix:'' || user?.result.suffix,
+        contactNumber:'' || user?.result.contactNumber,
+        email: '' ||user?.result.email,
+        concerns:'',
+        concernType: '',
+        dateAndTime: new Date(),
+       
+    })
     
 
     const [errors, setErrors] = useState({});
@@ -43,9 +54,9 @@ const useForms = (callback,validateInfo)=>{
         //setErrors(validateInfo(values));
           console.log(values);
           setIsSubmit(true);
-      
+        
         dispatch(createAppointment(values,history));
- 
+        //values == initialState;
          
      };
 
@@ -57,6 +68,6 @@ const useForms = (callback,validateInfo)=>{
     },
     );
 
-    return {handleChange, values, setValues,handleSubmit, errors};
+    return {handleChange, initialState,values, setValues,handleSubmit, errors};
 }
 export default useForms;

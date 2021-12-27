@@ -10,11 +10,12 @@ export const getAppointment =()=> async (dispatch)=>{
         console.log(error);
     }
 }
-export const createAppointment = (savess) => async (dispatch) =>{
+export const createAppointment = (savess,router) => async (dispatch) =>{
     try{
         const {data} = await api.addAppointment(savess);
         dispatch({type: CREATE,payload: data});
         console.log("MAMAMTAY ka na ")
+        router.push('/Home')
     }catch (error) {
         console.log(error);
     }
