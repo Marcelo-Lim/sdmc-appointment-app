@@ -10,12 +10,24 @@ import { Typography, makeStyles,Button,
 import EditIcon from '@mui/icons-material/Edit';
 import Appointments from '../components/Profile/Appointments';
 import CancelIcon from '@mui/icons-material/Cancel';
+import Calendar from '../components/Calendar/Calendar'
+import {cancelAppointment} from '../components/Connection/Action/appointments'
+
+
+
+
+
+
 const Profile = () => {
     const dispatch = useDispatch();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const [appointments,setAppointments] = useState([])
-   const [currentId,setCurrentId] = useState(0);
+
     const [open,setOpen] = useState(false);
+    const [current,setCurrent] = useState(false);
+    const [cancelOpen,setCancelOpen] = useState(false);
+
+   const [appointmentStatus, setAppointmentStatus] = useState({ appointmentStatus: 'Cancelled'})
 
    useEffect(function () {
     fetch("http://localhost:5000/appointment/appointmentsss")
@@ -23,8 +35,18 @@ const Profile = () => {
     .then(resp=>setAppointments(resp))
   
 })
-const handleOpen = () =>{
+
+const handleCancelOpen = (appointment) =>{
+    setCancelOpen(true);
+    setCurrent(appointment);
+
+}
+const handleCancelClose = () =>{
+    setCancelOpen(false);
+}
+const handleOpen = (appointment) =>{
     setOpen(true);
+    setCurrent(appointment)
 }
 const handleClose= () =>{
     setOpen(false);
@@ -45,7 +67,7 @@ const classes = useStyles();
                     <Grid container spacing={2}>
                   
            
-           {appointments.map((appointment) => (
+           {appointments.map((appointment,id) => (
               
                    <Grid container alignItems="stretch" spacing={3}>
                        {user?.result.email === appointment.email?
@@ -57,26 +79,52 @@ const classes = useStyles();
                        <Typography className={classes.typo4} >{appointment.concernType}</Typography>
                            <Typography className={classes.typo4}>{moment(appointment.dateAndTime).format('D MMM YYYY')}</Typography>
                            <Typography className={classes.typo4} >{moment(appointment.dateAndTime).format('h:mm a')}</Typography>
-                           <Typography>{appointment.status}</Typography>
+                           <Typography>{appointment.appointmentStatus}</Typography>
                            <Typography className={classes.typoIcon}>
-                               <CancelIcon sx={{ fontSize: 25 }} onClick={()=>console.log("Cancel")}/>&nbsp;&nbsp;&nbsp;&nbsp;
-                               <EditIcon sx={{ fontSize: 25 }} onClick={ handleOpen}/>
+                               <CancelIcon sx={{ fontSize: 25 }} onClick={()=>handleCancelOpen(appointment)}/>&nbsp;&nbsp;&nbsp;&nbsp;
+                               <EditIcon sx={{ fontSize: 25 }} onClick={()=>handleOpen(appointment)}/>
                            </Typography>           
                       
                          <Dialog
                                 open={open}
                                 onClose={handleClose}
                                 >
+
+
+                    <Container component="main" maxWidth="xl" > 
                          <DialogTitle>{"Congratulations"}</DialogTitle>
-                         <Typography >{appointment.concernType}</Typography>
-     
+                         <Typography >{current.concernType}</Typography>
+                        <Calendar/>
                              
                          <DialogActions>
                      <Button onClick={handleClose} color="primary">
                      Done
                      </Button>
-     
+                    
                      </DialogActions>
+                     </Container>
+                     </Dialog> 
+
+
+
+                     <Dialog
+                                open={cancelOpen}
+                                onClose={handleCancelClose}
+                                >
+
+
+                    <Container component="main" maxWidth="xl" > 
+                    <DialogTitle>{"Do you really want to cancel this appoinment?"}</DialogTitle>
+
+                    <DialogActions>
+                      <Button variant="contained" color="primary" onClick={() => dispatch(cancelAppointment(current._id,{...appointmentStatus}))}>Yes</Button>
+                      <Button variant="contained" color="secondary"onClick={handleCancelClose}>No</Button>
+                             
+                        
+                   
+                    
+                     </DialogActions>
+                     </Container>
                      </Dialog> 
                      </CardContent>
                    </Card>

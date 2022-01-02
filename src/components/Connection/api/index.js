@@ -19,3 +19,4 @@ export const updateInformation =(id, updatedInformation) => API.patch(`/user/${i
 
 export const addAppointment = (appointment) => API.post('/appointment', appointment);
 export const fetchAppointments = () => API.get('/appointment/appointmentsss');
+export const cancelAppointment = (id,cancelApps) => API.patch(`/appointment/${id}/cancelAppointment`, cancelApps);
