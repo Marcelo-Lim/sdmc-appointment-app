@@ -1,20 +1,31 @@
 import React, { useState } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import useForms from '../BookNow/useForms';
+import validateInfo from '../Auth/InfoValidation';
+
+function Calendar({selected,onChange, ...props}) {
+//const [startDate, setStartDate] = useState(new Date());
+
+    //const {...props, onChange,startDate,setStartDate,values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
 
 
-function Calendar() {
-    const [startDate, setStartDate] = useState(new Date());
+
     return (
-        
+    
+        <div>
         <DatePicker 
-            selected={startDate} 
-            onChange={(date) => setStartDate(date)} 
+           selected={selected} 
+            onChange={onChange} 
             showTimeSelect
-            isClearable={true}
+            //isClearable={true}
             dateFormat="MMMM d, yyyy h:mm aa"
+            //value={startDate}
+            {...props}
             />
-
+            
+           
+            </div>
     ); 
 }
 

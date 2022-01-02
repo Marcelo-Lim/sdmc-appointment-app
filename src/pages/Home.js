@@ -2,11 +2,11 @@ import React from "react"
 import { Container, Typography, makeStyles, Grid, Button } from "@material-ui/core";
 import { COLORS } from '../Styles/colors';
 import './Home.css';
-import cbc from "../assets/images/bt4.png";
-import serum from "../assets/images/bt3.png";
-import urinalysis from "../assets/images/bt2.png";
-import hiv from "../assets/images/bt6.png";
-import screening from "../assets/images/bt5.png";
+import cbc from "../assets/Images/bt4.png";
+import serum from "../assets/Images/bt3.png";
+import urinalysis from "../assets/Images/bt2.png";
+import hiv from "../assets/Images/bt6.png";
+import screening from "../assets/Images/bt5.png";
 
 const Home = () => {
   const classes = useStyles();
@@ -37,6 +37,7 @@ const Home = () => {
         </Grid>
       </div>
 
+      <Container component="main" maxWidth="lg">
       <div className="services">
         <Typography className={classes.typo2}>Services</Typography>
         <Typography className={classes.typo8}>Santos-Del Carmen Medical Clinic offers the following tests</Typography>
@@ -129,9 +130,11 @@ const Home = () => {
             </Grid>
           </Grid>
         </div>
-
+       
       </div>
+      </Container>    
     </div>
+  
   )
 };
 

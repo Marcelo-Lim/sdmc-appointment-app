@@ -1,27 +1,50 @@
 import { Typography, makeStyles,TextField, Grid, Container, Checkbox, FormControlLabel, Button } from "@material-ui/core";
 import Autocomplete from '@mui/material/Autocomplete';
-import React from "react";
+import React,{useEffect, useState} from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import {useDispatch} from 'react-redux';
+import useForms from '../components/BookNow/useForms';
+import validateInfo from '../components/Auth/InfoValidation';
 import "./BookNow.css";
 import Calendar from "../components/Calendar/Calendar"
+import ConsultationType from "../components/BookNow/ConsultationType";
 
-const BookNow = () => {
+
+
+const BookNow = ({submitForm}) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+
+  const {handleChange, values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
+
+
+
+
   return (
     <div className="hero-container1">
         <div className="hero">
         <Typography className={classes.typo1}> Appointment Booking </Typography>
         </div>
-  
-        <form className={classes.root}>
+    
+        <form className={classes.root} onSubmit={handleSubmit}>
           <Grid  container  alignItems="flex-start">
             <Grid item xs={12} sm={6} container  direction="row" justifyContent="flex-start" alignItems="center">
               <TextField 
                 required
                 className={classes.inputText}
-                id="outlined-required"
+                name="lastName"
                 label="Last Name"
                 variant="outlined"
                 style = {{width: 150}}
+                value={ values.lastName}
+                error={Boolean(errors.lastName)}
+                helperText={errors.lastName}
+                onChange={handleChange}
+                //enabled={Boolean(false)}
+                
               /> 
               <TextField 
                 required
@@ -30,73 +53,87 @@ const BookNow = () => {
                 label="First Name"
                 variant="outlined"
                 style = {{width: 150}}
+                value={values.firstName}
+                onChange={handleChange}
               />
               <TextField 
                 required
                 className={classes.inputText}
-                id="outlined-required"
+               name="middleName"
                 label="Middle Initial"
                 variant="outlined"
                 style = {{width: 120}}
+                value={values.middleName}
+                onChange={handleChange}
               />
               <TextField 
                 required
                 className={classes.inputText}
-                id="outlined-required"
+                name="suffx"
                 label="Suffix"
                 variant="outlined"
                 style = {{width: 80}}
+                value={values.suffix}
+                onChange={handleChange}
               />
               
               <TextField 
                 required
                 className={classes.inputText}
-                id="outlined-required"
+                name="email"
                 label="Email Address"
                 variant="outlined"
                 style = {{width: 480}}
+                value={values.email}
+                onChange={handleChange}
               /> 
             
               <TextField 
                 required
                 className={classes.inputText}
-                id="outlined-required"
+                name="contactNumber"
                 label="Contact Number"
                 variant="outlined"
                 style = {{width: 480}}
+                value={values.contactNumber}
+                onChange={handleChange}
               /> 
 
               <TextField 
                 required
                 className={classes.inputText}
-                id="outlined-multiline-flexible-required"
+                name="concerns"
                 label="Concern"
                 variant="outlined"
                 multiline
                 maxRows={4}
                 style = {{width: 480}} 
+                value={values.concerns}
+                
+                onChange={handleChange}
               /> 
-              <Autocomplete
-                disablePortal
-                className={classes.combobox}
-                id="combo-box-consultation"
-                options={consultation}
-                renderInput={(params) => <TextField {...params} label="Type of Consultation" />}
-              />
-              
+
+              <ConsultationType
+                 
+                  inputValue={values.concernType}
+                  onInputChange={(evt, value) => setValues(prev=>({...prev,concernType:value}))}
+                />
+             
               </Grid>
-              <Grid item> 
+              <Grid item xs={6}> 
+
                 <h1 className={classes.typo2}> Select Date and Time </h1>
                 <div className="calendarwidth">
-                <Calendar/>
+
+               <Calendar onChange={date=> setValues(prev =>({...prev, dateAndTime:date}))} selected={values.dateAndTime}/>
                 </div>
               </Grid>
 
               <Grid item xs={12} sm={6} container direction="column" justifyContent="flex-start" alignItems="flex-start">
               
-              <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
               
-              <Button variant="contained" className={classes.button} color="primary">Save</Button>
+              <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
+              <Button type="submit" variant="contained" className={classes.button} color="primary">Save</Button>
               </Grid>
 
               </Grid>

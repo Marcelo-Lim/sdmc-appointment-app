@@ -1,49 +1,65 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { makeStyles, AppBar } from "@material-ui/core";
 import {
+  Button,
   Collapse,
   Container,
   Navbar,
   NavbarBrand,
   NavbarToggler,
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import {useDispatch} from 'react-redux';
+import { Link,useHistory,useLocation } from "react-router-dom";
 import { COLORS } from "../../Styles/colors";
 import Item from "./Item";
 import "./Navmenu.css";
-import IconClinic from "../../assets/images/sdmc.png";
+import * as actionType from '../Connection/Reducers/Constant/actionType'
+import IconClinic from "../../assets/Images/sdmc.png";
 
 const menu =[
     {
         title: "Home",
         component: "/Home"
     },
+    /*{
+        title: "AboutUs",
+        component: "/AboutUs"
+    },
     {
         title: "ContactUs",
         component: "/ContactUs"
-    },
+    },*/
     {
-        title: "BookNow",
+        title: "Book Now",
         component: "/BookNow"
-    },
+    },/*
     {
       title: "Monitoring",
       component: "/Monitoring"
-    },
-    {
-      title: "Profile",
-      component: "/Profile"
-    },
-    {
-      title: "Doctor",
-      component: "/Doctor"
-    },
+    },*/
 ]
 
 const NavMenu = () => {
+    const [user,setUser] = useState(JSON.parse(localStorage.getItem('profile')))
     const [isOpen, setIsOpen] = useState(false);
     const [selectedPage, setSelectedPage] = useState("Home");
     const classes = useStyles();
+    const location =useLocation();
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+    const logout = ()=>{
+      dispatch({type: actionType.LOGOUT})
+      history.push('/Authentication');
+      setUser(null);
+    }
+ useEffect(()=>{
+   const token = user?.token;
+
+    setUser(JSON.parse(localStorage.getItem('profile')))
+ },[location])
+
+
     return (
       <AppBar
         elevation={0}
@@ -55,11 +71,13 @@ const NavMenu = () => {
           dark
         >
           <Container>
+         
             <NavbarBrand tag={Link} to='/'>
               <div className="navbarbrand">
                 <img src={IconClinic} alt='logo' height="50px" width="60px" />
               </div>
             </NavbarBrand>
+            {user?.result? (<>
             <NavbarToggler
               onClick={() => setIsOpen(!isOpen)}
               className='mr-2 white '
@@ -78,10 +96,21 @@ const NavMenu = () => {
                     onClickListener={() => {
                       setSelectedPage(title);
                     }}
+                  
                   />
+
                 ))}
+               <Button variant="contained" color="primary" onClick={logout}>Logout</Button>
               </ul>
             </Collapse>
+           
+            </>):(<>
+                 <NavbarBrand tag={Link} to='/Authentication'>
+                 <div className="navbarbrand">
+                    <Button variant="contained" color="primary">Sign In</Button>
+                 </div>
+               </NavbarBrand></>
+            )}
           </Container>
         </Navbar>
       </AppBar>
