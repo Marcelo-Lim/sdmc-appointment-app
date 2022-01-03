@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import "./Profile.css";
 import moment from 'moment';
 import { useDispatch } from "react-redux";
-import { getAppointment } from "../components/Connection/Action/appointments";
+import { getAppointment } from "../components/Connection/Action/Appointments";
 import { Typography, makeStyles,Button,
      Paper, Container, Grid, Card, 
      CircularProgress,CardContent, CardActionArea,
@@ -11,7 +11,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import Appointments from '../components/Profile/Appointments';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Calendar from '../components/Calendar/Calendar'
-import {cancelAppointment} from '../components/Connection/Action/appointments'
+import {cancelAppointment} from '../components/Connection/Action/Appointments'
 
 
 
@@ -79,7 +79,7 @@ const classes = useStyles();
                        <Typography className={classes.typo4} >{appointment.concernType}</Typography>
                            <Typography className={classes.typo4}>{moment(appointment.dateAndTime).format('D MMM YYYY')}</Typography>
                            <Typography className={classes.typo4} >{moment(appointment.dateAndTime).format('h:mm a')}</Typography>
-                           <Typography>{appointment.appointmentStatus}</Typography>
+                           <Typography className={classes.typo4}>{appointment.appointmentStatus}</Typography>
                            <Typography className={classes.typoIcon}>
                                <CancelIcon sx={{ fontSize: 25 }} onClick={()=>handleCancelOpen(appointment)}/>&nbsp;&nbsp;&nbsp;&nbsp;
                                <EditIcon sx={{ fontSize: 25 }} onClick={()=>handleOpen(appointment)}/>
@@ -92,7 +92,7 @@ const classes = useStyles();
 
 
                     <Container component="main" maxWidth="xl" > 
-                         <DialogTitle>{"Congratulations"}</DialogTitle>
+                         <DialogTitle>{"Edit appointment"}</DialogTitle>
                          <Typography >{current.concernType}</Typography>
                         <Calendar/>
                              

@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 import {useHistory} from 'react-router-dom';
-import {createAppointment} from '../Connection/Action/appointments'
+import {createAppointment} from '../Connection/Action/Appointments'
 
 
 const useForms = (callback,validateInfo)=>{
