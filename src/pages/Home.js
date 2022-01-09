@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Typography, makeStyles, Grid, Button } from "@material-ui/core";
+import { Container, Typography, makeStyles, Grid, Button, Link } from "@material-ui/core";
 import { COLORS } from '../Styles/colors';
 import './Home.css';
 import cbc from "../assets/images/bt4.png";
@@ -7,29 +7,35 @@ import serum from "../assets/images/bt3.png";
 import urinalysis from "../assets/images/bt2.png";
 import hiv from "../assets/images/bt6.png";
 import screening from "../assets/images/bt5.png";
+import vid1 from "../videos/vid1.mp4";
 
 const Home = () => {
   const classes = useStyles();
   return (
     <div>
+      
       <div className="cover">
+      <video src= {vid1} autoPlay loop muted></video>
         <Grid 
             container
             direction="column"
             justifyContent="center"
             alignItems="center"
         >
+          
           <Container component="main" maxWidth="lg">
+          
             <Grid container spacing={2} direction="column">
               <Grid item>
+              
                   <div className="home_title">
-                    <Typography className="typo1">Santos-Del Carmen <br/>&nbsp;&nbsp;&nbsp;Medical Clinic</Typography>
+                    <Typography className="typo1">Santos-Del Carmen <br/>Medical Clinic</Typography>
                   </div>
               </Grid>
 
               <Grid item>
                 <div className="button_book">
-                  <Button className={classes.button1}>Book Now</Button>
+                  <Button className={classes.button1}> <Link href="/BookNow" color="inherit" underline="none"> Book Now </Link></Button>
                 </div>
               </Grid>
             </Grid>
@@ -194,6 +200,7 @@ const Home = () => {
     button1: {
       background: COLORS.RED,
       color: COLORS.WHITE,
+      
     },
 
     

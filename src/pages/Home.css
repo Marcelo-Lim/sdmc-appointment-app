@@ -4,12 +4,14 @@
     display: flex;
     height: 400px;
     width: auto;
-    background-color: gray;
+    
 }
 
 
 .button_book {
-    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home_title {
@@ -18,7 +20,7 @@
 }
 
 .services {
-    margin-top: 50px;
+    margin-top: 70px;
     text-align: center;
     
 }
@@ -35,6 +37,7 @@
     font-size: 50px !important;
     font-family: 'Pathway Gothic One';
     color: black;
+    text-align: center;
 }
 
 @media screen and (max-width: 460px){

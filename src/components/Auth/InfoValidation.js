@@ -1,32 +1,35 @@
 export default function validateInfo(values) {
     let errors = {};
 
-    if(!values.firstName.trim()){
-        errors.firstName = 'First Name is required'
-    }
-    else if(values.firstName.length <1){
-        errors.firstName='First Name is invalid'
-    }
-    if(!values.lastName.trim()){
-        errors.lastName = 'Last Name is required'
-    }
-    else if(values.lastName.length <1){
-        errors.lastName='Last Name is invalid'
-    }
-    if(!values.middleName.trim()){
-        errors.middleName = 'Middle Name is required'
-    }
-    else if(values.middleName <2){
-        errors.middleName='Middle is invalid'
-    }
-   
-   
+    
+
+    if(!values.lastName) {
+      errors.lastName = "Last Name Required";
+  }else if(!/^[a-zA-Z]*$/i.test(values.lastName)) {
+      errors.lastName = "Not a Proper Name";
+  }
+
+  if(!values.firstName){
+      errors.firstName = "First Name Required";
+  }else if(!/^[a-zA-Z]*$/i.test(values.firstName)) {
+      errors.firstName = "Not a Proper Name";
+  }
+
+
+  if(!values.middleName){
+      errors.middleName = "Middle Name Required";
+  }else if(!/^[a-zA-Z]*$/i.test(values.middleName)) {
+      errors.middleName = "Not a Proper Name";
+  }
+
   if(values.suffix.length >3){
         errors.suffix='You entered invalid information'
-    }
+    } else if(!/^[a-zA-Z]*$/i.test(values.suffix)) {
+      errors.suffix = "Not a Suffix";
+  }
 
     
-   /* if (!values.username.trim()) {
+    /* if (!values.username.trim()) {
       errors.username = 'Username required';
     }
     else if(!/^[A-Za-z][A-Za-z0-9]*(?:_+[A-Za-z0-9]+)*$/.test(values.username)){
@@ -41,12 +44,14 @@ export default function validateInfo(values) {
       errors.email = 'Invalid input';
     }
     
-    if (!values.contactNum){
-        errors.contactNum = 'Contact number is required'
+
+    if(!values.contactNum){
+      errors.contactNum = "Contact Number Required";
+    }else if (!/^(09|\+639)\d{9}$/.test(values.contactNum)){
+      errors.contactNum = "Please enter a valid Contact Number";
     }
-    else if (!/^\d{11}$/.test(values.contactNum)){
-        errors.contactNum = 'Please enter a valid contact number'
-    }
+
+
   
     if (!values.password) {
       errors.password = 'Password is required';

@@ -2,6 +2,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import React, {useEffect, useState} from "react";
 import { makeStyles, Typography, Collapse, Grid, TextField, Button, createTheme, ThemeProvider} from "@material-ui/core";
 import './ContactUs.css';
+import vid3 from "../videos/vid3.mp4";
 
 const ContactUs = () => {
   const classes = useStyles();
@@ -30,7 +31,7 @@ const [values,setValues] = useState(initialValues);
   return(
       <div>
         <div className ="hero-container">
-        
+        <video src={vid3} autoPlay loop muted></video>
         <Collapse 
           in ={checked}
           {... (checked ? { timeout: 1000 } : {})}

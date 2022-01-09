@@ -31,24 +31,24 @@ const BookNow = ({submitForm}) => {
     
         <form className={classes.root} onSubmit={handleSubmit}>
           <Grid  container  alignItems="flex-start">
-            <Grid item xs={12} sm={6} container  direction="row" justifyContent="flex-start" alignItems="center">
+            <Grid item xs={12} sm={5} container  direction="row" justifyContent="flex-start" alignItems="center">
               <TextField 
-                required
+                
                 className={classes.inputText}
                 name="lastName"
                 label="Last Name"
                 variant="outlined"
                 style = {{width: 150}}
                 value={ values.lastName}
-                error={Boolean(errors.lastName)}
-                helperText={errors.lastName}
+                
                 onChange={handleChange}
                 //enabled={Boolean(false)}
                 
               /> 
               <TextField 
-                required
+                
                 className={classes.inputText}
+                name="firstName"
                 id="outlined-required"
                 label="First Name"
                 variant="outlined"
@@ -57,9 +57,9 @@ const BookNow = ({submitForm}) => {
                 onChange={handleChange}
               />
               <TextField 
-                required
+                
                 className={classes.inputText}
-               name="middleName"
+                name="middleName"
                 label="Middle Initial"
                 variant="outlined"
                 style = {{width: 120}}
@@ -67,7 +67,7 @@ const BookNow = ({submitForm}) => {
                 onChange={handleChange}
               />
               <TextField 
-                required
+                
                 className={classes.inputText}
                 name="suffx"
                 label="Suffix"
@@ -78,7 +78,7 @@ const BookNow = ({submitForm}) => {
               />
               
               <TextField 
-                required
+                
                 className={classes.inputText}
                 name="email"
                 label="Email Address"
@@ -89,7 +89,7 @@ const BookNow = ({submitForm}) => {
               /> 
             
               <TextField 
-                required
+                
                 className={classes.inputText}
                 name="contactNumber"
                 label="Contact Number"
@@ -100,7 +100,7 @@ const BookNow = ({submitForm}) => {
               /> 
 
               <TextField 
-                required
+                
                 className={classes.inputText}
                 name="concerns"
                 label="Concern"
@@ -114,18 +114,18 @@ const BookNow = ({submitForm}) => {
               /> 
 
               <ConsultationType
-                 
+
                   inputValue={values.concernType}
                   onInputChange={(evt, value) => setValues(prev=>({...prev,concernType:value}))}
                 />
-             
+
               </Grid>
-              <Grid item xs={6}> 
+              <Grid item xs={12} sm={6}> 
 
                 <h1 className={classes.typo2}> Select Date and Time </h1>
                 <div className="calendarwidth">
 
-               <Calendar onChange={date=> setValues(prev =>({...prev, dateAndTime:date}))} selected={values.dateAndTime}/>
+              <Calendar onChange={date=> setValues(prev =>({...prev, dateAndTime:date}))} selected={values.dateAndTime}/>
                 </div>
               </Grid>
 
@@ -133,7 +133,8 @@ const BookNow = ({submitForm}) => {
               
               
               <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
-              <Button type="submit" variant="contained" className={classes.button} color="primary">Save</Button>
+
+              <Button type="submit" variant="contained" className={classes.button} color="primary"  >Save</Button>
               </Grid>
 
               </Grid>
@@ -154,13 +155,15 @@ const useStyles = makeStyles((theme) => ({
   
   root: {
     '& .MuiFormControl-root': {
-      width: '30%',
+      width: '60%',
       margin: theme.spacing(2.5),
 
     }
   },
 
   typo1: {
+    marginTop: "25px",
+    marginBottom: "25px",
     textAlign:"center",
     fontSize: "30px",
     fontWeight: "bold",

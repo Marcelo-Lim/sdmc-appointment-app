@@ -15,16 +15,18 @@ function Calendar({selected,onChange, ...props}) {
     
         <div>
         <DatePicker 
-           selected={selected} 
+            selected={selected} 
             onChange={onChange} 
             showTimeSelect
+            minDate={new Date()}
+            
             //isClearable={true}
             dateFormat="MMMM d, yyyy h:mm aa"
             //value={startDate}
             {...props}
             />
             
-           
+
             </div>
     ); 
 }
