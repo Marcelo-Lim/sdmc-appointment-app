@@ -12,14 +12,14 @@ const ConsultationType = ({ value, onChange, inputValue, onInputChange }) => (
       id="controllable-states-demo"
       options={options}
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Controllable" />}
+      renderInput={(params) => <TextField {...params} label="Type of Consultation" />}
     />
   );
 
 const options = ['Check-up',
 'Blood Test',
- 'Ultrasound',
-  'Complete Blood Count (CBC)',
- 'Urinalysis'];
+'Ultrasound',
+'Complete Blood Count (CBC)',
+'Urinalysis'];
 
 export default ConsultationType;
