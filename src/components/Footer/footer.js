@@ -116,9 +116,6 @@ const Footer = () => {
             <Box textAlign="flex-start" pt={{xs: 1, sm: 1 }} pb={{xs:5, sm: 0}}>
                         Santos Del-Carmen Medical Clinic &reg; {new Date().getFullYear()}
             </Box>
-            <Box className="footerContact" pt={{xs: 1, sm: 1 }} pb={{xs:5, sm: 0}}>
-                        Contact us: 
-            </Box>
             </Grid>
         </footer>
     )

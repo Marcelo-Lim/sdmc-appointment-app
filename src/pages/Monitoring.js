@@ -1,4 +1,5 @@
 import React from "react";
+import emailjs from 'emailjs-com';
 import { Typography, makeStyles, Paper } from "@material-ui/core";
 import {
     Scheduler,
@@ -11,6 +12,20 @@ import AddBoxIcon from '@mui/icons-material/AddBox';
 
 const Monitoring = () => {
 const classes = useStyles();
+
+const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+        'service_lusftxg', 
+        'template_32kjbpm', 
+        e.target, 
+        'user_88fZhcEyqDDz9scokFOrs' 
+    ).then(res=>{
+        console.log(res);
+    }).catch(err=> console.log(err));
+}
+
     return (
         <div>
             <Paper className={classes.paper1}>

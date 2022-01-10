@@ -20,8 +20,10 @@ const BookNow = ({submitForm}) => {
 
   const {handleChange, values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
 
-
-
+  const [disButton, setDisButton] = useState(false);
+  const handleDisable=()=>{
+    setDisButton(true)
+  }
 
   return (
     <div className="hero-container1">
@@ -49,6 +51,7 @@ const BookNow = ({submitForm}) => {
               <TextField 
                 required
                 className={classes.inputText}
+                name="firstName"
                 id="outlined-required"
                 label="First Name"
                 variant="outlined"
@@ -67,7 +70,6 @@ const BookNow = ({submitForm}) => {
                 onChange={handleChange}
               />
               <TextField 
-                required
                 className={classes.inputText}
                 name="suffx"
                 label="Suffix"
@@ -132,8 +134,12 @@ const BookNow = ({submitForm}) => {
               <Grid item xs={12} sm={6} container direction="column" justifyContent="flex-start" alignItems="flex-start">
               
               
-              <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
-              <Button type="submit" variant="contained" className={classes.button} color="primary">Save</Button>
+              {/* <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox} handleChange={handleChange}/> */}
+              
+              <input type="checkbox" onClick={handleDisable}/>
+              <em>I have verified the information stated herein.</em>
+              <Button type="submit" variant="contained" className={classes.button} color="primary" disabled={!disButton}>Save</Button> 
+              
               </Grid>
 
               </Grid>

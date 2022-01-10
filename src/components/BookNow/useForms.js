@@ -17,7 +17,7 @@ const useForms = (callback,validateInfo)=>{
         concerns:'',
         concernType: '',
         dateAndTime: new Date(),
-       
+        checked: '',
     })
    
     const initialState = useState({

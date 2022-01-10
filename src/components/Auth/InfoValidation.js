@@ -62,7 +62,7 @@ export default function validateInfo(values) {
       errors.repeatPassword = 'Passwords do not match';
     }
     
-  
+    
     
   
     return errors;
