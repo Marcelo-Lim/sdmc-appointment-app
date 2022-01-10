@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Box, Link, makeStyles} from "@material-ui/core";
+import { Grid, Box, Link, makeStyles, Typography} from "@material-ui/core";
 import logo from "../../assets/images/SDMCLOGO1.png";
 import "./footer.css";
 
@@ -33,29 +33,29 @@ const Footer = () => {
                         <Grid item xs={12} sm={6} md >
                             <Box borderBottom={0}></Box>
                                 <Box>
-                                    <Link href="../pages/ContactUs.js" color="inherit">
+                                    <Typography>
                                         Address: #61, 7th Avenue, Baranggay Soccoro, Cubao, Quezon City
-                                    </Link>
+                                    </Typography>
                                 </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Typography>
                                         CBC | Complete Blood Count
-                                    </Link>
+                                    </Typography>
                                 </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Typography>
                                         X-Ray
-                                    </Link>
+                                    </Typography>
                                 </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Typography>
                                         Urinalysis
-                                    </Link>
+                                    </Typography>
                                 </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Typography>
                                         Fecalysis
-                                    </Link>
+                                    </Typography>
                                 </Box>
                         </Grid>
                         
@@ -63,32 +63,32 @@ const Footer = () => {
                             <Box borderBottom={0}> <b> Services </b> </Box>
                                 
                                 <Box>
-                                    <Link href="../pages/ContactUs.js" color="inherit">
+                                    <Typography>
                                         Physical Exam
-                                    </Link>
+                                    </Typography>
                                 </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Typography>
                                         CBC (Complete Blood Count)
-                                    </Link>
+                                    </Typography>
                                 </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Typography>
                                         X-Ray
-                                    </Link>
+                                    </Typography>
                                 </Box>
                         </Grid>
                         <Grid item xs={12} sm>
                             <Box borderBottom={0}> <br/> </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Typography>
                                         Urinalysis
-                                    </Link>
+                                    </Typography>
                                 </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Typography>
                                         Fecalysis
-                                    </Link>
+                                    </Typography>
                                 </Box>
                         </Grid>
                         <Grid item xs={12} sm>
@@ -99,7 +99,7 @@ const Footer = () => {
                                     </Link>
                                 </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Link href="/ContactUs" color="inherit">
                                         Contact us
                                     </Link>
                                 </Box>

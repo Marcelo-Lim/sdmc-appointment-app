@@ -11,13 +11,12 @@ const ProfileDesignAppoinment = ({appointments}) =>{
 
     return(
         <Card>
-             <CardContent>
-                  <Typography>{appointments.email}</Typography>
-                   <Typography >{appointments.firstName}</Typography>
+            <CardContent>
+                <Typography>{appointments.email}</Typography>
+                <Typography >{appointments.firstName}</Typography>
                                     
-             </CardContent>
-           
-         </Card>
+            </CardContent>
+        </Card>
     )
 
 }

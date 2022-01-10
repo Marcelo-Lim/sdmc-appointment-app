@@ -53,25 +53,25 @@ const NavMenu = () => {
       history.push('/Authentication');
       setUser(null);
     }
- useEffect(()=>{
-   const token = user?.token;
+  useEffect(()=>{
+    const token = user?.token;
 
     setUser(JSON.parse(localStorage.getItem('profile')))
- },[location])
+  },[location])
 
 
     return (
       <AppBar
         elevation={0}
         position='relative'
-        style={{ boxShadow: "none", background: COLORS.RED, }}
+        style={{ boxShadow: "none", background: COLORS.MAROON, }}
       >
         <Navbar
           className='navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow w-100'
           dark
         >
           <Container>
-         
+
             <NavbarBrand tag={Link} to='/'>
               <div className="navbarbrand">
                 <img src={IconClinic} alt='logo' height="50px" width="60px" />
@@ -100,16 +100,17 @@ const NavMenu = () => {
                   />
 
                 ))}
-               <Button variant="contained" color="primary" onClick={logout}>Logout</Button>
               </ul>
             </Collapse>
-           
+
+            <Button className={classes.buttonlogout} variant="contained"  onClick={logout}>Logout</Button>
+
             </>):(<>
-                 <NavbarBrand tag={Link} to='/Authentication'>
-                 <div className="navbarbrand">
-                    <Button variant="contained" color="primary">Sign In</Button>
-                 </div>
-               </NavbarBrand></>
+                  <NavbarBrand tag={Link} to='/Authentication'>
+                    <div className="navbarbrand">
+                      <Button className={classes.buttonlogin} variant="contained">Sign In</Button>
+                    </div>
+                  </NavbarBrand></>
             )}
           </Container>
         </Navbar>
@@ -124,6 +125,14 @@ const NavMenu = () => {
       fontSize: 25,
       color: COLORS.WHITE,
       fontFamily: "Pathway Gothic One",
+    },
+    buttonlogout: {
+      color: COLORS.BLACK,
+      backgroundColor: "lightgray",
+    },
+    buttonlogin: {
+      color: COLORS.BLACK,
+      backgroundColor: "lightgray",
     },
   }));
   export default NavMenu;

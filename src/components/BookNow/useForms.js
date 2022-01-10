@@ -19,7 +19,7 @@ const useForms = (callback,validateInfo)=>{
         dateAndTime: new Date(),
         checked: '',
     })
-   
+
     const initialState = useState({
         firstName:'' || user?.result.firstName,
         lastName:'' || user?.result.lastName,
@@ -30,7 +30,7 @@ const useForms = (callback,validateInfo)=>{
         concerns:'',
         concernType: '',
         dateAndTime: new Date(),
-       
+    
     })
     
 
