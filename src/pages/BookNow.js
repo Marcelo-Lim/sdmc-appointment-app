@@ -4,6 +4,7 @@ import React,{useEffect, useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {useDispatch} from 'react-redux';
+import { COLORS } from "../Styles/colors";
 import useForms from '../components/BookNow/useForms';
 import validateInfo from '../components/Auth/InfoValidation';
 import "./BookNow.css";
@@ -20,7 +21,7 @@ const BookNow = ({submitForm}) => {
 
   const {handleChange, values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
 
-
+  
 
 
   return (
@@ -120,7 +121,7 @@ const BookNow = ({submitForm}) => {
                 />
 
               </Grid>
-              <Grid item xs={12} sm={6}> 
+              <Grid item xs={12} sm={6} container direction="column" justifyContent="center" alignItems="center"> 
 
                 <h1 className={classes.typo2}> Select Date and Time </h1>
                 <div className="calendarwidth">
@@ -134,7 +135,7 @@ const BookNow = ({submitForm}) => {
               
               <FormControlLabel control={<Checkbox color="primary"/>} label="I have verified the information stated herein" className={classes.checkbox}/>
 
-              <Button type="submit" variant="contained" className={classes.button} color="primary"  >Save</Button>
+              <Button type="submit" variant="contained" className={classes.button} color="primary">Save</Button>
               </Grid>
 
               </Grid>
@@ -197,6 +198,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "150px",
     width: "35%",
     marginBottom: "150px",
+    backgroundColor: COLORS.BLUE,
   },
 
   calendar1: {

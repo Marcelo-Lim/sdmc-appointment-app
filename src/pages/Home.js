@@ -198,7 +198,7 @@ const Home = () => {
     },
 
     button1: {
-      background: COLORS.RED,
+      background: COLORS.MAROON,
       color: COLORS.WHITE,
       
     },
