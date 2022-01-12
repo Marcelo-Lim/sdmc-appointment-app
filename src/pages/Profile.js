@@ -6,7 +6,7 @@ import { getAppointment } from "../components/Connection/Action/Appointments";
 import { Typography, makeStyles,Button,
     Paper, Container, Grid, Card, 
     CircularProgress,CardContent, CardActionArea,
-    Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle} from "@material-ui/core";
+    Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle, TextField} from "@material-ui/core";
 import EditIcon from '@mui/icons-material/Edit';
 import Appointments from '../components/Profile/Appointments';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -52,6 +52,9 @@ const handleClose= () =>{
     setOpen(false);
 }
 
+const [fullWidth] = React.useState(true);
+const [maxWidth] = React.useState('sm');
+
 const classes = useStyles();
     return (
         <div class="d-flex flex-column justify-content-center align-items-center">
@@ -70,7 +73,7 @@ const classes = useStyles();
                     <Grid  item xs={12} sm={6}>
                         {user?.result.email === appointment.email?
                     (
-                    <Grid key={appointment._id} container >
+                    <Grid key={appointment.email} container >
                     
                     <Card className={classes.card1 }>
                         <CardContent>
@@ -84,16 +87,24 @@ const classes = useStyles();
                                 <EditIcon sx={{ fontSize: 25 }} onClick={()=>handleOpen(appointment)}/>
                             </Typography>           
 
+                    
                         <Dialog
+                                className={classes.dialog}
+                                fullWidth={fullWidth}
+                                maxWidth={maxWidth}
                                 open={open}
                                 onClose={handleClose}
                                 >
 
 
-                    <Container component="main" maxWidth="xl" > 
+                    <Container  component="main" maxWidth="xl" >
+                        <Grid container direction="column" justifyContent="center" alignItems="center" >
                         <DialogTitle>{"Edit appointment"}</DialogTitle>
+                        <Typography >{current.concerns}</Typography>
+                        <TextField style = {{width: 380}}>{current.concerns}</TextField>
                         <Typography >{current.concernType}</Typography>
                         <Calendar/>
+                        
 
                         <DialogActions>
                     <Button onClick={handleClose} color="primary">
@@ -101,9 +112,10 @@ const classes = useStyles();
                     </Button>
                     
                     </DialogActions>
+                    </Grid>
                     </Container>
                     </Dialog> 
-
+                    
 
 
                     <Dialog
@@ -225,8 +237,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center"
     },
 
-    grid1: {
-
+    dialog: {
+        height: "100%",
     }
 }))
 

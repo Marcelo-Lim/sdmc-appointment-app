@@ -115,6 +115,8 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: 75,
     fontFamily: "Pathway Gothic One",
+    color: "white",
+    textAlign: "center"
   },
   root: {
     '& .MuiFormControl-root': {
@@ -136,6 +138,7 @@ const useStyles = makeStyles((theme) => ({
 
   h4: {
     marginTop: 150,
+    textAlign: "center"
   },
 
 }));

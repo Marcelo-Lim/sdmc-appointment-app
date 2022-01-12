@@ -94,7 +94,7 @@ const Footer = () => {
                         <Grid item xs={12} sm>
                             <Box borderBottom={0}> <b> Clinic </b> </Box>
                                 <Box>
-                                    <Link href="/" color="inherit">
+                                    <Link href="/AboutUs" color="inherit">
                                         About us
                                     </Link>
                                 </Box>

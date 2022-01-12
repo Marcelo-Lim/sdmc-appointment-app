@@ -57,7 +57,6 @@ video {
     font-size: 40px;
     font-weight: bold;
     font-family: "Pathway Gothic One";
-    text-align: center;
 }
 
 h4 {
@@ -71,5 +70,44 @@ h4 {
 .p-1 {
     font-size: 35px;
     font-weight: 500;
-    text-align: center;
+}
+
+.imageContainer img{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+}
+
+@media only screen and (min-width: 360px) {
+    .imageContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+
+.paper-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.aboutus-img{
+    width: 120px;
+    height: 120px;
+    padding: 2px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px
+    solid rgb(231, 244, 250);
+    background-color: rgb(229, 236, 243);
 }
