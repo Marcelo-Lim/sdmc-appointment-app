@@ -14,7 +14,7 @@ import { COLORS } from "../../Styles/colors";
 import Item from "./Item";
 import "./Navmenu.css";
 import * as actionType from '../Connection/Reducers/Constant/actionType'
-import IconClinic from "../../assets/images/sdmc.png";
+import IconClinic from "../../assets/images/sdmc-no-border.png";
 
 const menu =[
     {
@@ -32,11 +32,11 @@ const menu =[
     {
         title: "Book Now",
         component: "/BookNow"
-    },/*
+    },
     {
-      title: "Monitoring",
-      component: "/Monitoring"
-    },*/
+      title: "Doctor",
+      component: "/Doctor"
+    },
 ]
 
 const NavMenu = () => {
@@ -74,7 +74,7 @@ const NavMenu = () => {
 
             <NavbarBrand tag={Link} to='/'>
               <div className="navbarbrand">
-                <img src={IconClinic} alt='logo' height="50px" width="60px" />
+                <img src={IconClinic} alt='logo' height="60px" width="60px" />
               </div>
             </NavbarBrand>
             {user?.result? (<>

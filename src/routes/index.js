@@ -8,7 +8,7 @@ import Home from '../pages/Home';
 import ContactUs from '../pages/ContactUs';
 import Auth from '../pages/Auth'
 import Home2 from '../pages/Home2'
-
+import AboutUs from '../pages/AboutUs';
 import BookNow from '../pages/BookNow';
 import Monitoring from '../pages/Monitoring';
 import Profile from '../pages/Profile';
@@ -30,6 +30,7 @@ const RootRoutes =()=>{
             <Route exact path='/Monitoring' component={Monitoring}/>
             <Route exact path='/Profile' component={Profile}/>
             <Route exact path='/Doctor' component={Doctor}/>
+            <Route exact path='/AboutUs' component={AboutUs}/>
             <ScrollButton/>
             </ScrollToTop>
             <Footer/>
