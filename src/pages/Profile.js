@@ -1,7 +1,10 @@
 import React,{useState,useEffect} from "react";
 import "./Profile.css";
 import moment from 'moment';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch } from "react-redux";
+import Autocomplete from '@mui/material/Autocomplete';
 import { getAppointment } from "../components/Connection/Action/Appointments";
 import { Typography, makeStyles,Button,
     Paper, Container, Grid, Card, 
@@ -11,20 +14,30 @@ import EditIcon from '@mui/icons-material/Edit';
 import Appointments from '../components/Profile/Appointments';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Calendar from '../components/Calendar/Calendar'
-import {cancelAppointment} from '../components/Connection/Action/Appointments'
+import ConsultationType from "../components/BookNow/ConsultationType";
+import {cancelAppointment,updateAppointment} from '../components/Connection/Action/Appointments'
 
+        const options = ['Check-up',
+        'Blood Test',
+        'Ultrasound',
+        'Complete Blood Count (CBC)',
+        'Urinalysis'];
 
-
-
-
-
+        const initialState={
+            concerns:'',
+            concernType:'',
+            dateAndTime: new Date()
+        }
 const Profile = () => {
     const dispatch = useDispatch();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-    const [appointments,setAppointments] = useState([])
-
-    const [open,setOpen] = useState(false);
     const [current,setCurrent] = useState(false);
+   
+  
+    const [appointments,setAppointments] = useState([])
+    
+    const [open,setOpen] = useState(false);
+    const [values,setValues]=useState(initialState);
     const [cancelOpen,setCancelOpen] = useState(false);
 
     const [appointmentStatus, setAppointmentStatus] = useState({ appointmentStatus: 'Cancelled'})
@@ -35,6 +48,7 @@ useEffect(function () {
     .then(resp=>setAppointments(resp))
 
 })
+
 
 const handleCancelOpen = (appointment) =>{
     setCancelOpen(true);
@@ -51,6 +65,14 @@ const handleOpen = (appointment) =>{
 const handleClose= () =>{
     setOpen(false);
 }
+const handleSubmit =(e)=>{
+    e.preventDefault();
+    console.log('ewan ko na ')
+//    dispatch(updateAppointment(current._id(...value)))
+
+}
+const handleChange = (e) => setValues({ ...values, [e.target.name]: e.target.value });
+
 
 const [fullWidth] = React.useState(true);
 const [maxWidth] = React.useState('sm');
@@ -66,14 +88,15 @@ const classes = useStyles();
             <Paper className={classes.paper2 + " col-11 mr-0 mt-5"} variant="outlined" elevation={6}>
                 <Typography className={classes.typo3}>My Appointments</Typography>
                 
-                    <Grid className={classes.grid } >
+                    <Grid container>
 
-            {appointments.map((appointment,id) => (
+            {appointments.map((appointment) => (
+                        <Grid item xs={5}>
 
-                    <Grid  item xs={12} sm={6}>
+                    <Grid key={appointment._id} id={appointment._id}>
                         {user?.result.email === appointment.email?
                     (
-                    <Grid key={appointment.email} container >
+                  
                     
                     <Card className={classes.card1 }>
                         <CardContent>
@@ -83,39 +106,45 @@ const classes = useStyles();
                             <Typography className={classes.typo4} >{moment(appointment.dateAndTime).format('h:mm a')}</Typography>
                             <Typography className={classes.typo4}>{appointment.appointmentStatus}</Typography>
                             <Typography className={classes.typoIcon}>
-                                <CancelIcon sx={{ fontSize: 25 }} onClick={()=>handleCancelOpen(appointment)}/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <EditIcon sx={{ fontSize: 25 }} onClick={()=>handleOpen(appointment)}/>
+                                {appointment.appointmentStatus === 'Pending'?<><CancelIcon sx={{ fontSize: 25 }} onClick={()=>handleCancelOpen(appointment)}/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <EditIcon sx={{ fontSize: 25 }} onClick={()=>handleOpen(appointment)}/></>:null}
+                                
                             </Typography>           
 
                     
-                        <Dialog
-                                className={classes.dialog}
-                                fullWidth={fullWidth}
-                                maxWidth={maxWidth}
-                                open={open}
-                                onClose={handleClose}
-                                >
+                            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
 
 
-                    <Container  component="main" maxWidth="xl" >
-                        <Grid container direction="column" justifyContent="center" alignItems="center" >
-                        <DialogTitle>{"Edit appointment"}</DialogTitle>
-                        <Typography >{current.concerns}</Typography>
-                        <TextField style = {{width: 380}}>{current.concerns}</TextField>
-                        <Typography >{current.concernType}</Typography>
-                        <Calendar/>
+                    <Container component="main" maxWidth="xl" > 
+                    <DialogTitle>{"Edit appointment"}</DialogTitle>
+                      {/* <form onSubmit={handleSubmit}>  */}
+                      <Grid container direction="column" justifyContent="center" alignItems="center" >
+                            <TextField   style = {{width: 380}} name="concerns" label="Concern" 
+                            value={values.concerns}
+                            variant="outlined"
+                            onChange={handleChange}
+                            required/>
+
+                            <ConsultationType
+                            value={values.concernType}
+                            onChange={(evt, value) => setValues(prev=>({...prev,concernType:value}))}
+                            />
+                      <Calendar  style = {{width: 380}}
+                      onChange={date=> setValues(prev =>({...prev, dateAndTime:date}))}
+                       selected={values.dateAndTime}/>
+                
+                             
+                         <DialogActions>
+                         <Button  variant='contained' color="primary" onClick={()=>dispatch(updateAppointment(current._id,{...values}))} >
+                        Submit
+                        </Button>
+                      
                         
-
-                        <DialogActions>
-                    <Button onClick={handleClose} color="primary">
-                        Done
-                    </Button>
-                    
-                    </DialogActions>
-                    </Grid>
-                    </Container>
-                    </Dialog> 
-                    
+                     </DialogActions>
+                     </Grid>
+                      {/* </form>  */}
+                     </Container>
+                     </Dialog> 
 
 
                     <Dialog
@@ -124,8 +153,9 @@ const classes = useStyles();
                                 >
 
 
-                    <Container component="main" maxWidth="xl" > 
-                    <DialogTitle>{"Do you really want to cancel this appoinment?"}</DialogTitle>
+            <Container component ="main" maxWidth="lg"> 
+                <DialogTitle id="form-dialog-title">
+                   Do you really want to cancel this appoinment?</DialogTitle>
 
                     <DialogActions>
                         <Button variant="contained" color="primary" onClick={() => dispatch(cancelAppointment(current._id,{...appointmentStatus}))}>Yes</Button>
@@ -137,10 +167,10 @@ const classes = useStyles();
                     </CardContent>
                 </Card>
 
-                </Grid>
+              
                     
                     ):  null }
-
+            </Grid>
             </Grid>
 
 
