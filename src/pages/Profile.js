@@ -70,7 +70,7 @@ const classes = useStyles();
 
             {appointments.map((appointment,id) => (
 
-                    <Grid  item xs={12} sm={6}>
+                    <Grid  item xs={12}>
                         {user?.result.email === appointment.email?
                     (
                     <Grid key={appointment.email} container >

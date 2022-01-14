@@ -37,6 +37,11 @@ const menu =[
     //   title: "Doctor",
     //   component: "/Doctor"
     // },
+
+    {
+        title : "Services",
+        component: "/Services"
+    },
 ]
 
 const NavMenu = () => {

@@ -29,7 +29,7 @@ const Home = () => {
               <Grid item>
               
                   <div className="home_title">
-                    <Typography className="typo1">Santos-Del Carmen <br/>Medical Clinic</Typography>
+                    <Typography className="typo1-home">Santos-Del Carmen <br/>Medical Clinic</Typography>
                   </div>
               </Grid>
 

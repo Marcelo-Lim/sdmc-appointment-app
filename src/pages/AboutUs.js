@@ -2,7 +2,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import React, {useEffect, useState} from "react";
 import { makeStyles, Typography, Collapse, Grid, TextField, Button, createTheme, ThemeProvider, Paper, Card, CardContent} from "@material-ui/core";
 import './AboutUs.css';
-import vid3 from "../videos/vid3.mp4";
+import vid2 from "../videos/vid2.mp4";
 import { COLORS } from "../Styles/colors";
 import doc from "../assets/images/doctorsImages/doc.jpg"
 import doc1 from "../assets/images/doctorsImages/doc1-crop.jpg"
@@ -10,12 +10,23 @@ import doc1 from "../assets/images/doctorsImages/doc1-crop.jpg"
 const ContactUs = () => {
     const classes = useStyles();
 
+    const [checked, setChecked] = useState(false);
+    useEffect(() => {
+        setChecked(true);
+    },[])
+
     return(
     <div>
         <div className ="hero-container">
-        <video src={vid3} autoPlay loop muted></video>
+        <video src={vid2} autoPlay loop muted></video>
         
-        <Typography className={classes.title}> ABOUT US </Typography>
+        <Collapse 
+            in ={checked}
+            {... (checked ? { timeout: 1000 } : {})}
+            collapsedHeight={50}
+        >
+        <Typography className={classes.title}> ABOUT US</Typography>
+        </Collapse>
         </div>
     
         <div className="wrapper">
@@ -45,12 +56,17 @@ const ContactUs = () => {
 
 const useStyles = makeStyles((theme) => ({
     title: {
-        marginTop: 150,
-        flexGrow: 1,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "100px",
         fontWeight: "bold",
         fontSize: 75,
         fontFamily: "Pathway Gothic One",
-        color: "white"
+        color: "#810000",
+        borderRadius: "25px",
+        padding: "20px",
+        backgroundColor: "rgb(192,192,192, 0.5)"
     },
     root: {
         '& .MuiFormControl-root': {

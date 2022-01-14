@@ -35,12 +35,16 @@
     text-align: right;
 }
 
-.typo1 {
-    font-size: 50px !important;
+.typo1-home {
+    font-size: 85px !important;
     font-family: 'Pathway Gothic One';
-    color: black;
+    color: #0F0E0E;
     text-align: center;
+    border-radius: 25px;
+    padding: 20px;
+    background-color:rgb(192,192,192, 0.5)
 }
+
 
 @media screen and (max-width: 460px){
     .typo1 {

@@ -115,8 +115,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: 75,
     fontFamily: "Pathway Gothic One",
-    color: "white",
-    textAlign: "center"
+    color: "#810000",
+    textAlign: "center",
+    borderRadius: "25px",
+    padding: "20px",
+    backgroundColor: "rgb(192,192,192, 0.5)"
   },
   root: {
     '& .MuiFormControl-root': {

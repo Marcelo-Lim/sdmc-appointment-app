@@ -24,7 +24,7 @@ const Footer = () => {
                 
                     <Grid container  direction="row" justifyContent="space-evenly" alignItems="center" spacing={1}>
                         
-                    <Grid item xs={12} md>
+                    <Grid className={classes.logo} item xs={12} md>
                         
                         <img src={logo} alt="logo"/>
                         
@@ -63,32 +63,32 @@ const Footer = () => {
                             <Box borderBottom={0}> <b> Services </b> </Box>
                                 
                                 <Box>
-                                    <Typography>
+                                    <Link href="/Services" color="inherit">
                                         Physical Exam
-                                    </Typography>
+                                    </Link>
                                 </Box>
                                 <Box>
-                                    <Typography>
+                                    <Link href="/Services" color="inherit">
                                         CBC (Complete Blood Count)
-                                    </Typography>
+                                    </Link>
                                 </Box>
                                 <Box>
-                                    <Typography>
+                                    <Link href="/Services" color="inherit">
                                         X-Ray
-                                    </Typography>
+                                    </Link>
                                 </Box>
                         </Grid>
                         <Grid item xs={12} sm>
                             <Box borderBottom={0}> <br/> </Box>
                                 <Box>
-                                    <Typography>
+                                    <Link href="/Services" color="inherit">
                                         Urinalysis
-                                    </Typography>
+                                    </Link>
                                 </Box>
                                 <Box>
-                                    <Typography>
+                                    <Link href="/Services" color="inherit">
                                         Fecalysis
-                                    </Typography>
+                                    </Link>
                                 </Box>
                         </Grid>
                         <Grid item xs={12} sm>
@@ -110,10 +110,10 @@ const Footer = () => {
             </Box>
             <Grid 
             container="row"
-            justifyContent="space-between"
+            justifyContent="center"
             alignItems="center"
             >
-            <Box textAlign="flex-start" pt={{xs: 1, sm: 1 }} pb={{xs:5, sm: 0}}>
+            <Box textAlign="center" pt={{xs: 1, sm: 1 }} pb={{xs:5, sm: 0}}>
                         Santos Del-Carmen Medical Clinic &reg; {new Date().getFullYear()}
             </Box>
             </Grid>
@@ -131,6 +131,9 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '10px',
     },
 
+    logo: {
+        textAlign: 'center',
+    }
 }))
 
 
