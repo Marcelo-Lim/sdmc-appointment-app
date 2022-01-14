@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Box, Link, makeStyles, Typography} from "@material-ui/core";
-import logo from "../../assets/images/SDMCLOGO1.png";
+import logo from "../../assets/Images/SDMCLOGO1.png";
 import "./footer.css";
 
 
