@@ -32,3 +32,15 @@ export const cancelAppointment =(id,cancelApps) => async (dispatch) =>{
         console.log(error.message);
     }
 }
+export const updateAppointment =(id,updateApps) => async (dispatch) =>{
+    try{
+        const {data} = await api.updateAppointment(id, updateApps)
+
+        dispatch({type: 'UPDATE', payload: data})
+
+        console.log("tatanga tanga kase e");
+
+    }catch(error){
+        console.log(error.message);
+    }
+}
