@@ -33,10 +33,10 @@ const menu =[
         title: "Book Now",
         component: "/BookNow"
     },
-    {
-      title: "Doctor",
-      component: "/Doctor"
-    },
+    // {
+    //   title: "Doctor",
+    //   component: "/Doctor"
+    // },
 ]
 
 const NavMenu = () => {
