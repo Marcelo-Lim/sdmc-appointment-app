@@ -4,8 +4,8 @@ import { makeStyles, Typography, Collapse, Grid, TextField, Button, createTheme,
 import './AboutUs.css';
 import vid3 from "../videos/vid3.mp4";
 import { COLORS } from "../Styles/colors";
-import doc from "../assets/Images/doctorsImages/doc.jpg"
-import doc1 from "../assets/Images/doctorsImages/doc1-crop.jpg"
+import doc from "../assets/images/doctorsImages/doc.jpg"
+import doc1 from "../assets/images/doctorsImages/doc1-crop.jpg"
 
 const ContactUs = () => {
     const classes = useStyles();

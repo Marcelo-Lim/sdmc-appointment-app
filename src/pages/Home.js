@@ -2,11 +2,11 @@ import React from "react"
 import { Container, Typography, makeStyles, Grid, Button, Link } from "@material-ui/core";
 import { COLORS } from '../Styles/colors';
 import './Home.css';
-import cbc from "../assets/Images/bt4.png";
-import serum from "../assets/Images/bt3.png";
-import urinalysis from "../assets/Images/bt2.png";
-import hiv from "../assets/Images/bt6.png";
-import screening from "../assets/Images/bt5.png";
+import cbc from "../assets/images/bt4.png";
+import serum from "../assets/images/bt3.png";
+import urinalysis from "../assets/images/bt2.png";
+import hiv from "../assets/images/bt6.png";
+import screening from "../assets/images/bt5.png";
 import vid1 from "../videos/vid1.mp4";
 
 const Home = () => {
