@@ -36,7 +36,7 @@
 }
 
 .typo1-home {
-    font-size: 85px !important;
+    font-size: 75px !important;
     font-family: 'Pathway Gothic One';
     color: #0F0E0E;
     text-align: center;
@@ -46,8 +46,24 @@
 }
 
 
+
 @media screen and (max-width: 460px){
     .typo1 {
         font-size: 35px !important;
+    }
+    .typo1-home {
+        font-size: 35px !important;
+    }
+}
+
+@media screen and (min-width: 461px) and (max-width: 900px){
+    .typo1-home {
+        font-size: 40px !important;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px){
+    .typo1-home {
+        font-size: 60px !important;
     }
 }

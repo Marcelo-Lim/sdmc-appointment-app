@@ -22,11 +22,11 @@ const Footer = () => {
             >
                 
                 
-                    <Grid container  direction="row" justifyContent="space-evenly" alignItems="center" spacing={1}>
+                    <Grid container  direction="row" justifyContent="flex-start" alignItems="center" spacing={1}>
                         
                     <Grid className={classes.logo} item xs={12} md>
                         
-                        <img src={logo} alt="logo"/>
+                        <img src={logo} alt="logo" />
                         
                     </Grid>
                         
@@ -39,24 +39,15 @@ const Footer = () => {
                                 </Box>
                                 <Box>
                                     <Typography>
-                                        CBC | Complete Blood Count
+                                        Tel No: (02) 7954-5168
                                     </Typography>
                                 </Box>
                                 <Box>
                                     <Typography>
-                                        X-Ray
+                                        santos.delcarmen.medical.clinic@gmail.com
                                     </Typography>
                                 </Box>
-                                <Box>
-                                    <Typography>
-                                        Urinalysis
-                                    </Typography>
-                                </Box>
-                                <Box>
-                                    <Typography>
-                                        Fecalysis
-                                    </Typography>
-                                </Box>
+                                
                         </Grid>
                         
                         <Grid item xs={12} sm={6} md >

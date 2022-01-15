@@ -67,7 +67,7 @@ const handleClose= () =>{
 }
 const handleSubmit =(e)=>{
     e.preventDefault();
-    console.log('ewan ko na ')
+    
 //    dispatch(updateAppointment(current._id(...value)))
 
 }
@@ -133,7 +133,7 @@ const classes = useStyles();
                         selected={values.dateAndTime}/>
                 
                             <DialogActions>
-                            <Button  variant='contained' color="primary" onClick={()=>dispatch(updateAppointment(current._id,{...values}))} >
+                            <Button  variant='contained' color="primary" onClick={()=>dispatch(updateAppointment(current._id,{...values})) && {handleClose}} >
                                 Submit
                             </Button>
                             </DialogActions>

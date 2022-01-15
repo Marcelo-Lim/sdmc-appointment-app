@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Container, Typography, makeStyles, Grid, Button, Link } from "@material-ui/core";
 import { COLORS } from '../Styles/colors';
 import './Home.css';
@@ -8,14 +8,21 @@ import urinalysis from "../assets/images/bt2.png";
 import hiv from "../assets/images/bt6.png";
 import screening from "../assets/images/bt5.png";
 import vid1 from "../videos/vid1.mp4";
+import { useHistory } from 'react-router-dom';
 
 const Home = () => {
   const classes = useStyles();
+
+  const history = useHistory();
+  
+  const [user,setUser] = useState(JSON.parse(localStorage.getItem('profile')))
+
   return (
     <div>
       
       <div className="cover">
-      <video src= {vid1} autoPlay loop muted></video>
+        
+      <video src= {vid1} autoPlay loop muted>  </video>
         <Grid 
             container
             direction="column"
@@ -35,7 +42,7 @@ const Home = () => {
 
               <Grid item>
                 <div className="button_book">
-                  <Button className={classes.button1}> <Link href="/BookNow" color="inherit" underline="none"> Book Now </Link></Button>
+                  <Button className={classes.button1} onClick={() => {user?.result ? history.push('/BookNow') : history.push('/Authentication')}}>  Book Now </Button>
                 </div>
               </Grid>
             </Grid>

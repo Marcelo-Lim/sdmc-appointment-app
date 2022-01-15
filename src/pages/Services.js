@@ -38,7 +38,7 @@ const Home = () => {
             {... (checked ? { timeout: 1000 } : {})}
             collapsedHeight={50}
             >
-                        <Typography className="typo1">SERVICES</Typography>
+                        <Typography className="typo1">LEARN MORE</Typography>
                         </Collapse>
                     </div>
                 </Grid>
