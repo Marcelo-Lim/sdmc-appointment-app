@@ -5,13 +5,13 @@ export default function validateInfo(values) {
 
     if(!values.lastName) {
       errors.lastName = "Last Name Required";
-  }else if(!/^[a-zA-Z]*$/i.test(values.lastName)) {
+  }else if(!/^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$/i.test(values.lastName)) {
       errors.lastName = "Not a Proper Name";
   }
 
   if(!values.firstName){
       errors.firstName = "First Name Required";
-  }else if(!/^[a-zA-Z]*$/i.test(values.firstName)) {
+  }else if(!/^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$/i.test(values.firstName)) {
       errors.firstName = "Not a Proper Name";
   }
 

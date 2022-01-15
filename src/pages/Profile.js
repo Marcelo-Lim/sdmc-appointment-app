@@ -133,7 +133,7 @@ const classes = useStyles();
                         selected={values.dateAndTime}/>
                 
                             <DialogActions>
-                            <Button  variant='contained' color="primary" onClick={()=>dispatch(updateAppointment(current._id,{...values})) && {handleClose}} >
+                            <Button  variant='contained' color="primary" onClick={()=> dispatch(updateAppointment(current._id,{...values}))} >
                                 Submit
                             </Button>
                             </DialogActions>

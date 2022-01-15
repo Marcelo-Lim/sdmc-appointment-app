@@ -37,6 +37,8 @@ const Home = () => {
               
                   <div className="home_title">
                     <Typography className="typo1-home">Santos-Del Carmen <br/>Medical Clinic</Typography>
+                    <p className="typo2-home"> Clinic Schedule: Monday - Friday(8:00AM to 3:00 PM) </p>
+                    <p className="typo3-home"> Offers free Check Up </p>
                   </div>
               </Grid>
 
@@ -44,14 +46,16 @@ const Home = () => {
                 <div className="button_book">
                   <Button className={classes.button1} onClick={() => {user?.result ? history.push('/BookNow') : history.push('/Authentication')}}>  Book Now </Button>
                 </div>
+                
               </Grid>
             </Grid>
           </Container>
         </Grid>
       </div>
-
+      
       <Container component="main" maxWidth="lg">
       <div className="services">
+        
         <Typography className={classes.typo2}>Services</Typography>
         <Typography className={classes.typo8}>Santos-Del Carmen Medical Clinic offers the following tests</Typography>
         
