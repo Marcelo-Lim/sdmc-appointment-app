@@ -136,11 +136,9 @@ const Home = () => {
             </Grid>
           </Grid>
         </div>
-       
       </div>
-      </Container>    
+      </Container>  
     </div>
-  
   )
 };
 

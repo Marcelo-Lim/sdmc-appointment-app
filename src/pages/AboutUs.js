@@ -6,6 +6,7 @@ import vid3 from "../videos/vid3.mp4";
 import { COLORS } from "../Styles/colors";
 import doc from "../assets/images/doctorsImages/doc.jpg"
 import doc1 from "../assets/images/doctorsImages/doc1-crop.jpg"
+import ClinicLocation from "../components/Map/ClinicLocation";
 
 const ContactUs = () => {
     const classes = useStyles();
@@ -17,7 +18,7 @@ const ContactUs = () => {
         
         <Typography className={classes.title}> ABOUT US </Typography>
         </div>
-    
+        
         <div className="wrapper">
             <h1 className="typography-title">Meet Our Doctors!</h1>
         </div>
