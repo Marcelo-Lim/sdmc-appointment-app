@@ -9,7 +9,7 @@ function Calendar({selected,onChange, ...props}) {
 
     //const {...props, onChange,startDate,setStartDate,values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
 
-  
+    
 
     return (
     
@@ -18,9 +18,11 @@ function Calendar({selected,onChange, ...props}) {
             selected={selected} 
             onChange={onChange} 
             showTimeSelect
+            filterDate={date => date.getDay() !== 6 && date.getDay() !== 0}
             minDate={new Date()}
-            minTime="08:00"
-            maxTime="16:00"
+            minTime={new Date(0, 0, 0, 8)}
+            maxTime={new Date(0, 0, 0, 15, 0)}
+            
             //isClearable={true}
             dateFormat="MMMM d, yyyy h:mm aa"
             //value={startDate}

@@ -45,10 +45,12 @@ const [values,setValues] = useState(initialValues);
           <h1 className="typography-title">We would love to hear from you!</h1>
         </div>
         <form className={classes.root}>
-          <Grid  container justifyContent="center" alignItems="flex-start">
-            <Grid item xs={12} sm={6} container  direction="column" justifyContent="flex-start" alignItems="center">
+          <Grid  container justifyContent="center" alignItems="center">
+            <Grid item xs={12} sm={6} container  direction="column" justifyContent="center" alignItems="center">
               <h4 className={classes.h4}>Santos-Del Carmen Medical Clinic</h4>
               <p className="p-1"> #61, 7th Avenue, Baranggay Soccoro, Cubao, Quezon City</p>
+              <p className="p-1"> Tel No: (02) 7954-5168 </p>
+              <p className="p-1"> Email: santos.delcarmen.medical.clinic@gmail.com </p>
 
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -115,8 +117,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: 75,
     fontFamily: "Pathway Gothic One",
-    color: "white",
-    textAlign: "center"
+    color: "#810000",
+    textAlign: "center",
+    borderRadius: "25px",
+    padding: "20px",
+    backgroundColor: "rgb(192,192,192, 0.5)"
   },
   root: {
     '& .MuiFormControl-root': {

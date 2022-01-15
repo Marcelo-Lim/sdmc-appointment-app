@@ -35,15 +35,35 @@
     text-align: right;
 }
 
-.typo1 {
-    font-size: 50px !important;
+.typo1-home {
+    font-size: 75px !important;
     font-family: 'Pathway Gothic One';
-    color: black;
+    color: #0F0E0E;
     text-align: center;
+    border-radius: 25px;
+    padding: 20px;
+    background-color:rgb(192,192,192, 0.5)
 }
+
+
 
 @media screen and (max-width: 460px){
     .typo1 {
         font-size: 35px !important;
+    }
+    .typo1-home {
+        font-size: 35px !important;
+    }
+}
+
+@media screen and (min-width: 461px) and (max-width: 900px){
+    .typo1-home {
+        font-size: 40px !important;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px){
+    .typo1-home {
+        font-size: 60px !important;
     }
 }

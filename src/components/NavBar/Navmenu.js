@@ -21,21 +21,32 @@ const menu =[
         title: "Home",
         component: "/Home"
     },
-    /*{
-        title: "AboutUs",
-        component: "/AboutUs"
-    },
-    {
-        title: "ContactUs",
-        component: "/ContactUs"
-    },*/
+
     {
         title: "Book Now",
         component: "/BookNow"
     },
+
     {
-      title: "Doctor",
-      component: "/Doctor"
+    
+      title: "About Us",
+      component: "/AboutUs"
+    },
+
+    {
+      title: "Contact Us",
+      component: "/ContactUs"
+    },
+
+
+    // {
+    //   title: "Doctor",
+    //   component: "/Doctor"
+    // },
+
+    {
+        title : "Learn More",
+        component: "/Services"
     },
 ]
 

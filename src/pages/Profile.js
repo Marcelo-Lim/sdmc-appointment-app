@@ -67,7 +67,7 @@ const handleClose= () =>{
 }
 const handleSubmit =(e)=>{
     e.preventDefault();
-    console.log('ewan ko na ')
+    
 //    dispatch(updateAppointment(current._id(...value)))
 
 }
@@ -91,12 +91,11 @@ const classes = useStyles();
                     <Grid container>
 
             {appointments.map((appointment) => (
-                        <Grid item xs={5}>
+            
 
-                    <Grid key={appointment._id} id={appointment._id}>
+                    <Grid  item xs={12}>
                         {user?.result.email === appointment.email?
                     (
-                  
                     
                     <Card className={classes.card1 }>
                         <CardContent>
@@ -118,7 +117,7 @@ const classes = useStyles();
                     <Container component="main" maxWidth="xl" > 
                     <DialogTitle>{"Edit appointment"}</DialogTitle>
                       {/* <form onSubmit={handleSubmit}>  */}
-                      <Grid container direction="column" justifyContent="center" alignItems="center" >
+                        <Grid container direction="column" justifyContent="center" alignItems="center" >
                             <TextField   style = {{width: 380}} name="concerns" label="Concern" 
                             value={values.concerns}
                             variant="outlined"
@@ -129,22 +128,19 @@ const classes = useStyles();
                             value={values.concernType}
                             onChange={(evt, value) => setValues(prev=>({...prev,concernType:value}))}
                             />
-                      <Calendar  style = {{width: 380}}
-                      onChange={date=> setValues(prev =>({...prev, dateAndTime:date}))}
-                       selected={values.dateAndTime}/>
+                        <Calendar  style = {{width: 380}}
+                        onChange={date=> setValues(prev =>({...prev, dateAndTime:date}))}
+                        selected={values.dateAndTime}/>
                 
-                             
-                         <DialogActions>
-                         <Button  variant='contained' color="primary" onClick={()=>dispatch(updateAppointment(current._id,{...values}))} >
-                        Submit
-                        </Button>
-                      
-                        
-                     </DialogActions>
-                     </Grid>
+                            <DialogActions>
+                            <Button  variant='contained' color="primary" onClick={()=>dispatch(updateAppointment(current._id,{...values})) && {handleClose}} >
+                                Submit
+                            </Button>
+                            </DialogActions>
+                        </Grid>
                       {/* </form>  */}
-                     </Container>
-                     </Dialog> 
+                        </Container>
+                        </Dialog> 
 
 
                     <Dialog
@@ -155,7 +151,7 @@ const classes = useStyles();
 
             <Container component ="main" maxWidth="lg"> 
                 <DialogTitle id="form-dialog-title">
-                   Do you really want to cancel this appoinment?</DialogTitle>
+                    Do you really want to cancel this appoinment?</DialogTitle>
 
                     <DialogActions>
                         <Button variant="contained" color="primary" onClick={() => dispatch(cancelAppointment(current._id,{...appointmentStatus}))}>Yes</Button>
@@ -167,11 +163,11 @@ const classes = useStyles();
                     </CardContent>
                 </Card>
 
-              
+
                     
                     ):  null }
             </Grid>
-            </Grid>
+            
 
 
 
