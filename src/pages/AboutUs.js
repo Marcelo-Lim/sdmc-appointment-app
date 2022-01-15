@@ -31,7 +31,7 @@ const ContactUs = () => {
         </div>
         
         <div className="wrapper">
-            <h1 className="typography-title">Meet Our Doctors!</h1>
+            <h1 className="typography-title">Meet our Owners/Doctors</h1>
         </div>
 
         <div className="container">

@@ -17,10 +17,10 @@ const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm(
-        'service_lusftxg', 
-        'template_32kjbpm', 
+        'service_vdtmbb6', 
+        'template_5cw3p8b', 
         e.target, 
-        'user_88fZhcEyqDDz9scokFOrs' 
+        'user_Pja1vFlc7jtiv7rvHzl6w' 
     ).then(res=>{
         console.log(res);
     }).catch(err=> console.log(err));

@@ -55,16 +55,25 @@ const handleCancelOpen = (appointment) =>{
     setCurrent(appointment);
 
 }
+const handleCancelCloseYes = () =>{
+    dispatch(cancelAppointment(current._id,{...appointmentStatus}))
+    setCancelOpen(false);
+}
+
 const handleCancelClose = () =>{
     setCancelOpen(false);
 }
+
 const handleOpen = (appointment) =>{
     setOpen(true);
     setCurrent(appointment)
 }
 const handleClose= () =>{
+    dispatch(updateAppointment(current._id,{...values}))
     setOpen(false);
 }
+
+
 const handleSubmit =(e)=>{
     e.preventDefault();
     
@@ -133,7 +142,7 @@ const classes = useStyles();
                         selected={values.dateAndTime}/>
                 
                             <DialogActions>
-                            <Button  variant='contained' color="primary" onClick={()=> dispatch(updateAppointment(current._id,{...values}))} >
+                            <Button  variant='contained' color="primary" onClick={handleClose} >
                                 Submit
                             </Button>
                             </DialogActions>
@@ -154,7 +163,7 @@ const classes = useStyles();
                     Do you really want to cancel this appoinment?</DialogTitle>
 
                     <DialogActions>
-                        <Button variant="contained" color="primary" onClick={() => dispatch(cancelAppointment(current._id,{...appointmentStatus}))}>Yes</Button>
+                        <Button variant="contained" color="primary" onClick={handleCancelCloseYes}>Yes</Button>
                         <Button variant="contained" color="secondary"onClick={handleCancelClose}>No</Button>
                         
                     </DialogActions>
