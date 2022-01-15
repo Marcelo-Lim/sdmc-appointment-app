@@ -78,9 +78,9 @@ const Auth = ({submitForm})=>{
             variant="outlined" error={Boolean(errors.suffix)} helperText={errors.suffix}/>
             </Grid>
             <Grid item xs={12}> 
-                <TextField  name="contactNumber" label="Contact Number" 
+                <TextField  name="contactNum" label="Contact Number" 
                     placeholder='Enter your Contact Number' 
-                    value={values.contactNumber} onChange={handleChange} 
+                    value={values.contactNum} onChange={handleChange} 
                     fullWidth  variant="outlined" error={Boolean(errors.contactNum)} helperText={errors.contactNum}/>
             </Grid>
             </>

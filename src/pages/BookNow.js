@@ -192,10 +192,10 @@ const useStyles = makeStyles((theme) => ({
 
   typo2: {
     textAlign:"center",
-    fontSize: "50px",
+    fontSize: "30px",
     fontWeight: "bold",
     marginTop: "150px",
-    fontFamily: "Montserrat",
+    
   },
 
   inputText: {

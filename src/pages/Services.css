@@ -1,0 +1,54 @@
+
+
+.cover {
+    display: flex;
+    height: 400px;
+    width: auto;
+    
+}
+
+
+.button_book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+}
+
+.services {
+    margin-top: 70px;
+    margin-bottom: 15px;
+    text-align: center;
+    
+    
+}
+
+.service-left {
+    text-align: left;
+}
+
+.service-right {
+    text-align: right;
+}
+
+.typo1 {
+    font-size: 85px !important;
+    font-family: 'Pathway Gothic One';
+    color: #921224;
+    text-align: center;
+    border-radius: 25px;
+    padding: 20px;
+    background-color:rgb(192,192,192, 0.5)
+}
+
+@media screen and (max-width: 460px){
+    .typo1 {
+        font-size: 35px !important;
+    }
+}
