@@ -4,6 +4,7 @@ import { makeStyles, Typography, Collapse, Grid, TextField, Button, createTheme,
 import './ContactUs.css';
 import vid3 from "../videos/vid3.mp4";
 import { COLORS } from "../Styles/colors";
+import emailjs from "@emailjs/browser";
 
 const ContactUs = () => {
   const classes = useStyles();
@@ -28,6 +29,23 @@ const initialValues = {
   message: '',
 
 }
+
+
+const sendEmail = (e) => {
+  e.preventDefault();
+  emailjs.sendForm(
+  'service_vdtmbb6', 
+  'template_5cw3p8b', 
+  e.target, 
+  'user_Pja1vFlc7jtiv7rvHzl6w' 
+).then(res=>{
+  console.log(res);
+}).catch(err=> console.log(err));
+  setValues(initialValues);
+}
+
+
+
 const [values,setValues] = useState(initialValues);
   return(
       <div>
@@ -44,7 +62,7 @@ const [values,setValues] = useState(initialValues);
         <div className="wrapper">
           <h1 className="typography-title">We would love to hear from you!</h1>
         </div>
-        <form className={classes.root}>
+        <form className={classes.root} onSubmit={sendEmail}>
           <Grid  container justifyContent="center" alignItems="center">
             <Grid item xs={12} sm={6} container  direction="column" justifyContent="center" alignItems="center">
               <h4 className={classes.h4}>Santos-Del Carmen Medical Clinic</h4>
@@ -97,6 +115,7 @@ const [values,setValues] = useState(initialValues);
                   color="primary"
                   size="large"
                   className={classes.btn}
+                  type="submit"
                 >
                   Submit
                 </Button>

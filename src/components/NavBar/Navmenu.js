@@ -48,6 +48,32 @@ const menu =[
         title : "Learn More",
         component: "/Services"
     },
+
+    
+]
+
+const menu1 = [
+
+
+{
+
+  title: "About Us",
+  component: "/AboutUs"
+},
+
+{
+  title: "Contact Us",
+  component: "/ContactUs"
+},
+
+
+{
+    title : "Learn More",
+    component: "/Services"
+},
+
+
+
 ]
 
 const NavMenu = () => {
@@ -117,6 +143,30 @@ const NavMenu = () => {
             <Button className={classes.buttonlogout} variant="contained"  onClick={logout}>Logout</Button>
 
             </>):(<>
+              <NavbarToggler
+              onClick={() => setIsOpen(!isOpen)}
+              className='mr-2 white '
+            />
+            <Collapse
+              className='d-sm-inline-flex flex-sm-row-reverse'
+              isOpen={isOpen}
+              navbar
+            >
+              <ul className='navbar-nav flex-grow mx-auto'>
+                {menu1.map(({ title, component }, idx) => (
+                  <Item
+                    key={idx}
+                    title={title}
+                    component={component}
+                    onClickListener={() => {
+                      setSelectedPage(title);
+                    }}
+                  
+                  />
+
+                ))}
+              </ul>
+            </Collapse>
                   <NavbarBrand tag={Link} to='/Authentication'>
                     <div className="navbarbrand">
                       <Button className={classes.buttonlogin} variant="contained">Sign In</Button>

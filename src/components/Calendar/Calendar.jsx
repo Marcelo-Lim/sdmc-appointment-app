@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useForms from '../BookNow/useForms';
 import validateInfo from '../Auth/InfoValidation';
+import './Calendar.css';
 
 function Calendar({selected,onChange, ...props}) {
 //const [startDate, setStartDate] = useState(new Date());
@@ -14,7 +15,9 @@ function Calendar({selected,onChange, ...props}) {
     return (
     
         <div>
-        <DatePicker 
+        
+        <DatePicker
+            className="datepicker" 
             selected={selected} 
             onChange={onChange} 
             showTimeSelect
@@ -29,7 +32,6 @@ function Calendar({selected,onChange, ...props}) {
             {...props}
             />
             
-
             </div>
     ); 
 }
