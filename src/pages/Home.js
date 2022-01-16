@@ -38,7 +38,7 @@ const Home = () => {
                   <div className="home_title">
                     <Typography className="typo1-home">Santos-Del Carmen <br/>Medical Clinic</Typography>
                     <p className="typo2-home"> Clinic Schedule: Monday - Friday(8:00AM to 3:00 PM) </p>
-                    <p className="typo3-home"> Offers free Check Up </p>
+                    <p className="typo3-home"> Offers free Check-Up </p>
                   </div>
               </Grid>
 

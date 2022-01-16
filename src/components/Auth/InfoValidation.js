@@ -18,7 +18,7 @@ export default function validateInfo(values) {
 
   if(!values.middleName){
       errors.middleName = "Middle Name Required";
-  }else if(!/^[a-zA-Z]*$/i.test(values.middleName)) {
+  }else if(!/^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$/i.test(values.middleName)) {
       errors.middleName = "Not a Proper Name";
   }
 
