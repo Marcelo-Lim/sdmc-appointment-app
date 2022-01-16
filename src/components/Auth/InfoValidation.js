@@ -45,10 +45,10 @@ export default function validateInfo(values) {
     }
     
 
-    if(!values.contactNum){
-      errors.contactNum = "Contact Number Required";
-    }else if (!/^(09|\+639)\d{9}$/.test(values.contactNum)){
-      errors.contactNum = "Please enter a valid Contact Number";
+    if(!values.contactNumber){
+      errors.contactNumber = "Contact Number Required";
+    }else if (!/^(09|\+639)\d{9}$/.test(values.contactNumber)){
+      errors.contactNumber = "Please enter a valid Contact Number";
     }
 
 
