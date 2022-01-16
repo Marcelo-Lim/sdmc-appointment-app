@@ -31,7 +31,7 @@ const Auth = ({submitForm})=>{
     e.preventDefault();
     if (isSignup){
         handleSubmit()
-        console.log("pakyu")
+        
       }
       else{
         logins()
@@ -80,8 +80,8 @@ const Auth = ({submitForm})=>{
             <Grid item xs={12}> 
                 <TextField  name="contactNumber" label="Contact Number" 
                     placeholder='Enter your Contact Number' 
-                    value={values.contactNum} onChange={handleChange} 
-                    fullWidth  variant="outlined" error={Boolean(errors.contactNum)} helperText={errors.contactNum}/>
+                    value={values.contactNumber} onChange={handleChange} 
+                    fullWidth  variant="outlined" error={Boolean(errors.contactNumber)} helperText={errors.contactNumber}/>
             </Grid>
             </>
           )}  
@@ -113,11 +113,10 @@ const Auth = ({submitForm})=>{
             </Grid></>}
 
             {isSignup &&<Grid item xs={12}>
-           <TextField  name="repeatPassword" label="Repeat Password" placeholder='Enter your password'
+            <TextField  name="repeatPassword" label="Repeat Password" placeholder='Enter your password'
                     value={values.repeatPassword} onChange={handleChange} 
                     fullWidth  variant="outlined"  error={Boolean(errors.repeatPassword)} helperText={errors.repeatPassword}
                     type={values.showPassword ? 'text' : 'password'} />
-         
             </Grid>}
 
         </Grid>
