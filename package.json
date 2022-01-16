@@ -1,6 +1,9 @@
 {
     "name": "sdmc-appointment-app",
     "version": "0.1.0",
+    "engines": {
+        "node": "14.x"
+    },
     "private": true,
     "dependencies": {
         "@autocomplete/material-ui": "0.0.17",
