@@ -19,7 +19,7 @@ const Auth = ({submitForm})=>{
   
   
   
-  const {handleChange, values,logins,setValues, handleSubmit, errors} = useForm(submitForm, validateInfo);
+  const {handleChange,values,logins,setValues, handleSubmit, errors,} = useForm(submitForm, validateInfo);
   
   const switchMode = () => {
     setValues(initialState)
@@ -36,7 +36,13 @@ const Auth = ({submitForm})=>{
       else{
         logins()
       }
-}
+};
+
+  // const handleChange = (e)=>{
+  //   e.preventDefault();
+    
+  // }
+    
  
   return(
     <Container component="main" maxWidth={isSignup?"md": "sm"}>

@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "100px",
         fontWeight: "bold",
         fontSize: 75,
-        fontFamily: "Pathway Gothic One",
+        fontFamily: "Montserrat",
         color: "#810000",
         borderRadius: "25px",
         padding: "20px",
@@ -86,13 +86,13 @@ const useStyles = makeStyles((theme) => ({
 
     doctor: {
         fontSize: 45,
-        fontFamily: "Pathway Gothic One",
+        fontFamily: "Montserrat",
         fontWeight: "bold",
     },
 
     doctorspecial: {
         fontSize: 30,
-        fontFamily: "Pathway Gothic One",
+        fontFamily: "Montserrat",
         
     },
 

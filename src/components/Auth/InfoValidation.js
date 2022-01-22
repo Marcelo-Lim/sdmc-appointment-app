@@ -39,15 +39,14 @@ export default function validateInfo(values) {
     if (!values.email) {
       errors.email = 'Email required';
     } 
-    else if (!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      .test(values.email)) {
+    else if (!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i.test(values.email)) {
       errors.email = 'Invalid input';
     }
     
 
     if(!values.contactNumber){
       errors.contactNumber = "Contact Number Required";
-    }else if (!/^(09|\+639)\d{9}$/.test(values.contactNumber)){
+    }else if (!/^(09|\+639)\d{9}$/i.test(values.contactNumber)){
       errors.contactNumber = "Please enter a valid Contact Number";
     }
 
@@ -56,7 +55,7 @@ export default function validateInfo(values) {
     if (!values.password) {
       errors.password = 'Password is required';
     } 
-    else if (values.password.length <= 8) {
+    else if (values.password.length < 8) {
       errors.password = 'Password needs to be 8 characters or more';
     }
   

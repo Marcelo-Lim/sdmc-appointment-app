@@ -34,10 +34,10 @@ const initialValues = {
 const sendEmail = (e) => {
   e.preventDefault();
   emailjs.sendForm(
-  'service_vdtmbb6', 
-  'template_5cw3p8b', 
+  'service_su9f05a', 
+  'template_sl6adhj', 
   e.target, 
-  'user_Pja1vFlc7jtiv7rvHzl6w' 
+  'user_MIaEzjD6HdttXMOf4OrTK' 
 ).then(res=>{
   console.log(res);
 }).catch(err=> console.log(err));
@@ -135,7 +135,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     fontWeight: "bold",
     fontSize: 75,
-    fontFamily: "Pathway Gothic One",
+    fontFamily: "Montserrat",
     color: "#810000",
     textAlign: "center",
     borderRadius: "25px",
