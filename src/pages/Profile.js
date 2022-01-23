@@ -15,7 +15,8 @@ import Appointments from '../components/Profile/Appointments';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Calendar from '../components/Calendar/Calendar'
 import ConsultationType from "../components/BookNow/ConsultationType";
-import {cancelAppointment,updateAppointment} from '../components/Connection/Action/Appointments'
+import {cancelAppointment,updateAppointment} from '../components/Connection/Action/Appointments';
+import Fab from '@mui/material/Fab';
 
         const options = ['Check-up',
         'Blood Test',
@@ -114,8 +115,8 @@ const classes = useStyles();
                             <Typography className={classes.typo4} >{moment(appointment.dateAndTime).format('h:mm a')}</Typography>
                             <Typography className={classes.typo4}>{appointment.appointmentStatus}</Typography>
                             <Typography className={classes.typoIcon}>
-                                {appointment.appointmentStatus === 'Pending'?<><CancelIcon sx={{ fontSize: 25 }} onClick={()=>handleCancelOpen(appointment)}/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <EditIcon sx={{ fontSize: 25 }} onClick={()=>handleOpen(appointment)}/></>:null}
+                                {appointment.appointmentStatus === 'Pending'?<> <Fab size="small"><CancelIcon sx={{ fontSize: 25 }} onClick={()=>handleCancelOpen(appointment)}/></Fab>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <Fab size="small"><EditIcon sx={{ fontSize: 25 }} onClick={()=>handleOpen(appointment)}/></Fab></>:null}
                                 
                             </Typography>           
 
@@ -242,7 +243,19 @@ const useStyles = makeStyles((theme) => ({
     },
 
     typoIcon: {
-        marginTop: "20px"
+        marginTop: "20px",
+    },
+
+    editIcon: {
+        '&:hover': {
+            background: "lightgray",
+        },
+    },
+
+    cancelIcon: {
+        '&:hover': {
+            background: "gray",
+        },
     },
 
     typo4: {

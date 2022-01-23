@@ -19,7 +19,7 @@ const Auth = ({submitForm})=>{
   
   
   
-  const {handleChange,values,logins,setValues, handleSubmit, errors,} = useForm(submitForm, validateInfo);
+  const {handleChange,values,logins,setValues, handleSubmit, errors} = useForm(submitForm, validateInfo);
   
   const switchMode = () => {
     setValues(initialState)
