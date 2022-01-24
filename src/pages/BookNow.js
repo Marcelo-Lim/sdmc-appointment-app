@@ -1,4 +1,5 @@
-import { Typography, makeStyles,TextField, Grid, Container, Checkbox, FormControlLabel, Button, Paper } from "@material-ui/core";
+import { Typography, makeStyles,TextField, Grid, Container, 
+  Checkbox, FormControlLabel, Button, Paper, MenuItem } from "@material-ui/core";
 import Autocomplete from '@mui/material/Autocomplete';
 import React,{useEffect, useState} from "react";
 import DatePicker from "react-datepicker";
@@ -17,10 +18,9 @@ import doc1 from "../assets/Images/doctorsImages/doc1-crop.jpg"
 
 const BookNow = ({submitForm}) => {
   const classes = useStyles();
-  const dispatch = useDispatch();
-  
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-
+  
+ 
   const {handleChange, values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
 
   const [disButton, setDisButton] = useState(false);
@@ -102,7 +102,8 @@ const BookNow = ({submitForm}) => {
                 value={values.contactNumber}
                 onChange={handleChange}
               /> 
-
+              
+                          
               <TextField 
                 
                 className={classes.inputText}
@@ -129,7 +130,7 @@ const BookNow = ({submitForm}) => {
                 <h1 className={classes.typo2}> Select Date and Time </h1>
                 <div className="calendarwidth">
 
-              <Calendar onChange={date=> setValues(prev =>({...prev, dateAndTime:date}))} selected={values.dateAndTime}/>
+              <Calendar onChange={date=> setValues(prev =>({...prev, dateAndTime:date}))} selected={values.dateAndTime} filterDate={date => date.getDay() !== 6 && date.getDay() !== 0}/>
                 </div>
               </Grid>
 

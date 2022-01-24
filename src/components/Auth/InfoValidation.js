@@ -63,7 +63,8 @@ export default function validateInfo(values) {
     if (!values.repeatPassword) {
       errors.repeatPassword = 'Password is required';
     } 
-    else if (values.repeatPassword !== values.password) {
+   
+    else if (values.password !== values.repeatPassword) {
       errors.repeatPassword = 'Passwords do not match';
     }
     
