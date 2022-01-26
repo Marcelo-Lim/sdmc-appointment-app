@@ -2,11 +2,11 @@ import React, {useEffect, useState} from "react"
 import { Container, Typography, makeStyles, Grid, Button, Link, Collapse } from "@material-ui/core";
 import { COLORS } from '../Styles/colors';
 import './Services.css';
-import cbcImg from "../assets/Images/blood-test.png";
-import physical from "../assets/Images/physical-therapy.png";
-import urinalysis from "../assets/Images/urine.png";
-import xrays from "../assets/Images/x-rays.png";
-import fecalysis from "../assets/Images/stool-test.png";
+import cbcImg from "../assets/images/blood-test.png";
+import physical from "../assets/images/physical-therapy.png";
+import urinalysis from "../assets/images/urine.png";
+import xrays from "../assets/images/x-rays.png";
+import fecalysis from "../assets/images/stool-test.png";
 import vid5 from "../videos/vid5.mp4";
 
 const Home = () => {

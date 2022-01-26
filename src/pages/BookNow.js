@@ -12,8 +12,8 @@ import "./BookNow.css";
 import Calendar from "../components/Calendar/Calendar"
 import ConsultationType from "../components/BookNow/ConsultationType";
 
-import doc from "../assets/Images/doctorsImages/doc.jpg"
-import doc1 from "../assets/Images/doctorsImages/doc1-crop.jpg"
+import doc from "../assets/images/doctorsImages/doc.jpg"
+import doc1 from "../assets/images/doctorsImages/doc1-crop.jpg"
 
 
 const BookNow = ({submitForm}) => {
