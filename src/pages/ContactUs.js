@@ -34,10 +34,10 @@ const initialValues = {
 const sendEmail = (e) => {
   e.preventDefault();
   emailjs.sendForm(
-  'service_vdtmbb6', 
-  'template_5cw3p8b', 
+  'service_su9f05a', 
+  'template_sl6adhj', 
   e.target, 
-  'user_Pja1vFlc7jtiv7rvHzl6w' 
+  'user_MIaEzjD6HdttXMOf4OrTK' 
 ).then(res=>{
   console.log(res);
 }).catch(err=> console.log(err));
@@ -66,7 +66,8 @@ const [values,setValues] = useState(initialValues);
           <Grid  container justifyContent="center" alignItems="center">
             <Grid item xs={12} sm={6} container  direction="column" justifyContent="center" alignItems="center">
               <h4 className={classes.h4}>Santos-Del Carmen Medical Clinic</h4>
-              <p className="p-1"> #61, 7th Avenue, Baranggay Soccoro, Cubao, Quezon City</p>
+              <p className="p-1"> Clinic Schedule: Monday - Friday(8:00AM to 3:00 PM) </p>
+              <p className="p-2"> #61, 7th Avenue, Baranggay Soccoro, Cubao, Quezon City</p>
               <p className="p-1"> Tel No: (02) 7954-5168 </p>
               <p className="p-1"> Email: santos.delcarmen.medical.clinic@gmail.com </p>
 
@@ -135,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     fontWeight: "bold",
     fontSize: 75,
-    fontFamily: "Pathway Gothic One",
+    fontFamily: "Montserrat",
     color: "#810000",
     textAlign: "center",
     borderRadius: "25px",

@@ -44,3 +44,14 @@ export const updateAppointment =(id,updateApps) => async (dispatch) =>{
         console.log(error.message);
     }
 }
+
+// Para lang makuha yung data
+export const getAppointment2 =()=> async (dispatch)=>{
+    try{
+        const {data} = await api.fetchAppointments();
+        dispatch({type: FETCH_ALL, payload: data});
+        return data;
+    }catch(error){
+        console.log(error);
+    }
+}

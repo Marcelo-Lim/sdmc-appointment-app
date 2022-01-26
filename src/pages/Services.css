@@ -1,3 +1,6 @@
+div {
+    font-family: "Montserrat";
+}
 
 
 .cover {
@@ -39,7 +42,7 @@
 
 .typo1 {
     font-size: 85px !important;
-    font-family: 'Pathway Gothic One';
+    font-family: 'Montserrat';
     color: #921224;
     text-align: center;
     border-radius: 25px;

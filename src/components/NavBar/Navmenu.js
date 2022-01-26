@@ -15,7 +15,7 @@ import { COLORS } from "../../Styles/colors";
 import Item from "./Item";
 import "./Navmenu.css";
 import * as actionType from '../Connection/Reducers/Constant/actionType'
-import IconClinic from "../../assets/Images/sdmc-no-border.png";
+import IconClinic from "../../assets/images/sdmc-no-border.png";
 
 const menu =[
     {
@@ -190,7 +190,7 @@ const NavMenu = () => {
       fontWeight: "bold",
       fontSize: 25,
       color: COLORS.WHITE,
-      fontFamily: "Pathway Gothic One",
+      fontFamily: "Montserrat",
     },
     buttonlogout: {
       color: COLORS.BLACK,

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Box, Link, makeStyles, Typography} from "@material-ui/core";
-import logo from "../../assets/Images/SDMCLOGO1.png";
+import logo from "../../assets/images/SDMCLOGO1.png";
 import "./footer.css";
 
 
@@ -105,7 +105,9 @@ const Footer = () => {
             alignItems="center"
             >
             <Box textAlign="center" pt={{xs: 1, sm: 1 }} pb={{xs:5, sm: 0}}>
-                        Santos Del-Carmen Medical Clinic &reg; {new Date().getFullYear()}
+
+                <Typography> <Link href="/PrivacyPolicy" color="inherit"> Privacy Statement    </Link> |  <Link href="/FAQs" color="inherit"> FAQs</Link></Typography>
+                <Typography>  Santos Del-Carmen Medical Clinic &reg; {new Date().getFullYear()} </Typography>
             </Box>
             </Grid>
         </footer>

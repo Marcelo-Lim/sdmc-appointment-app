@@ -23,7 +23,7 @@ const Item = ({ title, component, onClickListener }) => {
     title: {
       flexGrow: 1,
       fontSize: 20,
-      fontFamily: "Pathway Gothic One",
+      fontFamily: "Montserrat",
       color: COLORS.BLACK,
     },
   }));

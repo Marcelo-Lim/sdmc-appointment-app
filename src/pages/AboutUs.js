@@ -4,8 +4,8 @@ import { makeStyles, Typography, Collapse, Grid, TextField, Button, createTheme,
 import './AboutUs.css';
 import vid2 from "../videos/vid2.mp4";
 import { COLORS } from "../Styles/colors";
-import doc from "../assets/Images/doctorsImages/doc.jpg"
-import doc1 from "../assets/Images/doctorsImages/doc1-crop.jpg"
+import doc from "../assets/images/doctorsImages/doc.jpg"
+import doc1 from "../assets/images/doctorsImages/doc1-crop.jpg"
 import ClinicLocation from "../components/Map/ClinicLocation";
 
 const ContactUs = () => {
@@ -40,11 +40,14 @@ const ContactUs = () => {
                     <img className="aboutus-img" src={doc}></img>
                     <Typography className={classes.doctor}>Dr. Teodulo Santos</Typography>
                     <Typography className={classes.doctorspecial}>Specializes in Internal Medicine</Typography>
+                    <Typography className={classes.doctorspecial}>Clinic Hours: 8AM to 3PM</Typography>
+
                 </Paper>
                 <Paper className={classes.doctorpaper} elevation={6}>
                     <img className="aboutus-img" src={doc1}></img>
                     <Typography className={classes.doctor}>Dr. Florence Del-Carmen Santos</Typography>
                     <Typography className={classes.doctorspecial}>Specializes in Family Medicine</Typography>
+                    <Typography className={classes.doctorspecial}>Clinic Hours: 8AM to 3PM</Typography>
                 </Paper>
                 
             </div>
@@ -63,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "100px",
         fontWeight: "bold",
         fontSize: 75,
-        fontFamily: "Pathway Gothic One",
+        fontFamily: "Montserrat",
         color: "#810000",
         borderRadius: "25px",
         padding: "20px",
@@ -86,13 +89,13 @@ const useStyles = makeStyles((theme) => ({
 
     doctor: {
         fontSize: 45,
-        fontFamily: "Pathway Gothic One",
+        fontFamily: "Montserrat",
         fontWeight: "bold",
     },
 
     doctorspecial: {
         fontSize: 30,
-        fontFamily: "Pathway Gothic One",
+        fontFamily: "Montserrat",
         
     },
 
