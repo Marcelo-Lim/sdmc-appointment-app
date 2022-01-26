@@ -31,7 +31,6 @@ const useForm = (callback, validateInfo) => {
             ...values,
             [name]: value
         })
-       setErrors(validateInfo(values));
     };
      
     const handleSubmit = () => {
@@ -43,9 +42,7 @@ const useForm = (callback, validateInfo) => {
         setIsSubmit(true);
          console.log(values);
          dispatch(signup(values,history))
-      
-    
-      
+
 
         
     };
@@ -57,7 +54,6 @@ const useForm = (callback, validateInfo) => {
     useEffect(() => {
         if(Object.keys(errors).length === 0 && isSubmit) {
             callback();
-           
         }
     },
     );

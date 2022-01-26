@@ -64,6 +64,7 @@ const Home = () => {
                 A physical examination is a common test your primary care physician (PCP) does to examine your general health. <br/>
                 The checkup also provides you an opportunity to talk to them about any persistent pain or symptoms that you  <br/>
                 are having or any other health concerns that you might have.
+                <Typography> <b>FEE: ₱550.00</b></Typography>
                 </Typography>
             </Grid>
             </Grid>
@@ -79,6 +80,7 @@ const Home = () => {
                 <Typography className={classes.typo4}>
                 A complete blood count (CBC) is a blood test used to evaluate your general health can identify a wide range of diseases, <br/>
                 including anemia, infection and leukemia. A complete blood count test evaluates numerous components and properties of your blood.
+                <Typography> <b>FEE: ₱100.00</b></Typography>
                 </Typography>
             </Grid>  
             <Grid item>
@@ -101,6 +103,7 @@ const Home = () => {
                 X-ray beams flow through your body, and they are absorbed in varied degrees depending on the density of the substance <br/>
                 they pass through. Dense materials, such as bone and metal, show up as white on X-rays. The air in your lungs shows up as black. <br/>
                 Fat and muscle appear as hues of gray.
+                <Typography> <b>FEE: ₱550.00</b></Typography>
                 </Typography>
             </Grid>
             </Grid>
@@ -116,6 +119,7 @@ const Home = () => {
                 <Typography className={classes.typo6}>
                 A urinalysis is a urine examination. It's used to diagnose and treat a variety of illnesses, <br/>
                 including urinary tract infections, kidney disease, and diabetes.
+                <Typography> <b>FEE: ₱100.00</b></Typography>
                 </Typography>
             </Grid>  
             <Grid item>
@@ -137,6 +141,7 @@ const Home = () => {
                 A fecalysis is a series of tests performed on a stool (feces) sample to aid in the diagnosis <br/>
                 of digestive system disorders. Infection (from parasites, viruses, or bacteria), inadequate nutrition absorption, <br/>
                 and cancer are examples of these disorders.
+                <Typography> <b>FEE: ₱100.00</b></Typography>
                 </Typography>
             </Grid>
             </Grid>
@@ -157,7 +162,7 @@ const Home = () => {
         fontSize: 30,
         textAlign: 'center',
         fontWeight: 'bold',
-        fontFamily: 'Pathway Gothic One',
+        fontFamily: 'Montserrat',
         color: COLORS.BLACK,
     },
 
@@ -199,7 +204,7 @@ const Home = () => {
         textAlign: 'center',
         marginTop: '10px',
         marginBottom: '25px',
-        fontFamily: 'Pathway Gothic One',
+        fontFamily: 'Montserrat',
         color: COLORS.BLACK,
     },
 

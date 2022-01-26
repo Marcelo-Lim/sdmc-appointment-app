@@ -190,7 +190,7 @@ const NavMenu = () => {
       fontWeight: "bold",
       fontSize: 25,
       color: COLORS.WHITE,
-      fontFamily: "Pathway Gothic One",
+      fontFamily: "Montserrat",
     },
     buttonlogout: {
       color: COLORS.BLACK,

@@ -22,7 +22,7 @@ const Auth = ({submitForm})=>{
   const [isSignups, setIsSignups] = useState(false);
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   
-  const {handleChange, values,logins,setValues, handleSubmit, errors} = useForm(submitForm, validateInfo);
+  const {handleChange,values,logins,setValues, handleSubmit, errors} = useForm(submitForm, validateInfo);
   
   const switchMode = () => {
     setValues(initialState)
