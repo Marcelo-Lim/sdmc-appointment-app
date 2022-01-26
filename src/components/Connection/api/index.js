@@ -13,6 +13,8 @@ API.interceptors.request.use((req) => {
 
 export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);
+export const forgotPass = (formData) => API.post('/user/forgotten',formData);
+export const changePass =(id,formData) => API.patch(`/user/forgotpassword/${id}`,formData);
 
 
 export const fetchInfos = ()=> API.get('/user');

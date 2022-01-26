@@ -18,6 +18,7 @@ const useForms = (callback,validateInfo)=>{
         concernType: '',
         dateAndTime: new Date(),
         checked: '',
+        doctorsName:''
     })
 
     const initialState = useState({
@@ -30,6 +31,7 @@ const useForms = (callback,validateInfo)=>{
         concerns:'',
         concernType: '',
         dateAndTime: new Date(),
+        doctorsName:''
     
     })
     
@@ -37,6 +39,7 @@ const useForms = (callback,validateInfo)=>{
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
     const history = useHistory();
+
     
     const [isSubmit, setIsSubmit] = useState(false);
 
@@ -48,6 +51,7 @@ const useForms = (callback,validateInfo)=>{
         })
         setErrors(validateInfo(values));
     }; 
+
   
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -55,7 +59,7 @@ const useForms = (callback,validateInfo)=>{
           console.log(values);
           setIsSubmit(true);
         
-        dispatch(createAppointment(values,history));
+      //  dispatch(createAppointment(values,history));
         //values == initialState;
          
      };

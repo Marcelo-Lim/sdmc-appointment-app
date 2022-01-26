@@ -12,9 +12,6 @@ import "./BookNow.css";
 import Calendar from "../components/Calendar/Calendar"
 import ConsultationType from "../components/BookNow/ConsultationType";
 
-import doc from "../assets/images/doctorsImages/doc.jpg"
-import doc1 from "../assets/images/doctorsImages/doc1-crop.jpg"
-
 // Mga Dinagdag
 import { getAppointment2 } from "../components/Connection/Action/Appointments";
 import setHours from "date-fns/setHours";
@@ -24,9 +21,9 @@ import setMinutes from "date-fns/setMinutes";
 const BookNow = ({submitForm}) => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-
+  
+ 
   const {handleChange, values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
 
   const [disButton, setDisButton] = useState(false);
@@ -210,7 +207,8 @@ const dateFunc = (date) =>{
                 value={values.contactNumber}
                 onChange={handleChange}
               /> 
-
+              
+                          
               <TextField 
                 
                 className={classes.inputText}
@@ -424,6 +422,7 @@ const dateFunc = (date) =>{
           </div>
   )
 };
+
 
 const consultation = [
   {label: "Check-up"},

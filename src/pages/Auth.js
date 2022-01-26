@@ -7,17 +7,20 @@ import useStyles from '../components/Auth/Style'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import validateInfo from '../components/Auth/InfoValidation';
 import useForm from '../components/Auth/useForm';
+import { useHistory } from 'react-router-dom';
 const initialState = { firstName: '', lastName: '',suffix: '',middleName: '', email: '', password: '', confirmPassword: '',contactNumber: '' };
 
 const Auth = ({submitForm})=>{
   const classes = useStyles();
-
+  const history = useHistory();
    
   const [showPassword, setShowPassword] = useState(false);
+  const [showPasswords, setShowPasswords] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
+  const handleClickRepeatPassword = () => setShowPasswords(!showPasswords);
   const [isSignup, setIsSignup] = useState(false);
-  
-  
+  const [isSignups, setIsSignups] = useState(false);
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
   
   const {handleChange,values,logins,setValues, handleSubmit, errors} = useForm(submitForm, validateInfo);
   
@@ -36,13 +39,11 @@ const Auth = ({submitForm})=>{
       else{
         logins()
       }
-};
+}
 
-  // const handleChange = (e)=>{
-  //   e.preventDefault();
-    
-  // }
-    
+  const handleForgotPassword =() =>{
+    history.push('/ForgotPassword')
+  }
  
   return(
     <Container component="main" maxWidth={isSignup?"md": "sm"}>
@@ -103,7 +104,20 @@ const Auth = ({submitForm})=>{
             <Grid item xs={12}>
             <TextField  name="password" label="Password" type="password" placeholder='Enter your password'
                     value={values.password} onChange={handleChange} 
-                    fullWidth  variant="outlined"  error={Boolean(errors.password)} helperText={errors.password}/>
+                    fullWidth  variant="outlined"  error={Boolean(errors.password)} helperText={errors.password}
+                    type={showPasswords ? "text" : "password"} 
+                        //onChange={someChangeHandler}
+                        InputProps={{endAdornment: (
+                            <InputAdornment position="end">
+                                <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleClickRepeatPassword}
+                                 >
+                                {showPasswords ? <Visibility /> : <VisibilityOff />}
+                                </IconButton>
+                            </InputAdornment>
+                            )
+                        }}/>
             </Grid></> : 
             <> <Grid item xs={12}> 
                 <TextField  name="email" label="Email" 
@@ -115,20 +129,57 @@ const Auth = ({submitForm})=>{
             <Grid item xs={12}>
             <TextField  name="password" label="Password" type="password" placeholder='Enter your password'
                     value={values.password} onChange={handleChange} 
-                    fullWidth  variant="outlined"  />
+                    fullWidth  variant="outlined"
+                    type={showPassword ? "text" : "password"} 
+                        //onChange={someChangeHandler}
+                        InputProps={{endAdornment: (
+                            <InputAdornment position="end">
+                                <IconButton
+                                aria-label="toggle password visibility"
+                                onClick={handleShowPassword}
+                                >
+                                {showPassword ? <Visibility /> : <VisibilityOff />}
+                                </IconButton>
+                            </InputAdornment>
+                            )
+                        }}  />
             </Grid></>}
 
             {isSignup &&<Grid item xs={12}>
-            <TextField  name="repeatPassword" label="Repeat Password" placeholder='Enter your password'
+            <TextField  name="repeatPassword" label="Repeat Password" 
+            placeholder='Enter your password'
                     value={values.repeatPassword} onChange={handleChange} 
-                    fullWidth  variant="outlined"  error={Boolean(errors.repeatPassword)} helperText={errors.repeatPassword}
-                    type={values.showPassword ? 'text' : 'password'} />
+                    fullWidth  variant="outlined"  
+                    error={Boolean(errors.repeatPassword)} 
+                    helperText={errors.repeatPassword}
+                    type={showPassword ? "text" : "password"} 
+                    //onChange={someChangeHandler}
+                    InputProps={{endAdornment: (
+                        <InputAdornment position="end">
+                            <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleShowPassword}
+                            >
+                            {showPassword ? <Visibility /> : <VisibilityOff />}
+                            </IconButton>
+                        </InputAdornment>
+                        )
+                    }}
+                    
+
+                    />
             </Grid>}
 
         </Grid>
         
         <Button fullWidth type="submit" variant="contained" color="primary" className={classes.submit}> {isSignup ? 'Sign Up':'Sign In'}</Button>
-      
+        <Grid container justify="flex-end">
+            <Grid item>
+              <Button onClick={handleForgotPassword}>
+              { isSignup ? null : "Forgot Password?" }
+              </Button>
+            </Grid>
+          </Grid>
         <Grid container justify="flex-end">
             <Grid item>
               <Button onClick={switchMode}>

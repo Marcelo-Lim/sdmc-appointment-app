@@ -67,7 +67,7 @@ const [values,setValues] = useState(initialValues);
             <Grid item xs={12} sm={6} container  direction="column" justifyContent="center" alignItems="center">
               <h4 className={classes.h4}>Santos-Del Carmen Medical Clinic</h4>
               <p className="p-1"> Clinic Schedule: Monday - Friday(8:00AM to 3:00 PM) </p>
-              <p className="p-1"> #61, 7th Avenue, Baranggay Soccoro, Cubao, Quezon City</p>
+              <p className="p-2"> #61, 7th Avenue, Baranggay Soccoro, Cubao, Quezon City</p>
               <p className="p-1"> Tel No: (02) 7954-5168 </p>
               <p className="p-1"> Email: santos.delcarmen.medical.clinic@gmail.com </p>
 

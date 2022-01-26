@@ -59,12 +59,11 @@ export default function validateInfo(values) {
       errors.password = 'Password needs to be 8 characters or more';
     }
   
-    if (!values.repeatPassword) {
-      errors.repeatPassword = 'Password is required';
+    if (!values.repeatPassword && values.repeatPassword !== values.password ) {
+      errors.repeatPassword = 'Password do not match';
     } 
-    else if (values.repeatPassword !== values.password) {
-      errors.repeatPassword = 'Passwords do not match';
-    }
+   
+  
     
     
     

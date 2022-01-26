@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Route } from 'react-router-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import NavMenu from '../components/NavBar/Navmenu';
@@ -18,6 +18,8 @@ import ScrollButton from '../components/ScrollButton/ScrollButton';
 import Services from '../pages/Services';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import FAQs from '../pages/FAQs';
+import ForgotPassword from '../components/Auth/Components/forgotPassword'
+import ForgotPasswords from '../components/Auth/Components/forgotPassword2';
 
 const RootRoutes =()=>{
     return(
@@ -37,11 +39,16 @@ const RootRoutes =()=>{
             <Route exact path='/Services' component={Services}/>
             <Route exact path='/PrivacyPolicy' component={PrivacyPolicy}/>
             <Route exact path='/FAQs' component={FAQs}/>
+            <Route exact path='/forgotPassword' component={ForgotPassword}/>
+            <Route exact path='/forgotPasswords' component={ForgotPasswords}/>
             <ScrollButton/>
             </ScrollToTop>
             <Footer/>
         </Router>
         
     )
+
+
+    
 }
 export default RootRoutes;

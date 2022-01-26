@@ -78,7 +78,7 @@ const handleClose= () =>{
 const handleSubmit =(e)=>{
     e.preventDefault();
     
-//    dispatch(updateAppointment(current._id(...value)))
+   // dispatch(updateAppointment(current._id(...value)))
 
 }
 const handleChange = (e) => setValues({ ...values, [e.target.name]: e.target.value });
@@ -89,8 +89,8 @@ const [maxWidth] = React.useState('sm');
 
 const classes = useStyles();
     return (
-        <div class="d-flex flex-column justify-content-center align-items-center">
-            <Paper className={classes.paper + " col-11 mr-0 mt-5"} elevation={6}>
+        <div className="d-flex flex-column justify-content-center align-items-center">
+            <Paper className={classes.paper + " col-11 mr-0 mt-5"} elevation={3}>
                 <Typography className={classes.typo1}>Welcome {user?.result.lastName}, {user?.result.firstName}</Typography>
                 <Typography className={classes.typo2}>Contact number: {user?.result.contactNumber}</Typography>
                 <Typography className={classes.typo2}>Email address: {user?.result.email}</Typography>
@@ -103,7 +103,7 @@ const classes = useStyles();
             {appointments.map((appointment) => (
             
 
-                    <Grid  item xs={12}>
+                    <Grid key={appointment._id}  item xs={12}>
                         {user?.result.email === appointment.email?
                     (
                     
@@ -175,14 +175,12 @@ const classes = useStyles();
 
 
                     
-                    ):  null }
+                    ):null  }
             </Grid>
+           
+            ),'null')}
             
-
-
-
-            ) )}
-        {!appointments.length ?<Typography className={classes.typo4} >No record</Typography>: null }
+   
             </Grid>
                         
                     
@@ -200,7 +198,9 @@ const useStyles = makeStyles((theme) => ({
     
     paper: {
         
-        textAlign: "left"
+        textAlign: "left",
+        padding: theme.spacing(8)
+      
     },
 
     typo1: {
@@ -224,6 +224,8 @@ const useStyles = makeStyles((theme) => ({
         padding: "15px",
         textAlign: "center",
         height: "100%",
+        marginBottom: theme.spacing(10),
+
         
     },
 

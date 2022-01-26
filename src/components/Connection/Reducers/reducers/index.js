@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
 import auth from './auth';
 import appointments from './appointments';
-export default combineReducers({auth,appointments });
+import forgotpassword from './forgotpassword'
+export default combineReducers({auth,appointments,forgotpassword });
