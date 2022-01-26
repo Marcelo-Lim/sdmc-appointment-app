@@ -40,11 +40,14 @@ const ContactUs = () => {
                     <img className="aboutus-img" src={doc}></img>
                     <Typography className={classes.doctor}>Dr. Teodulo Santos</Typography>
                     <Typography className={classes.doctorspecial}>Specializes in Internal Medicine</Typography>
+                    <Typography className={classes.doctorspecial}>Clinic Hours: 8AM to 3PM</Typography>
+
                 </Paper>
                 <Paper className={classes.doctorpaper} elevation={6}>
                     <img className="aboutus-img" src={doc1}></img>
                     <Typography className={classes.doctor}>Dr. Florence Del-Carmen Santos</Typography>
                     <Typography className={classes.doctorspecial}>Specializes in Family Medicine</Typography>
+                    <Typography className={classes.doctorspecial}>Clinic Hours: 8AM to 3PM</Typography>
                 </Paper>
                 
             </div>

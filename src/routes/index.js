@@ -17,6 +17,7 @@ import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 import ScrollButton from '../components/ScrollButton/ScrollButton';
 import Services from '../pages/Services';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
+import FAQs from '../pages/FAQs';
 
 const RootRoutes =()=>{
     return(
@@ -35,6 +36,7 @@ const RootRoutes =()=>{
             <Route exact path='/AboutUs' component={AboutUs}/>
             <Route exact path='/Services' component={Services}/>
             <Route exact path='/PrivacyPolicy' component={PrivacyPolicy}/>
+            <Route exact path='/FAQs' component={FAQs}/>
             <ScrollButton/>
             </ScrollToTop>
             <Footer/>

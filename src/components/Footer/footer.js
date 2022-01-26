@@ -106,7 +106,7 @@ const Footer = () => {
             >
             <Box textAlign="center" pt={{xs: 1, sm: 1 }} pb={{xs:5, sm: 0}}>
 
-                <Typography> <Link href="/PrivacyPolicy" color="inherit"> Privacy Statement    </Link></Typography>
+                <Typography> <Link href="/PrivacyPolicy" color="inherit"> Privacy Statement    </Link> |  <Link href="/FAQs" color="inherit"> FAQs</Link></Typography>
                 <Typography>  Santos Del-Carmen Medical Clinic &reg; {new Date().getFullYear()} </Typography>
             </Box>
             </Grid>
