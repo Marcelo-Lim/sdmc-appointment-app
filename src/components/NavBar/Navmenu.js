@@ -8,13 +8,14 @@ import {
   NavbarBrand,
   NavbarToggler,
 } from "reactstrap";
+import decode from 'jwt-decode';
 import {useDispatch} from 'react-redux';
 import { Link,useHistory,useLocation } from "react-router-dom";
 import { COLORS } from "../../Styles/colors";
 import Item from "./Item";
 import "./Navmenu.css";
 import * as actionType from '../Connection/Reducers/Constant/actionType'
-import IconClinic from "../../assets/images/sdmc-no-border.png";
+import IconClinic from "../../assets/Images/sdmc-no-border.png";
 
 const menu =[
     {
@@ -27,27 +28,27 @@ const menu =[
         component: "/BookNow"
     },
 
-    {
+    // {
     
-      title: "About Us",
-      component: "/AboutUs"
-    },
+    //   title: "About Us",
+    //   component: "/AboutUs"
+    // },
 
-    {
-      title: "Contact Us",
-      component: "/ContactUs"
-    },
+    // {
+    //   title: "Contact Us",
+    //   component: "/ContactUs"
+    // },
 
 
     // {
-    //   title: "Doctor",
-    //   component: "/Doctor"
+    //   title: "Notification",
+    //   component: "/home"
     // },
 
-    {
-        title : "Learn More",
-        component: "/Services"
-    },
+    // {
+    //     title : "Learn More",
+    //     component: "/Services"
+    // },
 
     
 ]
@@ -92,7 +93,11 @@ const NavMenu = () => {
     }
   useEffect(()=>{
     const token = user?.token;
+    if (token) {
+      const decodedToken = decode(token);
 
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+    }
     setUser(JSON.parse(localStorage.getItem('profile')))
   },[location])
 
@@ -178,7 +183,7 @@ const NavMenu = () => {
       </AppBar>
     );
   };
-  
+   
   const useStyles = makeStyles((theme) => ({
     title: {
       flexGrow: 1,

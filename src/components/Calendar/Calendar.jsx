@@ -5,7 +5,7 @@ import useForms from '../BookNow/useForms';
 import validateInfo from '../Auth/InfoValidation';
 import './Calendar.css';
 
-function Calendar({selected,onChange, ...props}) {
+function Calendar({selected,onChange,filterDate, ...props}) {
 //const [startDate, setStartDate] = useState(new Date());
 
     //const {...props, onChange,startDate,setStartDate,values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
@@ -21,7 +21,8 @@ function Calendar({selected,onChange, ...props}) {
             selected={selected} 
             onChange={onChange} 
             showTimeSelect
-            filterDate={date => date.getDay() !== 6 && date.getDay() !== 0}
+            filterDate={filterDate}
+           // filterDate={date => date.getDay() !== 6 && date.getDay() !== 0}
             minDate={new Date()}
             minTime={new Date(0, 0, 0, 8)}
             maxTime={new Date(0, 0, 0, 15, 0)}
