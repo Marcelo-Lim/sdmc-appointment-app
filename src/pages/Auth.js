@@ -60,7 +60,7 @@ const Auth = ({submitForm})=>{
             <>
             <Grid item md={3}>
                   <TextField  name="lastName" label="Last Name" 
-                        placeholder='Enter your Last Name'  autoFocus
+                        placeholder='Enter your Last Name'  autoFocus 
                         value={values.lastName} onChange={handleChange} 
                         variant="outlined" error={Boolean(errors.lastName)} helperText={errors.lastName}/>
             </Grid>
@@ -149,7 +149,7 @@ const Auth = ({submitForm})=>{
             <TextField  name="repeatPassword" label="Repeat Password" 
             placeholder='Enter your password'
                     value={values.repeatPassword} onChange={handleChange} 
-                    fullWidth  variant="outlined"  
+                    fullWidth  variant="outlined"  required
                     error={Boolean(errors.repeatPassword)} 
                     helperText={errors.repeatPassword}
                     type={showPassword ? "text" : "password"} 

@@ -31,6 +31,7 @@ const useForm = (callback, validateInfo) => {
             ...values,
             [name]: value
         })
+        setErrors(validateInfo(values));
     };
      
     const handleSubmit = () => {
@@ -39,7 +40,7 @@ const useForm = (callback, validateInfo) => {
 
        setErrors(validateInfo(values));
      
-        setIsSubmit(true);
+        // setIsSubmit(true);
          console.log(values);
          dispatch(signup(values,history))
 
