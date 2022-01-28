@@ -26,10 +26,8 @@ const BookNow = ({submitForm}) => {
  
   const {handleChange, values,setValues, handleSubmit, errors} = useForms(submitForm, validateInfo);
 
+  const [checkBoxChecked, setCheckBoxChecked] = useState (false);
   const [disButton, setDisButton] = useState(false);
-  const handleDisable=()=>{
-    setDisButton(true)
-  }
 
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
@@ -41,8 +39,10 @@ const BookNow = ({submitForm}) => {
   };
 
   const handleClose = () => {
-    setOpen(false);
-    setDisButton(true);
+    //setOpen(false);
+    
+    setDisButton(!disButton);
+    console.log(disButton);
   };
 
   const descriptionElementRef = React.useRef(null);
@@ -270,7 +270,7 @@ const dateFunc = (date) =>{
               <Grid item xs={12} sm={5} container direction="column" justifyContent="flex-start" alignItems="flex-start">
               
               
-              <FormControlLabel control={<Checkbox color="primary"/>} label="By confirming this, you agree to our Terms of Service and Privacy Policy, and confirm that you are at least 18 years old." className={classes.checkbox} onClick={handleClickOpen('paper') }/>
+              <FormControlLabel control={<Checkbox color="primary"/>} label="By confirming this, you agree to our Terms of Service and Privacy Policy, and confirm that you are at least 18 years old." className={classes.checkbox} onClick={handleClose}/>
               <Dialog
                     open={open}
                     onClose={handleClose}
@@ -424,9 +424,6 @@ const dateFunc = (date) =>{
                     </DialogActions>
                   </Dialog>
 
-
-              {/* <input type="checkbox" onClick={handleDisable}/>
-              <em>I have verified the information stated herein.</em> */}
               <Button  type="submit" variant="contained" className={classes.button} color="primary" disabled={!disButton}>Save</Button> 
                   
               </Grid>
