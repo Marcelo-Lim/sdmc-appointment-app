@@ -56,12 +56,11 @@ const useForms = (callback,validateInfo)=>{
     const handleSubmit = (e) => {
         e.preventDefault();
         //setErrors(validateInfo(values));
-          console.log(values);
-          setIsSubmit(true);
+            console.log(values);
+            setIsSubmit(true);
         
-      //  dispatch(createAppointment(values,history));
+        dispatch(createAppointment(values,history));
         //values == initialState;
-         
      };
 
      useEffect(() => {

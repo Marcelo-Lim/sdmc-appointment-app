@@ -37,6 +37,7 @@ const BookNow = ({submitForm}) => {
   const handleClickOpen = (scrollType) => () => {
     setOpen(true);
     setScroll(scrollType);
+    
   };
 
   const handleClose = () => {
@@ -61,11 +62,21 @@ const appointment = dispatch(getAppointment2());
 const [exclude, setExcludedTime] = useState({
   time: [],
   excludedTime: null,
+  go: true,
 })
 
+const [doctor, setData] = useState([])
+const doctorLength = doctor.length - 1;
+
+useEffect(()=>{
+    fetch('https://sdmc-clinic.herokuapp.com/doctor/doctors/data')
+    .then(resp => resp.json())
+    .then(resp => setData(resp))
+})
+  
 
 appointment.then( (data) => {
-
+  
   processExcludedTime(data)
 
 }).catch( (error) => {
@@ -73,7 +84,7 @@ appointment.then( (data) => {
 })
 
 const processExcludedTime = (data) => {
-
+    
   var length = data.length
   var map = new Map()
   var excludedTime = new Map()
@@ -95,10 +106,15 @@ const processExcludedTime = (data) => {
 
       var time = hours + ":" + minute
 
-      if(map.get(date).get(time) == null){
+      // || map.get(date).get(time) < totalDoctor
+      if(map.get(date).get(time) == null ){
         map.get(date).set(time, 1)
       }
-      else if (map.get(date).get(time) == 1){
+      else if(map.get(date).get(time) < doctorLength){
+        var num = map.get(date).get(time) + 1
+        map.get(date).set(time, num)
+      }
+      else if (map.get(date).get(time) == doctorLength){
         var arr = []
 
         if(excludedTime.get(date) == null){
@@ -109,12 +125,24 @@ const processExcludedTime = (data) => {
           arr.push(setHours(setMinutes(new Date(), minute), hours))
           excludedTime.set(date, arr)
         }
-        map.get(date).set(time, 2)
+        map.get(date).set(time, doctorLength + 1)
       }
     }
   }
+  if( exclude.go ){
+    date = new Date(date)
+    var datDay = date.toDateString()
 
-  setExcludedTime(prev =>({...prev, excludedTime:excludedTime}))
+    var remove = []
+    if( excludedTime.get(datDay) != null){
+      remove = excludedTime.get(datDay)
+    }
+    
+    setExcludedTime(prev =>({...prev, excludedTime:excludedTime, time:remove, go:false}))
+  }
+  else{
+    setExcludedTime(prev =>({...prev, excludedTime:excludedTime}))
+  }
 }
 
 const dateFunc = (date) =>{

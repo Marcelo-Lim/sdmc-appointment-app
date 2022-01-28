@@ -22,7 +22,7 @@ export default function validateInfo(values) {
       errors.middleName = "Not a Proper Name";
   }
 
-  if(values.suffix.length >3){
+  if(values.suffix.length > 3){
         errors.suffix='You entered invalid information'
     } else if(!/^[a-zA-Z]*$/i.test(values.suffix)) {
       errors.suffix = "Not a Suffix";
