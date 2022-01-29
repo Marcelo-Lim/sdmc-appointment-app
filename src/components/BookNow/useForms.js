@@ -61,7 +61,6 @@ const useForms = (callback,validateInfo)=>{
         
       dispatch(createAppointment(values,history));
         //values == initialState;
-         
      };
 
      useEffect(() => {

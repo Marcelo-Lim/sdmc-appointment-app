@@ -42,7 +42,7 @@ export const signin = (formData, router) => async (dispatch) => {
     } catch (error) {
       
       console.log(error);
-      alert("Please Enter valid information")
+      
      
        //router.push('/Authentication');
      

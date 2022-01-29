@@ -26,12 +26,56 @@ h3 {
 }
 
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 468px) {
+    .privacyContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
     .p {
-        font-size: 10px;
+        font-size: 15px;
     }
     .h1 {
         font-size: 25px;
+    }
+    li {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 469px) and (max-width: 670px){
+    .privacyContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .p {
+        font-size: 20px;
+    }
+    .h1 {
+        font-size: 20px;
+    }
+    li {
+        font-size: 13px;
+    }
+}
+
+
+
+@media screen and (min-width: 671px) and (max-width: 900px){
+    .privacyContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    .p {
+        font-size: 25px;
+    }
+    .h1 {
+        font-size: 25px;
+    }
+    li {
+        font-size: 20px;
     }
 }
 
