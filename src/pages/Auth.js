@@ -8,7 +8,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import validateInfo from '../components/Auth/InfoValidation';
 import useForm from '../components/Auth/useForm';
 import { useHistory } from 'react-router-dom';
-const initialState = { firstName: '', lastName: '',suffix: '',middleName: '', email: '', password: '', confirmPassword: '',contactNumber: '' };
+const initialState = { firstName: '', lastName: '',suffix: '',middleName: '', email: '', password: '', repeatPassword: '',contactNumber: '' };
 
 const Auth = ({submitForm})=>{
   const classes = useStyles();

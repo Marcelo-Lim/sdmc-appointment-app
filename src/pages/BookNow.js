@@ -1,5 +1,5 @@
 import { Typography, makeStyles,TextField, Grid, Container, Checkbox, FormControlLabel, Button, Paper, 
-  Dialog,DialogTitle, DialogContentText, DialogContent, DialogActions, } from "@material-ui/core";
+  Dialog,DialogTitle, DialogContentText, DialogContent, DialogActions, Link, } from "@material-ui/core";
 import Autocomplete from '@mui/material/Autocomplete';
 import React,{useEffect, useState} from "react";
 import DatePicker from "react-datepicker";
@@ -43,6 +43,11 @@ const BookNow = ({submitForm}) => {
     
     setDisButton(!disButton);
     console.log(disButton);
+  };
+  
+  const handleCloseModal = () => {
+    setOpen(false);
+
   };
 
   const descriptionElementRef = React.useRef(null);
@@ -269,8 +274,9 @@ const dateFunc = (date) =>{
 
               <Grid item xs={12} sm={5} container direction="column" justifyContent="flex-start" alignItems="flex-start">
               
-              
-              <FormControlLabel control={<Checkbox color="primary"/>} label="By confirming this, you agree to our Terms of Service and Privacy Policy, and confirm that you are at least 18 years old." className={classes.checkbox} onClick={handleClose}/>
+              <div className="checkboxmodal">
+              <Checkbox  className={classes.checkbox} color="primary" onClick={handleClose}/> <Typography>By confirming this, you agree to our  <Link onClick={handleClickOpen('paper')}>Terms of Service and Privacy Policy, </Link> and confirm that you are at least 18 years old.</Typography>
+              </div>
               <Dialog
                     open={open}
                     onClose={handleClose}
@@ -420,7 +426,7 @@ const dateFunc = (date) =>{
                       </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                      <Button  variant="contained" onClick={handleClose}> I understand</Button>
+                      <Button  variant="contained" onClick={handleCloseModal}> I understand</Button>
                     </DialogActions>
                   </Dialog>
 
@@ -496,8 +502,10 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "50px",
     marginLeft: "110px",
     marginBottom: "40px",
-    width: "50%",
+    padding: "0",
+    width: "10%",
   },
+
 
   button: {
     marginLeft: "150px",

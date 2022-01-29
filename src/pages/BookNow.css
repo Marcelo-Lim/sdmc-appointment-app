@@ -4,3 +4,43 @@
     
 }
 
+.checkboxmodal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 468px){
+    .checkboxmodal {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: -100px;
+        
+    }
+}
+
+@media screen and (min-width: 469px) and (max-width: 900px) {
+    .checkboxmodal {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: -100px;
+        
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px){
+    .checkboxmodal {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: -100px;
+        
+    }
+}

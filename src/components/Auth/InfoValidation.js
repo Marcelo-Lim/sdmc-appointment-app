@@ -1,6 +1,6 @@
 export default function validateInfo(values) {
     let errors = {};
-
+    let isValid = true;
     
 
     if(!values.lastName) {
@@ -61,6 +61,14 @@ export default function validateInfo(values) {
   
     if (!values.repeatPassword && values.repeatPassword !== values.password ) {
       errors.repeatPassword = 'Password do not match';
+    } 
+
+    if (typeof values.password !== "undefined" && typeof values.repeatPassword !== "undefined") {
+          
+      if (values.repeatPassword != values.password) {
+        isValid = false;
+        errors["repeatPassword"] = "Passwords do not match.";
+      }
     } 
    
   

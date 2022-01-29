@@ -55,6 +55,10 @@ const menu =[
 
 const menu1 = [
 
+  {
+    title: "Home",
+    component: "/"
+  },
 
 {
 

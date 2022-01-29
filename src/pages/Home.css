@@ -86,13 +86,16 @@ b {
         font-size: 20px !important;
     }
     .typo3-home {
-        font-size: 10px !important;
+        font-size: 15px !important;
     }
 }
 
 @media screen and (min-width: 461px) and (max-width: 900px){
     .typo1-home {
         font-size: 40px !important;
+    }
+    .typo2-home {
+        font-size: 20px !important;
     }
 }
 
