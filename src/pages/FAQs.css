@@ -1,5 +1,4 @@
 .accordion {
-    border: 1px solid transparent;
-    
-    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
